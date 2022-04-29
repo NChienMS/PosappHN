@@ -1,0 +1,96 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+
+}
+.top{
+    width: 100%;
+    background-color: #fdba38;
+    position: fixed;
+    z-index: 999;
+   
+}
+.submenu{
+    text-align: center;
+    width: 120px; 
+    float: left;
+}
+.top2{
+    width: 100%;
+    background-color: #73798C ;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 100px;
+}
+.tmenu{
+    margin: 0 20px;
+    color: white;
+    text-decoration: none;
+   
+}
+
+div a:hover{
+    color: skyblue;
+    width: 300px;
+}
+
+img.logo{
+    padding: 10px 10px 10px 50px;
+    height: 38px; 
+    width: 80px;
+}
+
+.mid{ 
+
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+   
+}
+.item{
+    width: 560px; 
+    height: 355px; 
+    background-color: #EEEEE0;  
+    margin-top: 20px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: 5px 5px 5px #AAA;
+}
+iframe{
+
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.content{
+    width: 560px;
+    height: 315px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+}
+
+
+.my-menu .sub-menu {
+    display: none;
+    padding: 20px;
+
+}
+li, .dropdown a{
+    text-decoration: none;
+    font-weight: bold;
+}
+.dropdown a:hover{
+    color: red;
+    font-size: 20px;
+}
+.dropdown:hover{
+    color: red;
+    font-size: 20px;
+}
+
