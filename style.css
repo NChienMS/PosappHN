@@ -147,3 +147,6 @@ a{
 .troll:hover{
     color: skyblue;
 }
+p{
+    text-align: justify;
+}
