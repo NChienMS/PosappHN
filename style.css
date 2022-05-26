@@ -150,3 +150,13 @@ a{
 p{
     text-align: justify;
 }
+.bt{
+  background-color:#3d4351;
+  height: 500px;
+  width: 100%; 
+
+}
+.address{
+  color: white;
+  padding:50px;
+}
