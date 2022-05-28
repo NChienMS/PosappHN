@@ -150,6 +150,7 @@ a{
 p{
     text-align: justify;
 }
+
 .bt{
   background-color:#3d4351;
   height: 500px;
@@ -160,6 +161,21 @@ p{
   color: white;
   padding:50px;
 }
+table{
+            border-collapse:collapse;
+        }
+        table, th, td{
+            border:1px solid black;
+        }
+th, td{
+  text-align: center;
+  padding: 5px;
+
+}
+th{
+  background-color:   #C0C0C0;
+}
+td{  text-align: left;}
 
 .btn2 {
   float: right;
@@ -180,4 +196,3 @@ p{
   border: 3px solid skyblue;
   
 }
-
