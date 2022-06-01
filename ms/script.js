@@ -56,6 +56,33 @@ window.onload = function()
 	  return true;
   
 };
+ function verify(){if (document.querySelector('#password').value === '61030091'){document.querySelector('.sonblogloginwrap').classList.add('hidden');window.open("https://nchienms.github.io/PosappHN/ms/internal.html","_self");}
+
+else{alert('Bạn đã nhập sai mật khẩu!');password.setSelectionRange(0,password.value.length)}
+
+return false}
+
+  const show = () => {
+
+  let password = document.querySelector('#password');
+
+  let sandi = document.querySelector('.icon1');
+
+  if (password.type === 'password') {
+
+    password.type = 'text';
+
+    sandi.style.color = '#16537E';
+
+  } else {
+
+    password.type = 'password';
+
+    sandi.style.color = '#fff';
+
+  }
+
+};
 
 
  
