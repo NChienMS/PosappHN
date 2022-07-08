@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Chiến |Trang chủ</title>
+<link type="text/css" rel="stylesheet" href="css/content.css" />
+</head>
+
+    <body onload="time()">
+    <!-- thời gian:star-->
+    	<script type="text/javascript">
+function time() {
+   var today = new Date();
+   var weekday=new Array(7);
+   weekday[0]="Chủ nhật";
+   weekday[1]="Chủ nhật";
+   weekday[2]="Chủ nhật";
+   weekday[3]="Chủ nhật";
+   weekday[4]="Chủ nhật";
+   weekday[5]="Chủ nhật";
+   weekday[6]="Chủ nhật";
+   var day = weekday[today.getDay()];
+   var dd = today.getDate();
+   var mm = today.getMonth()+1; //January is 0!
+   var yyyy = today.getFullYear();
+   var h=today.getHours();
+   var m=today.getMinutes();
+   var s=today.getSeconds();
+   m=checkTime(m);
+   s=checkTime(s);
+   nowTime = h+":"+m+":"+s;
+   if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} today = day+', '+ dd+'/'+mm+'/'+yyyy;
+
+   tmp='<span class="date">'+today+' | '+nowTime+'</span>';
+
+   document.getElementById("clock").innerHTML=tmp;
+   clocktime=setTimeout("time()","1000","JavaScript");
+   function checkTime(i)
+   {
+      if(i<10){
+     i="0" + i;
+      }
+      return i;
+   }
+}
+</script>
+
+    <!-- thời gian: end-->
+    	<div class="main">
+        	<!-- Top : star -->
+        
+          	<!-- Top : End -->
+            <!-- hear: Star -->
+          
+          
+            
+            <!-- hear: End -->
+            <div class="clr"></div>
+            	<!-- conten star-->
+            <div class="content">
+            	<!-- Menu tab:star-->
+            	<div id="menu_tab">
+                	
+                    	<ul class="menu">
+                        	<li><a href="https://nchienms.github.io/PosappHN/" id="home">Home</a></li>
+                            <li><a href="imgpos.html" id="home">Back</a></li>
+                            
+                            <div id="clock" style="float: right;"></div>
+                        </ul>
+                    
+                </div>
+               
+                <!-- Nội dung chính star-->
+                 
+             <div class="sanpham">
+             <div class="layout">
+						&bull; Liên kết: <span class="current"> IMG POS</span>   </div>
+                <div class="clr"></div>
+   				<!-- thanh sp trang: STAR-->
+                 	<!-- thanh thân trang :Iphone-->
+              <div class="rivew">
+                 	<div class="rivew_tb" >
+                    	<ul>
+                        	<li><a href="#">Các dòng máy tính tiền</a> </li>
+                      </ul>
+                	</div>
+           	  </div>
+               <div class="clr"></div>
+			         	<!-- Nội dung sp1-->
+
+                <div style="text-align: center; float: right;">
+               
+                 <div class="box_sp">
+                 		<div class="image_sp"><a href="D3.html"><img src="./images/D3.png" width="157px"
+	height="200" alt="image"/></a></div>
+                        <div class="name_sp"><a href="ip11pro_max.html">PosApp D3</a></div>    
+                     
+                  </div>
+                  <!-- Nội dung sp1 :END-->
+                    <!-- Nội dung sp1-->
+               
+                 <div class="box_sp">
+                    <div class="image_sp"><a href="ip11pro_max.html"><img src="./images/PAL1.png" width="157px"
+  height="200" alt="image"/></a></div>
+                        <div class="name_sp"><a href="ip11pro_max.html">PosApp PAL1 (1 màn)</a></div>    
+                     
+                  </div>
+                  <!-- Nội dung sp1 :END-->
+                    <!-- Nội dung sp1-->
+               
+                 <div class="box_sp">
+                    <div class="image_sp"><a href="ip11pro_max.html"><img src="./images/PAL2-N.png" width="157px"
+  height="200" alt="image"/></a></div>
+                        <div class="name_sp"><a href="ip11pro_max.html">PAL2-N (2 màn)</a></div>    
+                     
+                  </div>
+                  <!-- Nội dung sp1 :END-->
+                    <!-- Nội dung sp1-->
+               
+                 <div class="box_sp">
+                    <div class="image_sp"><a href="ip11pro_max.html"><img src="./images/pal2.png" width="157px"
+  height="200" alt="image"/></a></div>
+                        <div class="name_sp"><a href="ip11pro_max.html">PAL2 (2 màn 15,6')</a></div>    
+                     
+                  </div>
+                  <div class="box_sp">
+                    <div class="image_sp"><a href="ip11pro_max.html"><img src="./images/pac2.png" width="157px"
+  height="200" alt="image"/></a></div>
+                        <div class="name_sp"><a href="ip11pro_max.html">PAC 2 (2G))</a></div>    
+                     
+                  </div>
+                  <div class="box_sp">
+                    <div class="image_sp"><a href="ip11pro_max.html"><img src="./images/tab10.png" width="157px"
+  height="200" alt="image"/></a></div>
+                        <div class="name_sp"><a href="ip11pro_max.html">TAB 10</a></div>    
+                     
+                  </div>
+                  </div>
+                  <!-- Nội dung sp1 :END-->
+
+              <div style="height: 1000px;"></div>
+        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </body>
+</html>
