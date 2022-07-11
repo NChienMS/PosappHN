@@ -2,10 +2,10 @@
 /* CSS Document */
 .sanpham{
 	float:left;
-	width:1200px;}
+	width:100%;}
 .rivew{
 	margin:10px 0 0 0;
-	width:1200px;
+	width:100%;
 	height:33px;
 	float:left;
 	background:url(../../images/rivew.png) no-repeat center;}
@@ -67,7 +67,7 @@ span.price_sp{
 	list-style-type:none;}
 	
 .enter{
-	width:1200px;
+	width:100%;
 	height:30px;
 	float:left;}	
 	/* xem them dt khác */
@@ -118,7 +118,7 @@ span.price_sp2{
 	font-weight:bold;
 	padding:0 5px 0 0;}	
 .ip11max_conten{
-	width:1200px;
+	width:100%;
 	background:#FFF;
 	float:left;
 	border-radius: 10px;
@@ -294,7 +294,7 @@ p{
 }
 .menu_tab{
 	background-color: red;
-	width: 1200px;
+	width::100%;
 }
 @charset "utf-8";
 /* CSS Document */
@@ -306,17 +306,19 @@ p{
 	clear:both;
 	}
 body{
-	background-color:#CCC;
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:14px;
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: Silver;
 	}
 .main{
-	width:1200px;
+	width:100%;
 	margin:0px auto
 	}
 	/*************************TOP**************************/
 .top{
-	width:1200px;
+	width:100%;
 	height:38px;
 	background-color:#73798C;
 	}
@@ -361,7 +363,7 @@ body{
 	padding:5px 0 0 15px;}
 
 .layout{
-	width:1200px;
+	width:100%;
 	height:15px;
 	padding:5px 10px 0 30px;
 	background-position:10px 7px;
@@ -375,7 +377,7 @@ body{
 .layout a:hover{
 	color:#F00;
 
-	width:1200px;
+	width:100%;
 	height:50px;
 	background-color: #FF9900;
 	border-bottom-left-radius: 10px;
@@ -386,7 +388,7 @@ body{
 	font-weight:bold;}
 
 ul.menu {
-	width:1200px;
+	width:100%;
 	float:left;
 	background-color: #fdba38;
 	
@@ -436,7 +438,7 @@ ul.menu li a, ul.menu li a:visited{
 	padding:20px 0 20px 20px;}
 .head{
 	background-image:url(../../images/head_bg.png);
-	width:1200px;
+	width:100%;
 	height:173px;}
 #logo{
 	float:left;
@@ -542,8 +544,14 @@ ul.menu li a, ul.menu li a:visited{
 	font-size:16px;
 	font-weight:bold;
 	color:#390;}
-
-
+.content_sp{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: Silver;
+    padding-bottom: 30px;
+}
 
 
 
