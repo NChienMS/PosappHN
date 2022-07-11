@@ -245,6 +245,16 @@ ul, #main-image{
 }
 ul li{
 	list-style: none;
+
+}
+@media all and (max-width: 1122px) {
+	ul li{
+	list-style: none;
+
+  display: inline-block;
+  margin-left: 20px;
+
+}
 }
 
 ul li img{
@@ -271,7 +281,7 @@ ul li img{
 .thongso{
 	margin-left: 20px;
 	float: left;
-	width: 500px;
+	width: 600px;
 
 }
 .title_thongso{
@@ -391,7 +401,6 @@ ul.menu {
 	width:100%;
 	float:left;
 	background-color: #fdba38;
-	
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	display:block;
@@ -552,35 +561,3 @@ ul.menu li a, ul.menu li a:visited{
     background-color: Silver;
     padding-bottom: 30px;
 }
-
-
-
-
-
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
