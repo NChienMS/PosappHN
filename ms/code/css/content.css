@@ -247,14 +247,24 @@ ul li{
 	list-style: none;
 
 }
+.thongso{
+	margin-left: 200px;
+	float: left;
+	width: auto;
+
+}
 @media all and (max-width: 1122px) {
 	ul li{
 	list-style: none;
 
   display: inline-block;
-  margin-left: 20px;
+	}
+	.thongso{
+	margin-left: 20px;
+	float: left;
+	width: auto;
 
-}
+	}
 }
 
 ul li img{
@@ -278,12 +288,7 @@ ul li img{
 	border-radius: 10px;
 }
 
-.thongso{
-	margin-left: 20px;
-	float: left;
-	width: 600px;
 
-}
 .title_thongso{
 	text-align: center; 
 	padding : 5px;
@@ -561,3 +566,4 @@ ul.menu li a, ul.menu li a:visited{
     background-color: Silver;
     padding-bottom: 30px;
 }
+
