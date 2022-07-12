@@ -3,12 +3,7 @@
 .sanpham{
 	float:left;
 	width:100%;}
-.rivew{
-	margin:10px 0 0 0;
-	width:100%;
-	height:33px;
-	float:left;
-	background:url(../../images/rivew.png) no-repeat center;}
+
 
 .rivew .rivew_tb{
 	line-height:33px;
@@ -181,7 +176,7 @@ body{
 	}
 
 .layout{
-	width:100%;
+	width:auto;
 	height:15px;
 	padding:5px 10px 0 30px;
 	background-position:10px 7px;
