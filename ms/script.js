@@ -119,7 +119,7 @@ class Effect {
   constructor(canasWidth, canvasHeight) {
     this.canvasWidth = canasWidth
     this.canvasHeight = canvasHeight
-    this.fontSize = 25
+    this.fontSize = 12
     this.columns = this.canvasWidth / this.fontSize
     this.symbols = []
     this.#initialize()
