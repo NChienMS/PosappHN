@@ -12,6 +12,7 @@ body{
     background-color: #fdba38;
     position: fixed;
     z-index: 999;
+    height: 62px;
    
 }
 .submenu{
