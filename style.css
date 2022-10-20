@@ -330,3 +330,11 @@ color: #D2D2D2;
     font-size: 50px;
 }
 }
+.hdimg{
+  border: 1px solid #b1154a;
+  width: 80%;
+}
+
+img{
+  margin: 10px 0 10px 0;
+}
