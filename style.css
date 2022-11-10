@@ -23,6 +23,7 @@ body {
     background:var(--bg-color);
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
+       width: 100%;
 }
 
 ul {
