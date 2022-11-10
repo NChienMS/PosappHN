@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PosApp - Retail </title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+    <meta property="og:image"
+        content="https://aries908218.files.wordpress.com/2022/06/abc.png">
+    <link rel="shortcut icon" href="https://posapp.vn/wp-content/themes/twentysixteen-child/images/favicon.png">
+</head>
+
+<body id="home">
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="">
+                        <img src="https://posapp.vn/wp-content/themes/twentysixteen-child/images/logo.png" style="width: 93px;" alt="">
+                    </a>
+                </div>
+                   <!--  tạo menu cho màn hình nhỏ  -->
+    <div class="containersub">
+        <div class="btnbnt">
+            <ion-icon name="add-outline"></ion-icon>
+        </div>
+        <ul id="menubnt">
+            <li class="itembnt">
+                <ion-icon name="home"></ion-icon>
+                 <a href="../index.html" >Home</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="restaurant"></ion-icon>
+                <a href="fnb.html">FnB</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="storefront"></ion-icon>
+                <a href="retail.html"style="color: red; font-weight: bold;">Retail</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="heart"></ion-icon>
+                <a href="Spa.html">Spa</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="timer"></ion-icon>
+                <a href="karaoke.html">Karaoke</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="desktop-outline"></ion-icon>
+                <a href="posapppc.html">PosApp PC</a>
+            </li>
+        </ul>
+
+    </div>
+        <script>
+            const btnbnt = document.querySelector(".btnbnt")
+            btnbnt.addEventListener('click', e => {
+                btnbnt.classList.toggle("rotateBtn");
+                document.querySelector("#menubnt").classList.toggle('showMenu')
+            })
+        </script>
+                <ul class="menu">
+                    <li class="item">
+                        <a href="../index.html" >Home</a>
+                    </li>
+                    <li class="item">
+                        <a href="fnb.html">FnB</a>
+                    </li>
+                    <li class="item">
+                        <a href="retail.html"style="color: red; font-weight: bold;">Retail</a>
+                    </li>
+                    <li class="item">
+                        <a href="Spa.html">Spa</a>
+                    </li>
+                    <li class="item">
+                        <a href="karaoke.html">Karaoke</a>
+                    </li>
+                     <li class="item">
+                        <a href="posapppc.html">PosApp PC</a>
+                    </li>
+                </ul>
+
+
+
+
+
+
+
+
+            </nav>
+
+
+        </div>
+    </header>
+
+<dir style="height: 60px; width: 100%;"></dir>
+<div class='my-menu'>
+
+<p style="background-color: Silver; margin: 0 0 10px -30px; padding-left: 30px; width: 300px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;"><span style="font-size: 20px; ">&#8226;  </span>Bạn đang ở "Retail"</p>
+
+
+    <p style="color: red; ">Mô hình bán lẻ sử dụng trên máy pos sẽ bị lỗi quét mã vạch khi khách dùng phần mềm "laban key", nếu bị lỗi quét mã vạch không ra sp thì xóa giúp em ứng dụng laban key và tải ứng dụng gõ tiếng việt khác</p>
+
+<div class="tiltehead">Thao tác liên quan tới mã vạch</div>
+<div class="accordion">Tạo mã vạch cho sản phẩm chưa có mã vạch</div>
+<div class="panel" style="width: 90%">
+  <p><i>Không phải sản phẩm nào cũng có mã vạch, những sản phẩm không có mã vạch PosApp cung cấp công cụ tạo ngẫu nhiên trên nền web</i></p>
+    <div class='sub-menu' >
+        <span><b>Bước 1:</b> Truy cập Admin.posapp.vn > Sản phẩm dịch vụ > sản phẩm dịch vụ </span> <br>
+        <img class="hdimg" src="../img/banle/mavach1.png"> <br>
+        <span><b>Bước 2:</b> PosApp có công cụ "Tạo mã vạch" có các tùy chọn </span> <br>
+        <p>- Sản phẩm được chọn (bạn cần tích chọn vào ô trước sản phẩm muốn tạo mã vạch, và khi ấn tùy chọn này chỉ có sản phẩm được chọn mới được tạo mã vạch)</p>
+        <p>- Sản phẩm chưa có mã vạch (phần mềm tự tìm kiếm tất cả sản phẩm chưa có mã vạch để tạo ngẫu nhiên)</p>
+        <p>- Tất cả sản phẩm (phần mềm tạo ngẫu nhiên cho tất cả sp, <span style="color: red;">lưu ý có thể các sp có mã rồi sẽ bị thay đổi</span>)</p>
+    </div>
+</div>
+
+<div class="accordion">In mã vạch trên app</div>
+<div class="panel" style="width: 90%">
+    <div class='sub-menu' >
+        <span><b>Bước 1:</b> Mở app > chọn sản phẩm </span> <br>
+        <img class="hdimg" src="../img/banle/mavach2.png"> <br>
+        <span><b>Bước 2:</b> Chọn dấu 3 chấm trên cùng bên phải > chọn in mã vạch sản phẩm</span> <br>
+        <img class="hdimg" src="../img/banle/mavach3.png"> <br>
+        <span><b>Bước 3:</b> Chọn các sp mà mình muốn in > đối với sp có 2 đơn vị tính ấn thẳng vào tên sp để hiển thị các đơn vị tính con rồi chọn tùy ý (giống sp 7 Up trên hình) </span> <br>
+        <img class="hdimg" src="../img/banle/mavach4.png"> <br>
+        <span><b>Bước 4:</b> Chọn số lượng muốn in (số lượng ở đây sẽ áp dụng cho tấtcả sp được chọn, không thể in sp A 3 cái sp B 4 cái cùng lúc được)</span> <br> <br>
+
+
+       
+    </div>
+</div>
+
+<div class="accordion">Sản phẩm liên kết cân điện tử</div>
+<div class="panel" style="width: 90%">
+        <span><b>Bước 1:</b> Khi tải file excel nhập menu sản phẩm, sản phẩm nào cần sử dụng cân điện tử thì chọn yes ở ô cho phép sử dụng cân điện tử</span> 
+        <p style="margin-left: 15px;"><i> Lưu ý: Sản phẩm để đơn vị là Kg thì cân mới hiểu nha</i> </p> 
+        <img class="hdimg" src="tlcdt/ri_1.png"> <br>
+        <p>Hoặc có thể vào từng sản phẩm tích vào ô cho phép sử dụng cân điện tử </p> <br>
+        <img class="hdimg" src="tlcdt/ri_2.png"> <br>
+        <span><b>Bước 2:</b> Những sp đó sau khi đã up lên menu nhưng chưa có mã vạch, chúng ta sẽ tạo mã vạch cho sản phẩm chưa có mã vạch </span>
+        <img class="hdimg" src="tlcdt/ri_3.png"> <br>
+        <span><b>Bước 3:</b> Sau khi tạo xong những sản phẩm nào có ô cân điện tử sẽ có 5 số<br> </span> <br>
+        <img class="hdimg" src="tlcdt/ri_4.png"> <br>
+        <span><b>Bước 4:</b> Sau khi đã có mã vạch cân điện tử, ta sẽ xuất dữ liệu mã vạch cân điện tử để nhập vào phần mềm cân điện tử</span> <br>
+        <img class="hdimg" src="tlcdt/ri_5.png"> <br>
+
+        <span><b>Bước 5:</b> Vào thiết lập -> chọn cân điện tử</span> <br>
+        <img class="hdimg" src="tlcdt/ri_6.png"> <br>
+        <span><b>Bước 6:</b> Thiết lập -> cân điện tử -> chon trạng thái đang sử dụng -> nhập mã cân-> lưu </span> <br>
+        <p style="margin-left: 15px;"><i> Lưu ý: Mã cân dùng để phân biệt mã barcode của sản phẩm bình thường và sản phẩm dùng cân điện tử</i> </p> 
+        <img class="hdimg" src="tlcdt/ri_7.png"> <br>
+        <span><b>Bước 7:</b> Sau khi thiết lập trên PosApp xong, ta mở phần mềm cân điện tử <br>
+        
+        <img class="hdimg" src="tlcdt/ri_8.png"> <br>
+        <img class="hdimg" src="tlcdt/ri_9.png"> <br>
+        <span><b>Bước 8:</b> Chọn excel</span> <br>
+        <img class="hdimg" src="tlcdt/ri_10.png"> <br>
+        <span><b>Bước 9:</b> Chọn dấu CỘNG màu vàng và thêm các cột trong hình </span> <br>
+        <img class="hdimg" src="tlcdt/ri_11.png"> <br>
+        <p>Sau đó chọn import file excel xuất từ phần mềm PosApp vào</p>
+        <img class="hdimg" src="tlcdt/ri_12.png"> <br>
+        <p>File excel xuất từ PosApp có dạng</p>
+        <img class="hdimg" style="width: auto;" src="tlcdt/ri_13.png"> <br>
+        <p>Sau khi import thành công sẽ báo succsess</p>
+        <img class="hdimg" style="width: auto;" src="tlcdt/ri_14.png"> <br>
+
+        <span><b>Bước 10:</b> vào database -> PLU để xem dữ liệu import đã vào chưa</span> <br>
+        <img class="hdimg" src="tlcdt/ri_15.png"> <br>
+        <p>Nếu đã thấy đúng dữ liệu -> nhấn Ethernet</p>
+        <img class="hdimg" src="tlcdt/ri_16.png"> <br>|
+        <p style="margin-left: 15px;"><i> Lưu ý : Number là mã số của sản phẩm để khi cân, ta sẽ bấm số sản phẩm tương ứng</i> </p> 
+        <img class="hdimg" src="tlcdt/ri_17.png"> <br>
+
+
+        <span><b>Bước 11:</b> Sau khi nhấn ethnet xong, ta nhấn đóng -> và vào Dowload (To device ) -> Execute để đẩy dữ liệu từ phần mềm cân điện tử sang thiết bị cân<br> </span> <br>
+        <img class="hdimg" src="tlcdt/ri_18.png"> <br>
+        <p>Khi cập nhật thành công sẽ có thời gian cập nhật</p>
+        <img class="hdimg" src="tlcdt/ri_19.png"> <br> <br>
+        <p><b>CÀI ĐẶT MẪU TEM CÂN ĐIỆN TỬ</b></p>
+
+
+
+        <span><b>Bước 1:</b> vào config Wizard</span> <br>
+        <img class="hdimg" src="tlcdt/ri_20.png"> <br>
+
+        <span>Nhấn Next</span> <br>
+        <img class="hdimg" src="tlcdt/ri_21.png"> <br>
+
+        <span>Nhấn Next tiếp</span> <br>
+        <img class="hdimg" src="tlcdt/ri_22.png"> <br>
+        <span>Chỉnh sửa các giá trị của tem</span> <br>
+        <img class="hdimg" src="tlcdt/ri_23.png"> <br>
+        <span>Sau khi chỉnh sửa xong nhấn Next</span> <br>
+        <span><b>Hiển thị màn hình này</b></span> <br>
+        <p style="margin-left: 15px;">
+            <span>+ Flag là Mã cân dùng để phân biệt mã barcode của sản phẩm bình thường và sản phẩm dùng cân điện tử (Chỉnh giông với mã cân trong PosAapp phần thiết lập cân điện tử) sau đó nhân next</span> <br>
+        </p>
+        <img class="hdimg" src="tlcdt/ri_24.png"> <br>
+        <p>Chọn Ethernet</p>
+        <img class="hdimg" src="tlcdt/ri_25.png"> <br>
+        <p>Và chọn cập nhật từ phần mềm qua thiết bị cân điện tử</p>
+        <img class="hdimg" src="tlcdt/ri_26.png"> <br>
+        <p>Sau khi in ta được mẫu tem như này là đã thành công</p>
+
+        <img class="hdimg" style="width: 300px;" src="tlcdt/ri_27.png"> <br>
+
+        
+
+
+        <br>
+        <br>
+</div>
+
+
+<div class="accordion">Cách in tem mã vạch trên PC</div>
+<div class="panel">
+    <h4>1. Set khổ giấy mã vạch của máy in trên PC (không set bước này sẽ bị lệch khổ khi in)</h4>
+    <p>Tem hỗ trợ rất nhiều khổ, tùy theo giấy in của bạn dùng khổ nào thì set khổ giấy theo giấy mình sử dụng</p>
+    <div class='sub-menu'>
+                <div class="content">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/k2N44zdfW6M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
+                </div>
+    </div>
+
+    <hr>
+
+
+    <h4>2. Thao tác in mã vạch trên pc</h4>
+    <div class='sub-menu'>
+                <div class="content">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xX_1nDb_9us" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                </div>
+    </div>
+   
+</div>
+
+
+
+
+<div class="tiltehead">Các thao tác sử dụng PosApp Bán lẻ trên PC</div>
+<div class="accordion">Hướng dẫn sử dụng PosApp Retail trên PC</div>
+<div class="panel">
+  <p><i>Chú ý: Đối với mô hình bán lẻ trên PC sẽ không cần cài đặt app mà chạy trên nền trình duyệt</i></p>
+  <p><b>Video hướng dẫn Sử dụng</b></p>
+    <div class='sub-menu'>
+                <div class="content">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/GrGcS8p5Pas" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
+                </div>
+    </div>
+</div>
+
+<div class="accordion">Cài đặt driver máy in trên PC (hóa đơn và tem)</div>
+<div class="panel">
+    <p><i>Chú ý: Đây là bước cài driver trên máy tính, cài xong bước này rồi là có thể in từ web hoặc từ app</i></p>
+    <p><i>Máy USB hay Lan đều chung nhau bước cài driver > riêng với dòng máy in lan bạn phải lấy được địa chỉ ip máy in theo cách bên trên sau đó add port rồi điền địa chỉ ip máy in của máy</i></p>
+    <p><b>Máy in hóa đơn</b></p>
+    <p><a href="https://drive.google.com/file/d/1s0Eg8qhtGGJ3YiU-0Bj2rSy5-9q2NErN/view" ><b>►  Tải XPrinter Driver V7.77 (dùng chung cho cả lan và USB)</b></a></p>
+    <div class='sub-menu'>
+                <div class="content">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5ZkoX_XuZRc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
+                </div>
+    </div>
+    
+    
+    <hr>
+
+
+    <p><b>Máy in tem, mã vạch</b></p>
+    <p><a href="https://drive.google.com/file/d/1Sox9PFMAO-6ijr-Z8I6qjBjh17ui_O5s/view?usp=sharing"><b>►  Tải Driver máy in 350B, 350BM (dùng chung cho cả lan và USB)</b></a></p>
+    <div class='sub-menu'>
+                <div class="content">
+                   <iframe width="560" height="315" src="https://www.youtube.com/embed/SuZ0s_ZnkK0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
+                </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+<!-- ====================End: menu ====================-->
+
+
+
+    
+
+         
+    </div>
+
+
+
+
+
+    <section id="contact" style="background-color: #3d4351; color: white; padding-top: 30px; padding-bottom: 30px;">
+        <div class="container">
+            <div class="bt">
+            <div class="address"> <b>ĐỊA CHỈ CÔNG TY </b>
+            <P style="margin-left:20px;font-size: 14px;">- Trụ sở TPHCM: 260/11 Nguyễn Thái Bình Phường 12 Quận Tân Bình HS Building Floor 5</P>
+            <P style="margin-left:20px;font-size: 14px;">- Chi nhánh Hà Nội: Tầng 4, 174 đường Láng, Phường Thịnh Quang, Quận Đống Đa, Hà Nội</P>
+            <P style="margin-left:20px;font-size: 14px;">- Đà Nẵng: Số 21 Trần Quốc Toản, Hải Châu, Đà Nẵng</P>
+            <P style="margin-left:20px;font-size: 14px;">- Cần Thơ: 191 Phan Huy Chú, phường An Khánh, quận Ninh Kiều, TP Cần Thơ</P>
+            <P style="margin-left:20px;font-size: 14px;">- Quảng Ninh: Số 2, Ngõ 430 Trần Quốc Tảng, Cẩm Phú, Tp.Cẩm Phả, Quảng Ninh</P>
+            </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Jquery  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!-- font lib  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+    <!-- Js custom file -->
+    <script src="../script-jquery.js"></script>
+</body>
+
+</html>
