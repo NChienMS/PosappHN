@@ -481,7 +481,7 @@ nav .responsive-menu .close-responsive-menu {
   max-height: 0;
   background-color: white;
   overflow: hidden;
-  width:600px;
+  width:auto;
   transition: max-height 0.3s ease-out;
 
 }
