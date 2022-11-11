@@ -8,10 +8,6 @@
     --border-color:rgba(255,255,255,0.5);
 }
 
-
-
-
-
 *{
     padding:0;
     margin:0;
@@ -33,6 +29,10 @@ a{
      text-decoration: none;
      color: red;
 }
+a:hover{
+    color:#550000
+}
+
 p{
     text-align: justify;
 }
@@ -98,52 +98,19 @@ nav .menu a {
     transition: 0.3s all;
 }
 nav .menu .item:hover a {
-    color:rgb(163,156,156);
+    color:#550000;
 }
 
 
 
-nav .open-menu {
-    /*  ddược hiển thị khi màn hình nhỏ */
-    color:#fff;
-    font-size: 35px;
-    display: none;
-
-}
 
 
-nav .responsive-menu {
-    /*  ddược hiển thị khi màn hình nhỏ */
-    position:absolute;
-    background:rgb(2,1,4);
-    width:100%;
-    left:0;
-    top:0;
-    padding:20px;
-    display: none;
 
-    
-}
 
-nav .responsive-menu .item {
-    height: 70px;
-    text-align: center;
-}
-nav .responsive-menu  a {
-    color:#fff;
-    transition:0.2s all;
-}
-nav .responsive-menu .item:hover a {
-    color:#fff;
-    color:rgb(163,156,156);
-}
 
-nav .responsive-menu .close-responsive-menu {
-    position:absolute;
-    color:#fff;
-    right: 20px;
-    font-size:25px;
-}
+
+
+
 
 
 
@@ -481,7 +448,7 @@ nav .responsive-menu .close-responsive-menu {
   max-height: 0;
   background-color: white;
   overflow: hidden;
-  width:auto;
+  width: auto;
   transition: max-height 0.3s ease-out;
 
 }
