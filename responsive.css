@@ -9,17 +9,7 @@
        
     }
 
-    .intro .btn-danger {
-         width: 150px;
-         height: 40px;
-    }
-
-    #about .box-left {
-        width: 70%;
-    }
-    #skills .skill {
-        width:100%;
-    }
+    
     header .menu {
         display: none;
     }
@@ -27,6 +17,36 @@
         display: block;
         display: flex;
     }
+        .my-menu{
+    width: 650px;
+    }
+        .nav{
+        width: 100px;
+    } 
+    .tiltehead{
+        background-color: red;
+        width: 115%
+    }
+    .accordion{
+    margin-left: -20px;
+    width: 100%;
+    }
+    .logo{
+    width: 50px;
+
+    }
+    iframe{
+        width: 100%;
+        height: 200px;
+    }
+    .panel{
+        width: 100%;
+        padding: 0 0 0 18px;
+        margin-left: -30px;
+    }
+    
+
+
 }
 
 
@@ -45,4 +65,34 @@
     #projects .projects {
         grid-template-columns: repeat(1,1fr);
     }
+        .my-menu{
+    width: 650px;
+    }
+        .nav{
+        width: 100px;
+        height: 10px;
+    } 
+    .tiltehead{
+        background-color: red;
+        width: 115%
+    }
+    .accordion{
+    margin-left: -20px;
+    width: 100%;
+    }
+    .logo{
+    width: 60px;
+
+    }
+    iframe{
+        width: 100%;
+        height: 200px;
+    }
+    .panel{
+        width: 100%;
+        padding: 0 0 0 18px;
+        margin-left: -30px;
+    }
+
 }
+
