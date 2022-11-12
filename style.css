@@ -91,6 +91,7 @@ nav {
 nav .menu {
     display: flex;
     gap:35px;
+    display: none;
 }
 
 nav .menu a {
@@ -487,7 +488,7 @@ iframe{
 
 #menubnt.showMenu {
     width: 200px;
-    height: 400px;
+    height: auto;
 }
 
 #menubnt .itembnt {
@@ -498,7 +499,7 @@ iframe{
     height: 50px;
     display: inline-flex;
     align-items: center;
-    padding:20px 20px 20px 5px;
+    padding:15px 15px 15px 5px;
     transition: all 0.3s;
 }
 #menubnt .itembnt a{
@@ -513,8 +514,8 @@ ion-icon {
 }
 
 #menubnt .itembnt:hover {
-    box-shadow: 8px 5px 2px #111;
-    background:rgb(20,20,20);
+    box-shadow: 8px 5px 2px #FF6600;
+    background:#FF9900;
     transform:translateX(10px);
 }
 
@@ -531,7 +532,6 @@ ion-icon {
     margin-top:10px;
     transition: 0.2s;
     float: right;
-    display: none;
 }
 
 
