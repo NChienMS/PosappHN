@@ -1,15 +1,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>PosApp | IMG POS</title>
-<link type="text/css" rel="stylesheet" href="css/content.css" />
-<link rel="shortcut icon" href="https://posapp.vn/wp-content/themes/twentysixteen-child/images/favicon.png">
-        <meta property="og:image"
-        content="https://aries908218.files.wordpress.com/2022/06/abc.png">
+    <title>PosApp | IMG POS</title>
+    <link type="text/css" rel="stylesheet" href="css/content.css" />
+    <link rel="shortcut icon" href="https://posapp.vn/wp-content/themes/twentysixteen-child/images/favicon.png">
+    <meta property="og:image"
+    content="https://aries908218.files.wordpress.com/2022/06/abc.png">
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../responsive.css">
+
 </head>
 
-    <body onload="time()">
+
+    <body onload="time()" id="home">
+
     <!-- thời gian:star-->
     	<script type="text/javascript">
 function time() {
@@ -49,46 +59,121 @@ function time() {
 </script>
 
     <!-- thời gian: end-->
-    	<div class="main">
-        	<!-- Top : star -->
-        
-          	<!-- Top : End -->
-            <!-- hear: Star -->
-          
-          
-            
-            <!-- hear: End -->
-            <div class="clr"></div>
-            	<!-- conten star-->
-            <div class="content">
-            	<!-- Menu tab:star-->
-            	<div id="menu_tab">
-                	
-                    	<ul class="menu">
-                        	<li><a href="https://nchienms.github.io/PosappHN/" id="home">Home</a></li>
-                            <li><a href="imgpos.html" id="home">Back</a></li>
-                            
-                            <div id="clock" style="float: right;"></div>
-                        </ul>
-                    
+    	
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="">
+                        <img src="https://posapp.vn/wp-content/themes/twentysixteen-child/images/logo.png" style="width: 93px;" alt="">
+                    </a>
                 </div>
+                   <!--  tạo menu cho màn hình nhỏ  -->
+                   <div id="clock" style="position: fixed; top: 40px; font-size: 10px; z-index: 1;"></div>
+    <div class="containersub">
+        <div class="btnbnt">
+            <ion-icon name="add-outline"></ion-icon>
+        </div>
+        <ul id="menubnt">
+            <li class="itembnt"style="color: red; font-weight: bold;">
+                <ion-icon name="home"></ion-icon>
+                 <a href="../../index.html" style="color: red; font-weight: bold;">Home</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="restaurant"></ion-icon>
+                <a href="https://nchienms.gitbook.io/posapphn">FnB</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="storefront"></ion-icon>
+                <a href="https://nchienms.gitbook.io/retail/">Retail</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="heart"></ion-icon>
+                <a href="https://nchienms.gitbook.io/spa/">Spa</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="timer"></ion-icon>
+                <a href="../karaoke.html">Karaoke</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="desktop-outline"></ion-icon>
+                <a href="../posapppc.html">PosApp PC</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="download"></ion-icon>
+                <a href="../download.html">Download</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="desktop"></ion-icon>
+                <a href="imgpos.html">Máy Pos</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="lock-closed"></ion-icon>
+                <a href="../lock.html">Internal</a>
+            </li>
+
+        </ul>
+
+    </div>
+        <script>
+            const btnbnt = document.querySelector(".btnbnt")
+            btnbnt.addEventListener('click', e => {
+                btnbnt.classList.toggle("rotateBtn");
+                document.querySelector("#menubnt").classList.toggle('showMenu')
+            })
+        </script>
+                <ul class="menu" >
+                    <li class="item">
+                        <a href="index.html" style="color: red; font-weight: bold;">Home</a>
+                    </li>
+                    <li class="item">
+                        <a href="https://nchienms.gitbook.io/posapphn">FnB</a>
+                    </li>
+                    <li class="item">
+                        <a href="https://nchienms.gitbook.io/retail/">Retail</a>
+                    </li>
+                    <li class="item">
+                        <a href="https://nchienms.gitbook.io/spa/">Spa</a>
+                    </li>
+                    <li class="item">
+                        <a href="ms/karaoke.html">Karaoke</a>
+                    </li>
+                     <li class="item">
+                        <a href="ms/posapppc.html">PosApp PC</a>
+                    </li>
+                    <li class="item">
+                        <a href="ms/download.html">Download</a>
+                    </li>
+                    <li class="item">
+                        <a href="ms/lock.html">Internal</a>
+                    </li>
+                </ul>
+
+
+
+
+
+
+            </nav>
+
+
+        </div>
+    </header>
+
+
+<dir style="height: 80px; width: 100%; background-color: Silver;"></dir>
+      <div class="main">
+<div style="background-color: Silver;">
+  <p style="background-color: white; margin: 0 0 10px -30px; padding-left: 30px; width: 300px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;"><span style="font-size: 20px; ">&#8226;  </span>Bạn đang ở "Home"</p>
+</div>            
+            	<!-- Menu tab:star-->
+            
                
                 <!-- Nội dung chính star-->
                  
              <div class="sanpham">
-             <div class="layout">
-						&bull; Liên kết: <span class="current"> IMG POS</span>   </div>
-                <div class="clr"></div>
-   				<!-- thanh sp trang: STAR-->
-                 	<!-- thanh thân trang :Iphone-->
-              <div class="rivew">
-                 	<div class="rivew_tb" >
-                    	<ul>
-                        	<li><a href="#">Các dòng máy tính tiền</a> </li>
-                      </ul>
-                	</div>
-           	  </div>
-               <div class="clr"></div>
+            
+             
 			         	<!-- Nội dung sp1-->
 
                 <div style="text-align: center; float: right;" class="content_sp">
@@ -147,10 +232,24 @@ function time() {
                   </div>
                   <!-- Nội dung sp1 :END-->
 
-              <div style="height: 1000px;"></div>
         </div>
     
     
+    </div>
+    
+        <div id="contact" style="background-color: #3d4351; color: white; ">
+        <div class="container" >
+            <div style="height: 30px; width: 100%"></div>
+            <div class="address" style=""> <b>ĐỊA CHỈ CÔNG TY </b>
+            <P style="margin-left:20px;font-size: 14px;">- Trụ sở TPHCM: 260/11 Nguyễn Thái Bình Phường 12 Quận Tân Bình HS Building Floor 5</P>
+            <P style="margin-left:20px;font-size: 14px;">- Chi nhánh Hà Nội: Tầng 4, 174 đường Láng, Phường Thịnh Quang, Quận Đống Đa, Hà Nội</P>
+            <P style="margin-left:20px;font-size: 14px;">- Đà Nẵng: Số 21 Trần Quốc Toản, Hải Châu, Đà Nẵng</P>
+            <P style="margin-left:20px;font-size: 14px;">- Cần Thơ: 191 Phan Huy Chú, phường An Khánh, quận Ninh Kiều, TP Cần Thơ</P>
+            <P style="margin-left:20px;font-size: 14px;">- Quảng Ninh: Số 2, Ngõ 430 Trần Quốc Tảng, Cẩm Phú, Tp.Cẩm Phả, Quảng Ninh</P>
+            </div>
+
+        </div>
+    </div>
     
     
     
@@ -159,10 +258,14 @@ function time() {
     
     
     
-    
-    
-    
-    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!-- font lib  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+    <!-- Js custom file -->
+    <script src="./script-jquery.js"></script>
     
     
     
