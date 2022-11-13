@@ -2,7 +2,8 @@
 /* CSS Document */
 .sanpham{
 	float:left;
-	width:100%;}
+	width:100%;
+margin-top: -10px;}
 
 
 .rivew .rivew_tb{
@@ -56,9 +57,6 @@
 
 	
 .content_sp{
-	height:650px;
-	
-	background-color:#FFF;
 	width:400px;
 	padding:10px 0 0 0;
 	}
@@ -140,10 +138,7 @@ ul li img{
 	float: left;
 
 }
-p{
-	padding: 5px;
-	border-bottom: thin solid #DDDDDD;
-}
+
 .menu_tab{
 	background-color: red;
 	width::100%;
@@ -161,12 +156,12 @@ body{
 	margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
     background-color: Silver;
 	}
 .main{
 	width:100%;
 	margin:0px auto
+	background-color: Silver;
 	}
 	/*************************TOP**************************/
 .top{
