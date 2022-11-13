@@ -1,19 +1,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/xemthemip.dwt" codeOutsideHTMLIsLocked="false" -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- InstanceBeginEditable name="doctitle" -->
-<title>PosApp D3</title>
-<!-- InstanceEndEditable -->
-<link type="text/css" rel="stylesheet" href="css/content.css" />
-<link rel="shortcut icon" href="https://posapp.vn/wp-content/themes/twentysixteen-child/images/favicon.png">
-        <meta property="og:image"
-        content="https://aries908218.files.wordpress.com/2022/06/abc.png">
-<!-- InstanceBeginEditable name="head" -->
-<!-- InstanceEndEditable -->
+    <title>PosApp | IMG POS</title>
+    <link type="text/css" rel="stylesheet" href="css/content.css" />
+    <link rel="shortcut icon" href="https://posapp.vn/wp-content/themes/twentysixteen-child/images/favicon.png">
+    <meta property="og:image"
+    content="https://aries908218.files.wordpress.com/2022/06/abc.png">
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../responsive.css">
+
 </head>
 
-    <body onload="time()">
+
+    <body onload="time()" id="home">
+
     <!-- thời gian:star-->
     	<script type="text/javascript">
 function time() {
@@ -41,7 +47,6 @@ function time() {
    tmp='<span class="date">'+today+' | '+nowTime+'</span>';
 
    document.getElementById("clock").innerHTML=tmp;
-
    clocktime=setTimeout("time()","1000","JavaScript");
    function checkTime(i)
    {
@@ -53,23 +58,122 @@ function time() {
 }
 </script>
 
-    	<div class="main">
-        <div class="clr"></div>
-        <div class="content">
-          <div id="menu_tab">
-                <ul class="menu">
-                          <li><a href="https://nchienms.github.io/PosappHN/" id="home">Home</a></li>
-                          <li><a href="imgpos.html" id="home">Back</a></li>
-                          <div id="clock" style="float: right;"></div>
+    <!-- thời gian: end-->
+    	
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="">
+                        <img src="https://posapp.vn/wp-content/themes/twentysixteen-child/images/logo.png" style="width: 93px;" alt="">
+                    </a>
+                </div>
+                   <!--  tạo menu cho màn hình nhỏ  -->
+                   <div id="clock" style="position: fixed; top: 40px; font-size: 10px; z-index: 1;"></div>
+    <div class="containersub">
+        <div class="btnbnt">
+            <ion-icon name="add-outline"></ion-icon>
+        </div>
+        <ul id="menubnt">
+            <li class="itembnt">
+                <ion-icon name="home"></ion-icon>
+                 <a href="../../index.html" >Home</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="restaurant"></ion-icon>
+                <a href="https://nchienms.gitbook.io/posapphn">FnB</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="storefront"></ion-icon>
+                <a href="https://nchienms.gitbook.io/retail/">Retail</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="heart"></ion-icon>
+                <a href="https://nchienms.gitbook.io/spa/">Spa</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="timer"></ion-icon>
+                <a href="../karaoke.html">Karaoke</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="desktop-outline"></ion-icon>
+                <a href="../posapppc.html">PosApp PC</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="download"></ion-icon>
+                <a href="../download.html">Download</a>
+            </li>
+            <li class="itembnt"style="color: red; font-weight: bold;">
+                <ion-icon name="desktop"></ion-icon>
+                <a href="imgpos.html"style="color: red; font-weight: bold;">Máy Pos</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="lock-closed"></ion-icon>
+                <a href="../lock.html" >Internal</a>
+            </li>
+
+        </ul>
+
+    </div>
+        <script>
+            const btnbnt = document.querySelector(".btnbnt")
+            btnbnt.addEventListener('click', e => {
+                btnbnt.classList.toggle("rotateBtn");
+                document.querySelector("#menubnt").classList.toggle('showMenu')
+            })
+        </script>
+                <ul class="menu" >
+                    <li class="item">
+                        <a href="index.html" style="color: red; font-weight: bold;">Home</a>
+                    </li>
+                    <li class="item">
+                        <a href="https://nchienms.gitbook.io/posapphn">FnB</a>
+                    </li>
+                    <li class="item">
+                        <a href="https://nchienms.gitbook.io/retail/">Retail</a>
+                    </li>
+                    <li class="item">
+                        <a href="https://nchienms.gitbook.io/spa/">Spa</a>
+                    </li>
+                    <li class="item">
+                        <a href="ms/karaoke.html">Karaoke</a>
+                    </li>
+                     <li class="item">
+                        <a href="ms/posapppc.html">PosApp PC</a>
+                    </li>
+                    <li class="item">
+                        <a href="ms/download.html">Download</a>
+                    </li>
+                    <li class="item">
+                        <a href="ms/lock.html">Internal</a>
+                    </li>
                 </ul>
-          </div>
+
+
+
+
+
+
+            </nav>
+
+
+        </div>
+    </header>
+
+
+<dir style="height: 80px; width: 100%; background-color: Silver;"></dir>
+<div class="main">
+      <div style="background-color: Silver;">
+        <p style="background-color: white; margin: 0 0 10px -30px; padding-left: 30px; width: 300px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;"><span style="font-size: 20px; ">&#8226;  </span>Bạn đang ở "Sản phẩm"</p>
+        <dir style="width: 100%; height: 5px;"></dir>
+      </div>   
+
+        <div class="content colorSilver" >
+          
                
-                <!-- Nội dung chính star--><!-- InstanceBeginEditable name="xem thêm" -->
-        <div class="sanpham">
-          <div class="layout">&bull; Liên kết: 
-                <a class="lienket" href="../code/imgpos.html">IMG POS</a>&raquo;
-                <span class="current"> Máy PosApp D3</span> 
-          </div>
+               
+        <div class="sanpham" >
+
           <div class="clr"></div>
           <div class="title_name"> PosApp D3 Full FHD</div>
            <div class="ip11max_conten" >
@@ -86,46 +190,91 @@ function time() {
        
                 <!---------------------------------------------------->
              <!-- thông số -->
-              <div class="thongso">
-                <div class="title_thongso" ><b>Máy POSAPP D3</b></div>
-                <br>
-                <p><span class="title_namethongso">Màn hình:</span>Cảm ứng 15.6 inch màn hình chạm đa điểm.</p>
-                <p><span class="title_namethongso">Độ phân giải:</span>1920 x 1080</p>
-                <p><span class="title_namethongso">Hệ điều hành:</span>Android 7.1</p>
-                <p><span class="title_namethongso">CPU:</span>RK3388W</p>
-                <p><span class="title_namethongso">Bộ nhớ:</span>16GB ROM + 2GB RAM</p>
-                <p><span class="title_namethongso">Wifi:</span>802.11b/g/n (2.4Ghz)</p>
-                <p><span class="title_namethongso">Kích thước:</span>382 x 232 x 412 mm (ngang x rộng x cao)</p>
-                <p><span class="title_namethongso">Trọng lượng:</span>3,2Kg (chưa bao gồm thùng)</p>
-                <p><span class="title_namethongso" style="height: 120px">Cổng giao tiếp:</span>• USB Type A: 04 <br>
-                      • RJ11: 01,RJ12 (Ngăn đựng tiền): 01 <br>
-                      • RJ45: 01 <br>
-                      • DC-in: 01 <br> 
-                      • Cổng tai nghe: 01 <br>
-                      • Loa: 1 x 1.5W <br>
-                      • Micro USB: 01 <br>
-                      </p>
-
-              <p><span class="title_namethongso">Wifi:</span>802.11b/g/n (2.4Ghz)</p>
-              <div style="text-align: center; margin-top: 30px; font-weight: bold;"><a href="#" style="text-decoration: none; color: red;"> Download IMG</a></div>
+             <div class="thongso">
+                <table >
+                  <tr>
+                    <td colspan="2"> <div class="title_thongso" ><b>Máy POSAPP D3 Full HD</b></div></td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso"> Màn hình:</td>
+                    <td> Cảm ứng 15.6 inch màn hình chạm đa điểm </td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso"> Độ phân giải:</td>
+                    <td> 1920 x 1080 Full HD</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">Hệ điều hành:</td>
+                    <td>Android 7.1</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">CPU:</td>
+                    <td>RK3388W</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">Bộ nhớ:</td>
+                    <td>16GB ROM + 2GB RAM</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">Wifi:</td>
+                    <td>802.11b/g/n (2.4Ghz)</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">Kích thước</td>
+                    <td>382 x 232 x 412 mm (ngang x rộng x cao)</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">Trọng lượng</td>
+                    <td>3,2Kg (chưa bao gồm thùng)</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">Cổng giao tiếp:</td>
+                    <td>  • USB Type A: 04 <br>
+                          • RJ11: 01,RJ12 (Ngăn đựng tiền): 01 <br>
+                          • RJ45: 01<br>
+                          • DC-in: 01<br>
+                          • Cổng tai nghe: 01<br>
+                          • Loa: 1 x 1.5W<br>
+                          • Micro USB: 01</td>
+                  </tr>
+                </table>
+             
               </div>
+           
              <!-- hình ảnh thực tế-->
               
 
 
         </div>
     
-    <div style="float: left;margin-top: 10px; height: 100px; width: 100%; "> 
+    <div style="float: left;margin-top: 10px; height: 100px; width: 100%; " class="colorSilver"> 
       <hr>
-      <div style="font-weight: bold; font-size: 18px; text-align: center; padding-top: 10px;"> Một số hình ảnh thực tế</div>
-        <div style="text-align: center; padding-top: 10px;"> 
+      <div style="font-weight: bold; font-size: 18px; text-align: center; padding-top: 10px;" > Một số hình ảnh thực tế</div>
+        <div style="text-align: center; padding-top: 10px;"class="colorSilver"> 
         <img style="margin-top: 30px; text-align: center; border: thin solid #DDDDDD; border-radius: 10px; width: 80%;" src="../code/images/D3/D3_1.jpg">
         <img style="margin-top: 30px; text-align: center; border: thin solid #DDDDDD; border-radius: 10px; width: 80%;" src="../code/images/D3/D3_3.jpg">
         <img style="margin-top: 30px; text-align: center; border: thin solid #DDDDDD; border-radius: 10px; width: 80%;" src="../code/images/D3/D3_6.jpg">
         </div>
-        <div style="height: 100px;"></div>
+        <div style="height: 100px;" class="colorSilver"></div>
     </div>
+    </div>
+  </div>
+</div>
+
+
+    
+    
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!-- font lib  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+    <!-- Js custom file -->
+    <script src="./script-jquery.js"></script>
+    
     
     
     </body>
-<!-- InstanceEnd --></html>
+</html>
