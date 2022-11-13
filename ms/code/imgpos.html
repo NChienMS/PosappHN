@@ -1,117 +1,69 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PosApp | IMG POS</title>
-    <link type="text/css" rel="stylesheet" href="css/content.css" />
-    <link rel="shortcut icon" href="https://posapp.vn/wp-content/themes/twentysixteen-child/images/favicon.png">
-    <meta property="og:image"
-    content="https://aries908218.files.wordpress.com/2022/06/abc.png">
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="../../responsive.css">
-
+    <title>Internal </title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+    <meta property="og:image"
+        content="https://aries908218.files.wordpress.com/2022/06/abc.png">
+    <link rel="shortcut icon" href="https://posapp.vn/wp-content/themes/twentysixteen-child/images/favicon.png">
 </head>
 
-
-    <body onload="time()" id="home">
-
-    <!-- thời gian:star-->
-    	<script type="text/javascript">
-function time() {
-   var today = new Date();
-   var weekday=new Array(7);
-   weekday[0]="Chủ Nhật";
-   weekday[1]="Thứ 2";
-   weekday[2]="Thứ 3";
-   weekday[3]="Thứ 4";
-   weekday[4]="Thứ 5";
-   weekday[5]="Thứ 6";
-   weekday[6]="Thứ 7";
-   var day = weekday[today.getDay()];
-   var dd = today.getDate();
-   var mm = today.getMonth()+1; //January is 0!
-   var yyyy = today.getFullYear();
-   var h=today.getHours();
-   var m=today.getMinutes();
-   var s=today.getSeconds();
-   m=checkTime(m);
-   s=checkTime(s);
-   nowTime = h+":"+m+":"+s;
-   if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} today = day+', '+ dd+'/'+mm+'/'+yyyy;
-
-   tmp='<span class="date">'+today+' | '+nowTime+'</span>';
-
-   document.getElementById("clock").innerHTML=tmp;
-   clocktime=setTimeout("time()","1000","JavaScript");
-   function checkTime(i)
-   {
-      if(i<10){
-     i="0" + i;
-      }
-      return i;
-   }
-}
-</script>
-
-    <!-- thời gian: end-->
-    	
+<body id="home">
     <header>
         <div class="container">
             <nav>
                 <div class="logo">
-                    <a href="">
+                    <a href="../index.html">
                         <img src="https://posapp.vn/wp-content/themes/twentysixteen-child/images/logo.png" style="width: 93px;" alt="">
                     </a>
                 </div>
                    <!--  tạo menu cho màn hình nhỏ  -->
-                   <div id="clock" style="position: fixed; top: 40px; font-size: 10px; z-index: 1;"></div>
     <div class="containersub">
         <div class="btnbnt">
             <ion-icon name="add-outline"></ion-icon>
         </div>
         <ul id="menubnt">
-            <li class="itembnt"style="color: red; font-weight: bold;">
+            <li class="itembnt">
                 <ion-icon name="home"></ion-icon>
-                 <a href="../../index.html" style="color: red; font-weight: bold;">Home</a>
+                 <a href="../index.html" >Home</a>
             </li>
             <li class="itembnt">
                 <ion-icon name="restaurant"></ion-icon>
-                <a href="https://nchienms.gitbook.io/posapphn">FnB</a>
+                <a href="fnb.html">FnB</a>
             </li>
             <li class="itembnt">
                 <ion-icon name="storefront"></ion-icon>
-                <a href="https://nchienms.gitbook.io/retail/">Retail</a>
+                <a href="retail.html">Retail</a>
             </li>
             <li class="itembnt">
                 <ion-icon name="heart"></ion-icon>
-                <a href="https://nchienms.gitbook.io/spa/">Spa</a>
+                <a href="Spa.html">Spa</a>
             </li>
             <li class="itembnt">
                 <ion-icon name="timer"></ion-icon>
-                <a href="../karaoke.html">Karaoke</a>
+                <a href="karaoke.html">Karaoke</a>
             </li>
             <li class="itembnt">
                 <ion-icon name="desktop-outline"></ion-icon>
-                <a href="../posapppc.html">PosApp PC</a>
+                <a href="posapppc.html">PosApp PC</a>
             </li>
             <li class="itembnt">
                 <ion-icon name="download"></ion-icon>
-                <a href="../download.html">Download</a>
+                <a href="download.html">Download</a>
             </li>
             <li class="itembnt">
                 <ion-icon name="desktop"></ion-icon>
-                <a href="imgpos.html">Máy Pos</a>
+                <a href="code/imgpos.html">Máy Pos</a>
             </li>
-            <li class="itembnt">
+            <li class="itembnt" style="color: red; font-weight: bold;">
                 <ion-icon name="lock-closed"></ion-icon>
-                <a href="../lock.html">Internal</a>
+                <a href="lock.html" style="color: red; font-weight: bold;">Internal</a>
             </li>
-
         </ul>
 
     </div>
@@ -122,32 +74,28 @@ function time() {
                 document.querySelector("#menubnt").classList.toggle('showMenu')
             })
         </script>
-                <ul class="menu" >
+                <ul class="menu">
                     <li class="item">
-                        <a href="index.html" style="color: red; font-weight: bold;">Home</a>
+                        <a href="../index.html" >Home</a>
                     </li>
                     <li class="item">
-                        <a href="https://nchienms.gitbook.io/posapphn">FnB</a>
+                        <a href="fnb.html">FnB</a>
                     </li>
                     <li class="item">
-                        <a href="https://nchienms.gitbook.io/retail/">Retail</a>
+                        <a href="retail.html">Retail</a>
                     </li>
                     <li class="item">
-                        <a href="https://nchienms.gitbook.io/spa/">Spa</a>
+                        <a href="Spa.html">Spa</a>
                     </li>
                     <li class="item">
-                        <a href="ms/karaoke.html">Karaoke</a>
+                        <a href="karaoke.html">Karaoke</a>
                     </li>
                      <li class="item">
-                        <a href="ms/posapppc.html">PosApp PC</a>
-                    </li>
-                    <li class="item">
-                        <a href="ms/download.html">Download</a>
-                    </li>
-                    <li class="item">
-                        <a href="ms/lock.html">Internal</a>
+                        <a href="posapppc.html">PosApp PC</a>
                     </li>
                 </ul>
+
+
 
 
 
@@ -160,114 +108,307 @@ function time() {
         </div>
     </header>
 
+<dir style="height: 60px; width: 100%;"></dir>
+<div class='my-menu'>
 
-<dir style="height: 80px; width: 100%; background-color: Silver;"></dir>
-      <div class="main">
-<div style="background-color: Silver;">
-  <p style="background-color: white; margin: 0 0 10px -30px; padding-left: 30px; width: 300px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;"><span style="font-size: 20px; ">&#8226;  </span>Bạn đang ở "Home"</p>
-</div>            
-            	<!-- Menu tab:star-->
-            
-               
-                <!-- Nội dung chính star-->
-                 
-             <div class="sanpham">
-            
-             
-			         	<!-- Nội dung sp1-->
+<p style="background-color: Silver; margin: 0 0 10px -30px; padding-left: 30px; width: 300px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;"><span style="font-size: 20px; ">&#8226;  </span>Bạn đang ở "Internal"</p>
 
-                <div style="text-align: center; float: right;" class="content_sp">
-               
-                 <div class="box_sp">
-                 		<div class="image_sp"><a href="D3.html"><img src="./images/D3.png" width="157px"
-	height="200" alt="image"/></a></div>
-                        <div class="name_sp"><a href="D3.html">PosApp D3</a></div>    
-                     
-                  </div>
-                  <!-- Nội dung sp1 :END-->
-                    <!-- Nội dung sp1-->
-               
-                 <div class="box_sp">
-                    <div class="image_sp"><a href="PAL1.html"><img src="./images/pal1.png" width="157px"
-  height="200" alt="image"/></a></div>
-                        <div class="name_sp"><a href="PAL1.html">PosApp PAL1 (1 màn)</a></div>    
-                     
-                  </div>
-                  <!-- Nội dung sp1 :END-->
-                    <!-- Nội dung sp1-->
-               
-                 <div class="box_sp">
-                    <div class="image_sp"><a href="PAL2-N.html"><img src="./images/PAL2-N.png" width="157px"
-  height="200" alt="image"/></a></div>
-                        <div class="name_sp"><a href="PAL2-N.html">PAL2-N (2 màn)</a></div>    
-                     
-                  </div>
-                  <!-- Nội dung sp1 :END-->
-                    <!-- Nội dung sp1-->
-               
-                 <div class="box_sp">
-                    <div class="image_sp"><a href="PAL2.html"><img src="./images/PAL2.png" width="157px"
-  height="200" alt="image"/></a></div>
-                        <div class="name_sp"><a href="PAL2.html">PAL2 (2 màn 15,6')</a></div>    
-                     
-                  </div>
-                  <div class="box_sp">
-                    <div class="image_sp"><a href="PAC2.html"><img src="./images/PAC2.png" width="157px"
-  height="200" alt="image"/></a></div>
-                        <div class="name_sp"><a href="PAC2.html">PAC 2 (2G)</a></div>    
-                     
-                  </div>
-                  <div class="box_sp">
-                    <div class="image_sp"><a href="#"><img src="./images/tab10.png" width="157px"
-  height="200" alt="image"/></a></div>
-                        <div class="name_sp"><a href="#">TAB 10</a></div>    
-                     
-                  </div>
-                  <div class="box_sp">
-                    <div class="image_sp"><a href="PAM2.html"><img src="./images/PAM2.png" width="157px"
-  height="200" alt="image"/></a></div>
-                        <div class="name_sp"><a href="#">PAM2</a></div>    
-                     
-                  </div>
-                  </div>
-                  <!-- Nội dung sp1 :END-->
 
-        </div>
+<div class="accordion">Thông tin xuất hóa đơn</div>
+<div class="panel" style="text-align:justify; width: 750px; ">
+ 
+    <div class='sub-menu' >
+        <p><b>CÔNG TY CỔ PHẦN CÔNG NGHỆ POSAPP</b></p>
+        <p>– Mã số thuế: 0315892628 </br>
+        – Địa chỉ: 260/11 Nguyễn Thái Bình, Phường 12, Quận Tân Bình, Thành phố Hồ Chí Minh</br>– Email: doisoat@posapp.vn
+</div>
+    </div>
+<div class="accordion">Thông tin hàng đi nước ngoài hoặc bưu điện</div>
+<div class="panel" style="text-align:justify; width: 750px; ">
+  <div class='sub-menu' >
+        <p><b>CÔNG TY CỔ PHẦN CÔNG NGHỆ POSAPP</b></p>
+        <table>
+          <tr>
+            <TH style="padding: 10px;">STT</TH>
+            <TH style="padding: 10px;">Sản phẩm</TH>
+            <th style="padding: 10px;">Dài x rộng x cao (cm)</th>
+            <th style="padding: 10px;">Trọng lượng (kg)</th>
+          </tr>
+          <tr>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: center;">PAL1</td>
+            <td style="text-align: center;" rowspan="3">47 x 31 x 53</td>
+            <td style="text-align: center;">8,6 kg</td>
+          </tr>
+          <tr>
+            <td style="text-align: center;">2</td>
+            <td style="text-align: center;">PAL2</td>
+            <td style="text-align: center;"></td>
+          </tr>
+          <tr>
+            <td style="text-align: center;">3</td>
+            <td style="text-align: center;">PAL2-N</td>
+            <td style="text-align: center;"></td>
+          </tr>
+          <tr>
+            <td style="text-align: center;">4</td>
+            <td style="text-align: center;">D3</td>
+            <td style="text-align: center;">46 x 29,5 x 45</td>
+            <td style="text-align: center;"></td>
+          </tr>
+          <tr>
+            <td style="text-align: center;">5</td>
+            <td style="text-align: center;">PAM1</td>
+            <td style="text-align: center;">37 x 17 x 39</td>
+            <td style="text-align: center;"></td>
+          </tr>
+          <tr>
+            <td style="text-align: center;">6</td>
+            <td style="text-align: center;">Máy in tem</td>
+            <td style="text-align: center;">29,5 x 21,5 x 18</td>
+            <td style="text-align: center;"></td>
+          </tr>
+          <tr>
+            <td style="text-align: center;">7</td>
+            <td style="text-align: center;">Máy in Bill k80</td>
+            <td style="text-align: center;">28,5 x 17,5 x 18,5</td>
+            <td style="text-align: center;"></td>
+          </tr>
+          <tr>
+            <td style="text-align: center;">8</td>
+            <td style="text-align: center;">4 ngăn</td>
+            <td style="text-align: center;">39 x 14 x 42,5</td>
+            <td style="text-align: center;">4,1 kg</td>
+          </tr>
+          <tr>
+            <td style="text-align: center;">9</td>
+            <td style="text-align: center;">5 ngăn</td>
+            <td style="text-align: center;">47,5 x 45,5 x 16,5</td>
+            <td style="text-align: center;">6 kg</td>
+          </tr>
+          <tr>
+            <td style="text-align: center;">10</td>
+            <td style="text-align: center;">Đa tia</td>
+            <td style="text-align: center;">22 x 13,5 x 14</td>
+            <td style="text-align: center;"></td>
+          </tr>
+          <tr>
+            <td style="text-align: center;">11</td>
+            <td style="text-align: center;">Đơn tia</td>
+            <td style="text-align: center;">9,5 x 10 x 22</td>
+            <td style="text-align: center;"></td>
+          </tr>
+          <tr>
+            <td style="text-align: center;">12</td>
+            <td style="text-align: center;">PAC2</td>
+            <td style="text-align: center;">23 x 8,5 x 8,5</td>
+            <td style="text-align: center;"></td>
+          </tr>
+          <tr>
+            <td style="text-align: center;">13</td>
+            <td style="text-align: center;">Thùng K80</td>
+            <td style="text-align: center;">46 x 24 x 17</td>
+            <td style="text-align: center;">10 kg</td>
+          </tr>
+          <tr>
+            <td style="text-align: center;">14</td>
+            <td style="text-align: center;">Thùng K57x38</td>
+            <td style="text-align: center;">40 x 20 x 12,5</td>
+            <td style="text-align: center;">4,94 Kg</td>
+          </tr>
+          <tr>
+            <td style="text-align: center;">15</td>
+            <td style="text-align: center;">Thùng K57x45</td>
+            <td style="text-align: center;">46,5 x 24 x 12,5</td>
+            <td style="text-align: center;"></td>
+          </tr>
+          
+        </table>
+        <br>
+  </div>
+</div>
+
+<div class="accordion">Thông tin chuyển khoản</div>
+<div class="panel" style="text-align:justify; width: 750px; ">
+ 
+    <div class='sub-menu' >
+        Quý khách mua dịch vụ vui lòng chuyển khoản tới 1 trong 2 tài khoản sau:
+<p><b>Ngân hàng Cổ phần Ngoại Thương (Vietcombank)</b></p>
+<p>– Số tài khoản: 0251 002 7868 51</br>
+– Chủ tài khoản: Công ty Cổ phần Công Nghệ PosApp</br>
+– Chi nhánh: Bình Tây, TP. Hồ Chí Minh</br>
+(Lưu ý Khi chuyển khoản ghi chú: Tên cửa hàng mua dịch vụ PosApp)</p>
+<hr>
+<p><b>Ngân hàng thương mại cổ phần Á Châu (ACB)</b></p>
+<p>– Số tài khoản: 39 868686 888</br>
+– Chủ tài khoản: Công ty Cổ phần Công Nghệ PosApp</br>
+– Chi nhánh: Phú Trung, TP. Hồ Chí Minh</br>
+(Lưu ý Khi chuyển khoản ghi chú: Tên cửa hàng mua dịch vụ PosApp)</br>
+</div>
+    </div>
+
+<div class="accordion">Thông tin gửi máy bảo hành</div>
+<div class="panel" style="text-align:justify; width: 750px; ">
+ 
+    <div class='sub-menu' >
+        <p><b>Khu vực miền Bắc</b></p>
+        <p>Hà Nội: Tầng 4, 174 đường Láng, Phường Thịnh Quang, Quận Đống Đa, Hà Nội </br>
+        - SĐT: Tổng đài (19003016) Chiến (0337260123)</p>
+        <hr>
+        <p><b>Khu vực miền Nam</b></p>
+        <p>Trụ sở TPHCM: 260/11 Nguyễn Thái Bình Phường 12 Quận Tân Bình HS Building Floor 5 </br>
+        - SĐT: Tổng đài (19003016), A trực (0798438116)</p>
+        <hr>
+        
+</div>
+</div>
+
+<div class="accordion">Các tài khoản demo, test</div>
+<div class="panel" style="text-align:justify; width: 750px; ">
+ 
+    <div class='sub-menu' >
+        <table style="border-collapse:collapse;">
+           <tr>
+               <th>Tài khoản</th>
+               <th>Pas</th>
+               <th>Ghi chú</th>
+           </tr>
+           <tr>
+
+               <td>Posapp1293</td>
+               <td>123456</td>
+               <td style="text-align: left"> Mô hình tính tiền giờ, giặt là</td>
+           </tr>
+           <tr>
+
+               <td>Demo.posapp27</td>
+               <td>123456</td>
+               <td style="text-align: left">Dành cho HN, có thể xóa, thay đổi menu</td>
+           </tr>
+           <tr>
+
+               <td>Tuansap1122</td>
+               <td>123456</td>
+               <td style="text-align: left">TK demo spa</td>
+           </tr>
+           <tr>
+
+               <td>Posappdemocafe</td>
+               <td>123456</td>
+               <td style="text-align: left">Tk chuỗi demo cho CTY PosApp, hạn chế xóa, sửa thông tin</td>
+           </tr>
+           <tr>
+
+               <td >Orange</td>
+               <td>123456</td>
+               <td style="color: red; text-align: left">TK demo weborder để phục vụ marketing không thay đổi thông tin</td>
+           </tr>
+           <tr>
+
+               <td >Posappdemohn</td>
+               <td>123456</td>
+               <td style="text-align: left">TK test trên site dev <a href="https://dev-admin.posapp.vn/"><b>Link Web</b></a></td>
+           </tr>
+           
+           
+
+           
+        </table>
+        <br>
+        
+</div>
+</div>
+
+<div class="accordion">Thông tin #</div>
+<div class="panel" style="text-align:justify; width: 750px; ">
+ 
+    <div class='sub-menu' >
+        <p><a href="https://docs.google.com/spreadsheets/d/1Itb-X-RuIQM6wuKaf_I9x8_s4BUlPA521HOc2y8UmBE/edit?pli=1#gid=8521709" target="_blank"><b>►  Theo dõi bảo hành</b></a></p>
+        <p><a href="https://docs.google.com/spreadsheets/d/1l20wzRdBUNm9ENV5FxtKWTECPxxiX-n7nA3_sW1a11Q/edit#gid=251114618" target="_blank"><b>►  Các bộ phận liên quan</b></a></p>
+        <p><a href="https://docs.google.com/spreadsheets/d/1P-oIDKdXmC6lj8RFqkh2YVmiV-57iSfpwBGA1cpkRTA/edit#gid=0" target="_blank"><b>►  Bảng giá sửa chữa bên Phong Vũ </b></a><i>(Báo giá của PV, giá bán cho MC + 150.000)</i></p>
+ 
+</div>
+</div>
+
+<div class="accordion">SĐT Nhân sự PosApp
+</div>
+<div class="panel" style="text-align:justify; width: 750px; ">
+ 
+    <div class='sub-menu' >
+      <div id="container"></div>
+</div>
+</div>
+ 
+ <div class="accordion">Các mẫu phiếu bảo hành, đề xuất</div>
+<div class="panel" style="text-align:justify; width: 750px; ">
+    <div class='sub-menu' >
+        <p><a href="https://docs.google.com/spreadsheets/d/10d_qJYEZRMSAfMcGp-SZ2Cp5i8rMaVxzJQ72hJoFA4E/edit#gid=0">► Mẫu phiếu BH, mượn máy, phiếu đề xuất</a></p>
+ 
+</div>
+</div>
+
+<div class="an">Setup máy chấm công HN</div>
+<div class="panel" style="text-align:justify; width: 750px; ">
+    <div class='sub-menu' >
+        <p><a href="https://drive.google.com/file/d/1g3dbcv8aJqvyx9Cmz4F1r7-8QgwuMiwk/view?usp=sharing">> File setup</a></p>
+        <p><b>Thông tin liên quan</b></p>
+        <p>- Số seri: 61600520005665</p>
+        <p>- Số Đăng ký: 29488889813968</p>
+        <p>- iP hiện tại: 192.168.100.164</p>
+        <p>- Sđt mua hàng: 0344 545 223</p>
+        <p>- <a href="https://vuhoangtelecom.vn/">> Vũ Hoàng Telecom</a></p>
+</div>
+</div>
+<div class="accordion">Tài khoản giao vận</div>
+<div class="panel" style="text-align:justify; width: 750px; ">
+    <div class='sub-menu' >
+        <p><b> lalamove:</b> 0779340312/081202</p>
+</div>
+</div>
+
+
+
+
+<!-- ====================End: menu ====================-->
+
+
     
-    
+
+         
     </div>
     
-        <div id="contact" style="background-color: #3d4351; color: white; ">
-        <div class="container" >
-            <div style="height: 30px; width: 100%"></div>
-            <div class="address" style=""> <b>ĐỊA CHỈ CÔNG TY </b>
+
+         
+  
+
+
+
+
+
+    <section id="contact" style="background-color: #3d4351; color: white; padding-top: 30px; padding-bottom: 30px;">
+        <div class="container">
+            <div class="bt">
+            <div class="address"> <b>ĐỊA CHỈ CÔNG TY </b>
             <P style="margin-left:20px;font-size: 14px;">- Trụ sở TPHCM: 260/11 Nguyễn Thái Bình Phường 12 Quận Tân Bình HS Building Floor 5</P>
             <P style="margin-left:20px;font-size: 14px;">- Chi nhánh Hà Nội: Tầng 4, 174 đường Láng, Phường Thịnh Quang, Quận Đống Đa, Hà Nội</P>
             <P style="margin-left:20px;font-size: 14px;">- Đà Nẵng: Số 21 Trần Quốc Toản, Hải Châu, Đà Nẵng</P>
             <P style="margin-left:20px;font-size: 14px;">- Cần Thơ: 191 Phan Huy Chú, phường An Khánh, quận Ninh Kiều, TP Cần Thơ</P>
             <P style="margin-left:20px;font-size: 14px;">- Quảng Ninh: Số 2, Ngõ 430 Trần Quốc Tảng, Cẩm Phú, Tp.Cẩm Phả, Quảng Ninh</P>
             </div>
-
+</div>
         </div>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </section>
+
+    <!-- Jquery  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
     <!-- font lib  -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
     <!-- Js custom file -->
-    <script src="./script-jquery.js"></script>
-    
-    
-    
-    </body>
+    <script src="../script-jquery.js"></script>
+    <script src="script.js"></script>
+</body>
+
 </html>
