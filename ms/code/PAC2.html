@@ -1,19 +1,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/xemthemip.dwt" codeOutsideHTMLIsLocked="false" -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- InstanceBeginEditable name="doctitle" -->
-<title>PosApp PAC2 </title>
-<!-- InstanceEndEditable -->
-<link type="text/css" rel="stylesheet" href="css/content.css" />
-<link rel="shortcut icon" href="https://posapp.vn/wp-content/themes/twentysixteen-child/images/favicon.png">
-        <meta property="og:image"
-        content="https://aries908218.files.wordpress.com/2022/06/abc.png">
-<!-- InstanceBeginEditable name="head" -->
-<!-- InstanceEndEditable -->
+    <title>PosApp | IMG POS</title>
+    <link type="text/css" rel="stylesheet" href="css/content.css" />
+    <link rel="shortcut icon" href="https://posapp.vn/wp-content/themes/twentysixteen-child/images/favicon.png">
+    <meta property="og:image"
+    content="https://aries908218.files.wordpress.com/2022/06/abc.png">
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../responsive.css">
+
 </head>
 
-    <body onload="time()">
+
+    <body onload="time()" id="home">
+
     <!-- thời gian:star-->
     	<script type="text/javascript">
 function time() {
@@ -41,7 +47,6 @@ function time() {
    tmp='<span class="date">'+today+' | '+nowTime+'</span>';
 
    document.getElementById("clock").innerHTML=tmp;
-
    clocktime=setTimeout("time()","1000","JavaScript");
    function checkTime(i)
    {
@@ -53,23 +58,122 @@ function time() {
 }
 </script>
 
-    	<div class="main">
-        <div class="clr"></div>
-        <div class="content">
-          <div id="menu_tab">
-                <ul class="menu">
-                          <li><a href="https://nchienms.github.io/PosappHN/" id="home">Home</a></li>
-                          <li><a href="imgpos.html" id="home">Back</a></li>
-                          <div id="clock" style="float: right;"></div>
+    <!-- thời gian: end-->
+    	
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="">
+                        <img src="https://posapp.vn/wp-content/themes/twentysixteen-child/images/logo.png" style="width: 93px;" alt="">
+                    </a>
+                </div>
+                   <!--  tạo menu cho màn hình nhỏ  -->
+                   <div id="clock" style="position: fixed; top: 40px; font-size: 10px; z-index: 1;"></div>
+    <div class="containersub">
+        <div class="btnbnt">
+            <ion-icon name="add-outline"></ion-icon>
+        </div>
+        <ul id="menubnt">
+            <li class="itembnt">
+                <ion-icon name="home"></ion-icon>
+                 <a href="../../index.html" >Home</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="restaurant"></ion-icon>
+                <a href="https://nchienms.gitbook.io/posapphn">FnB</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="storefront"></ion-icon>
+                <a href="https://nchienms.gitbook.io/retail/">Retail</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="heart"></ion-icon>
+                <a href="https://nchienms.gitbook.io/spa/">Spa</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="timer"></ion-icon>
+                <a href="../karaoke.html">Karaoke</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="desktop-outline"></ion-icon>
+                <a href="../posapppc.html">PosApp PC</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="download"></ion-icon>
+                <a href="../download.html">Download</a>
+            </li>
+            <li class="itembnt"style="color: red; font-weight: bold;">
+                <ion-icon name="desktop"></ion-icon>
+                <a href="imgpos.html"style="color: red; font-weight: bold;">Máy Pos</a>
+            </li>
+            <li class="itembnt">
+                <ion-icon name="lock-closed"></ion-icon>
+                <a href="../lock.html" >Internal</a>
+            </li>
+
+        </ul>
+
+    </div>
+        <script>
+            const btnbnt = document.querySelector(".btnbnt")
+            btnbnt.addEventListener('click', e => {
+                btnbnt.classList.toggle("rotateBtn");
+                document.querySelector("#menubnt").classList.toggle('showMenu')
+            })
+        </script>
+                <ul class="menu" >
+                    <li class="item">
+                        <a href="index.html" style="color: red; font-weight: bold;">Home</a>
+                    </li>
+                    <li class="item">
+                        <a href="https://nchienms.gitbook.io/posapphn">FnB</a>
+                    </li>
+                    <li class="item">
+                        <a href="https://nchienms.gitbook.io/retail/">Retail</a>
+                    </li>
+                    <li class="item">
+                        <a href="https://nchienms.gitbook.io/spa/">Spa</a>
+                    </li>
+                    <li class="item">
+                        <a href="ms/karaoke.html">Karaoke</a>
+                    </li>
+                     <li class="item">
+                        <a href="ms/posapppc.html">PosApp PC</a>
+                    </li>
+                    <li class="item">
+                        <a href="ms/download.html">Download</a>
+                    </li>
+                    <li class="item">
+                        <a href="ms/lock.html">Internal</a>
+                    </li>
                 </ul>
-          </div>
+
+
+
+
+
+
+            </nav>
+
+
+        </div>
+    </header>
+
+
+<dir style="height: 80px; width: 100%; background-color: Silver;"></dir>
+<div class="main">
+      <div style="background-color: Silver;">
+        <p style="background-color: white; margin: 0 0 10px -30px; padding-left: 30px; width: 300px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;"><span style="font-size: 20px; ">&#8226;  </span>Bạn đang ở "Sản phẩm"</p>
+        <dir style="width: 100%; height: 5px;"></dir>
+      </div>   
+
+        <div class="content colorSilver" >
+          
                
-                <!-- Nội dung chính star--><!-- InstanceBeginEditable name="xem thêm" -->
-        <div class="sanpham">
-          <div class="layout">&bull; Liên kết: 
-                <a class="lienket" href="../code/imgpos.html">IMG POS</a>&raquo;
-                <span class="current"> Máy PosApp PAC2</span> 
-          </div>
+               
+ <div class="sanpham">
+          
           <div class="clr"></div>
           <div class="title_name"> Máy PosApp PAC2</div>
            <div class="ip11max_conten" >
@@ -88,29 +192,64 @@ function time() {
                 <!---------------------------------------------------->
              <!-- thông số -->
               <div class="thongso">
-                <div class="title_thongso" ><b>Máy POS PAC2</b></div>
-                <br>
-                <p><span class="title_namethongso">Màn hình:</span>5.5' LCD+TP</p>
-                <p><span class="title_namethongso">Độ phân giải:</span>1366 x 768, chạm  đa điểm </p>
-                <p><span class="title_namethongso">Hệ điều hành:</span>Android 7.1</p>
-                <p><span class="title_namethongso">CPU:</span>Qualcomm snapdragon Quad Core Processor</p>
-                <p><span class="title_namethongso">Bộ nhớ:</span>16GB ROM + 2GB RAM</p>
-                <p><span class="title_namethongso">Trọng lượng:</span>346 gam (không hộp)</p>
-                <p><span class="title_namethongso">SIM card:</span>1 sim 4G</p>
-                <p><span class="title_namethongso">Pin:</span>7.6 V/2580 mAh</p>
-                <p><span class="title_namethongso">Kích thước:</span> 21.5 x8.3x1.7cm</p>
-                <p><span class="title_namethongso">Camera:</span>5 Megapixel auto zoom</p>
-                <p><span class="title_namethongso" style="height: 60px">Cổng giao tiếp:</span>• Built in bluetooth 2.1  <br>
-                      • Built in WIFI <br>
-                      • Support GPRS and 3G <br>
-                      </p>
-                <p><span class="title_namethongso" style="height: 60px">Máy in:</span>• Máy in nhiệt 58mm  <br>
-                      • 70 mm/s <br>
-                      
-                      </p>
-
-              
-              <div style="text-align: center; margin-top: 30px; font-weight: bold;"><a href="#" style="text-decoration: none; color: red;"> Download IMG</a></div>
+                             <table >
+                  <tr>
+                    <td colspan="2"> <div class="title_thongso" ><b>Máy POS PAC2</b></div></td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso"> Màn hình:</td>
+                    <td> 5.5' LCD+TP </td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso"> Độ phân giải:</td>
+                    <td> 1366 x 768, chạm đa điểm</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">Hệ điều hành:</td>
+                    <td>Android 7.1</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">CPU:</td>
+                    <td>Qualcomm snapdragon Quad Core Processor</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">Bộ nhớ:</td>
+                    <td>16GB ROM + 2GB RAM</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">SIM card:</td>
+                    <td>1 sim 4G</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">Pin:</td>
+                    <td>7.6 V/2580 mAh</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">Kích thước:</td>
+                    <td>21.5 x8.3x1.7cm</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">Trọng lượng</td>
+                    <td>346 gam (không hộp)</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">Camera:</td>
+                    <td>5 Megapixel auto zoom</td>
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">Cổng giao tiếp:</td>
+                    <td>  • Built in bluetooth 2.1 <br>
+                          • Built in WIFI<br>
+                          • Support GPRS and 3G<br>
+                    </td>   
+                  </tr>
+                  <tr>
+                    <td class="title_namethongso">Máy in:</td>
+                    <td> • Máy in nhiệt 58mm <br>
+                          • 70 mm/s<br>
+                    </td>   
+                  </tr>
+                </table>
               </div>
              <!-- hình ảnh thực tế-->
               
@@ -118,16 +257,35 @@ function time() {
 
         </div>
     
-    <div style="float: left;margin-top: 10px; height: 100px; width: 100%; "> 
+   <div style="float: left;margin-top: 10px; height: 100px; width: 100%; " class="colorSilver"> 
       <hr>
-      <div style="font-weight: bold; font-size: 18px; text-align: center; padding-top: 10px;"> Một số hình ảnh thực tế</div>
-        <div style="text-align: center; padding-top: 10px;"> 
+      <div style="font-weight: bold; font-size: 18px; text-align: center; padding-top: 10px;" > Một số hình ảnh thực tế</div>
+        <div style="text-align: center; padding-top: 10px;"class="colorSilver"> 
         <img style="margin-top: 30px; text-align: center; border: thin solid #DDDDDD; border-radius: 10px; width: 80%;" src="../code/images/PAC2/PAC25.png">
         <img style="margin-top: 30px; text-align: center; border: thin solid #DDDDDD; border-radius: 10px; width: 80%;" src="../code/images/PAC2/PAC26.png">
+        
         </div>
-        <div style="height: 100px;"></div>
+        <div style="height: 100px;" class="colorSilver"></div>
     </div>
+
+    </div>
+  </div>
+</div>
+
+
+    
+    
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!-- font lib  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+    <!-- Js custom file -->
+    <script src="./script-jquery.js"></script>
+    
     
     
     </body>
-<!-- InstanceEnd --></html>
+</html>
