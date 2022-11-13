@@ -4,7 +4,9 @@
 	float:left;
 	width:100%;
 margin-top: -10px;}
-
+.colorSilver{
+	background-color: Silver;
+}
 
 .rivew .rivew_tb{
 	line-height:33px;
@@ -128,14 +130,11 @@ ul li img{
 	text-align: center; 
 	padding : 5px;
 	font-size: 16px; 
-	border-top: thin solid black;
-	border-bottom: thin solid black;
 	color:#FF9900;
 }
 .title_namethongso{
 	font-weight: bold;
-	width: 120px;
-	float: left;
+
 
 }
 
@@ -255,4 +254,19 @@ ul.menu li a, ul.menu li a:visited{
     justify-content: center;
     background-color: Silver;
     padding-bottom: 30px;
+}
+
+table{
+	margin-right: 20px;
+	border-right:hidden!important;
+
+	border-left:hidden!important;
+	border: 1px solid red;
+	
+}
+table tr td{
+	border-right:none;
+	border-right:hidden!important;
+	border: 1px solid Silver;
+	border-left:hidden!important;
 }
