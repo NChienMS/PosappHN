@@ -22,6 +22,8 @@ if ($("#hoten").val() == ""){
 {
 	$("#hoten").css('box-shadow', 'none');
 	$("#Reason").css('box-shadow', 'none');
+  $("#Reason2").css('box-shadow', 'none');
+  $("#Reason3").css('box-shadow', 'none');
 	$("#day-w").css('box-shadow', 'none');
 document.getElementById("popup").style.display = "block";
 document.getElementById("loader").style.display = "block";
