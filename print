@@ -1,0 +1,37 @@
+<!DOCTYPE html >
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Demo nút in</title>
+</head>
+<body>
+<header>Tiêu đề trang header + logo</header>
+<article class="content" id="Content_ID"> 
+  <title>Tiêu đề bài viết</title>
+  <p>Nội dung chi tiết bàisdầdsf viết</p>
+  <p>Vụ việc xảy ra tại Gudimalkapur, Chinthalapalem Mandal, quận Suryapet, bang Telangana, Ấn Độ vào hôm 15/6.
+
+Hình ảnh cho thấy một loài chim quý hiếm và bí ẩn, giống loài cú, được tìm thấy trong sân một ngôi nhà trong làng. Sự việc nhanh chóng trở thành tâm điểm chú ý, thu hút sự tò mò của dân làng khắp làng.
+
+Con chim được phát hiện bị gãy cánh đã được dân làng cẩn thận bắt lại, sau đó đưa nó đến bác sĩ thú y địa phương để cấp cứu.
+
+Sau khi được điều trị ban đầu để ổn định vết thương, con chim đã được chuyển đến văn phòng Cảnh sát địa phương để đánh giá thêm.</p>
+  <span>Nội dung chi tiết bàisdầdsf viết</span>
+</article>
+
+<script>
+function In_Content(strid){   
+    var prtContent = document.getElementById(strid);
+    var WinPrint = window.open('','','letf=0,top=0,width=100%,height=%100');
+    WinPrint.document.write(prtContent.innerHTML);
+    WinPrint.document.close();
+    WinPrint.focus();
+    WinPrint.print();
+}
+</script>
+<p>
+  <a href="javascript:void(0)" onclick="In_Content('Content_ID')">IN</a></p>
+
+
+</body>
+</html>
