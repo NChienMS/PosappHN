@@ -4,33 +4,156 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Demo nút in</title>
 </head>
-<body>
-<header>Tiêu đề trang header + logo</header>
-<article class="content" id="Content_ID"> 
-  <title>Tiêu đề bài viết</title>
-  <p>Nội dung chi tiết bàisdầdsf viết</p>
-  <p>Vụ việc xảy ra tại Gudimalkapur, Chinthalapalem Mandal, quận Suryapet, bang Telangana, Ấn Độ vào hôm 15/6.
+<style type="text/css">
+  
+.tieudene{
+  font-weight: bold;
 
-Hình ảnh cho thấy một loài chim quý hiếm và bí ẩn, giống loài cú, được tìm thấy trong sân một ngôi nhà trong làng. Sự việc nhanh chóng trở thành tâm điểm chú ý, thu hút sự tò mò của dân làng khắp làng.
-
-Con chim được phát hiện bị gãy cánh đã được dân làng cẩn thận bắt lại, sau đó đưa nó đến bác sĩ thú y địa phương để cấp cứu.
-
-Sau khi được điều trị ban đầu để ổn định vết thương, con chim đã được chuyển đến văn phòng Cảnh sát địa phương để đánh giá thêm.</p>
-  <span>Nội dung chi tiết bàisdầdsf viết</span>
-</article>
-
-<script>
-function In_Content(strid){   
-    var prtContent = document.getElementById(strid);
-    var WinPrint = window.open('','','letf=0,top=0,width=100%,height=%100');
-    WinPrint.document.write(prtContent.innerHTML);
-    WinPrint.document.close();
-    WinPrint.focus();
-    WinPrint.print();
 }
-</script>
-<p>
-  <a href="javascript:void(0)" onclick="In_Content('Content_ID')">IN</a></p>
+
+.CEN{
+  text-align: center;
+}
+.noidungne{
+  font-size: 9px;
+}
+input{
+  border: hidden;
+}
+
+</style>
+<body>
+<article class="content" id="Content_ID" style="width: 210mm;" > 
+   
+  <table width="100%">
+    <tr>
+      <th style="width: 150px;"><img height="40px" src="https://ariesvn8.wordpress.com/wp-content/uploads/2024/06/posapp-logo.png"></th>
+    
+    
+      <td style="text-align:center; font-size: 12px;" >
+           <b> PHẦN MỀM BÁN HÀNG POSAPP.VN </b> <br>
+      Sản phẩm của Công Ty Cổ Phần Công Nghệ PosApp<br>
+      Trụ sở chính: 260/11 Nguyễn Thái Bình, P12, Q. Tân Bình, TP.HCM<br>
+      Chi nhánh Hà Nội: Tầng 4, 174 Đường Láng, Q. Đống Đa, HN<br>
+      Hotline 1900.3016                   Zalo: 0379 096 987           Email: support@posapp.vn<br>
+      </td>
+       </tr>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- #Ngắt -->
+  <p style="text-align: center; width: 100%; font-size: 13px;"><b>PHIẾU TIẾP NHẬN THÔNG TIN KHÁCH HÀNG</b> <br>
+            <span style="font-size: 12px">Số phiếu:.....</span>
+  </p>
+
+
+  <div style="font-size: 12px; font-weight: bold;" > I. Thông tin khách hàng</div>
+
+  <p style="font-size:12px; ">Tên khách hàng:
+    <input  title="" required="" class="nhaptext" type="text" style="border: hidden">
+  <span style="font-size:12px; margin-left: 30%"> SĐT:<input  title="" required="" class="nhaptext" type="text"> </p>
+  <p style="font-size:12px;margin-top: -5px;"> Địa chỉ:<input  style="font-weight: bold; width: 90%;" title="" required="" class="nhaptext" type="text"></p>
+
+
+
+  <p style="font-size: 12px; font-weight: bold;"> II. Thông tin thiếu bị tiếp nhận</p> 
+
+  <table width="100%" style="font-size:12px;border: 1px solid black;
+    border-collapse: collapse;">  
+    <tr>
+      <th style="border: 1px solid black; padding: 3px; width: 30px;">STT</th>
+      <th style="border: 1px solid black; padding: 3px;width: 140px;">Tên thiết bị</th>
+      <th style="border: 1px solid black; padding: 3px;width: 40px;">SL</th>
+      <th style="border: 1px solid black; padding: 3px;width: 100px;">Tem BH</th>
+      <th style="border: 1px solid black; padding: 3px;width: 100px;">Ngày nhận</th>
+      <th style="border: 1px solid black; padding: 3px;">Tình trạng/SN</th></tr>  
+    <tr>
+      <td style="border: 1px solid black;padding: 3px; text-align: center;"class="CEN">1</td>
+      <td style="border: 1px solid black;padding: 3px;"><input style="width: 140px;" title="" required="" class="nhaptext" type="text"></td>
+      <td style="border: 1px solid black;text-align: center;"><input  style="text-align: center; width: 40px;"title="" required="" class="nhaptext" type="number" min="1"></td>
+      <td style="border: 1px solid black;"><input style="width: 100px;" title="" required="" class="nhaptext" type="text"></td>
+      <td style="border: 1px solid black;"><input style="width: 100px;" title="" required="" class="nhaptext" type="date"></td>
+      <td style="border: 1px solid black;"><input style="width: 99%;" title="" required="" class="nhaptext" type="text"></td>
+      
+    </tr>
+    <tr>
+      <td style="border: 1px solid black;padding: 3px;text-align: center;"class="CEN">2</td>
+      <td style="border: 1px solid black;padding: 3px;"></td>
+      <td style="border: 1px solid black;padding: 3px;"></td>
+      <td style="border: 1px solid black;padding: 3px;"></td>
+      <td style="border: 1px solid black;padding: 3px;"></td>
+      <td style="border: 1px solid black;padding: 3px;"></td>
+    </tr>
+  </table>
+  <p style="font-size:12px;">Kết quả tiếp nhận:...</p> 
+  <p style="font-size:12px;">Ngày dự kiến trả:...</p>
+
+  <p style="font-size: 12px; font-weight: bold;"> III. Quy định bảo hành</p> 
+  <p style="font-size:12px;">
+1. Điều kiện bảo hành: Sản phẩm theo đúng tiêu chuẩn của nhà sản xuất, có phiếu bảo hành, tem bảo hành. <br>
+2. Những trường hợp không bảo hành: <br>
+<div style="margin: -10px 0 0 10px;" style="font-size:12px;" >
+  <span style="font-size:12px;">
+  - Thiết bị hết thời hạn bảo hành, tem bảo hành không còn nguyên vẹn, bị dán đè, không tự ý thảo gỡ, sửa chữa thiết bị <br>
+  - Đầu bị trầy, xước, rơi vỡ do người sử dụng tạo ra. <br>
+  - Thiết bị hỏng hóc do tác động cơ học làm biến dạng; rơi, vỡ, va đập <br>
+  - Bị ẩm ướt, hoen rỉ, sử dụng sai điện áp quy định; cháy nổ, chuột bọ, côn trùng gây ra, hoặc do con người sử dụng làm hư.
+</span>
+</div>
+  </p>
+
+  <p style="font-size: 12px; font-weight: bold;"> IV. Lưu ý</p>
+  <p style="font-size:12px;" style="text-align:justify;">
+1. Để đảm bảo, bảo mật các dữ liệu bao gồm cả dữ liệu cá nhân ("Dữ Liệu"), quý khách vui lòng tự sao lưu hoặc xóa dữ liệu, các phần mềm, ứng dụng, hình ảnh hoặc bất kỳ nội dung nào khác được lưu trữ trong sản phẩm ("Dữ Liệu") trước khi gừi sản phẩm cho PosApp để bảo hành/sửa chữa. PosApp không chịu trách nhiệm cho bất kỳ thiệt hại trực tiếp hoặc gián tiếp nào gây ra cho Quý khách nếu Dữ Liệu lưu trong sản phẩm bị tiết lộ, bị mất, bị hư hỏng hoặc bị định dạng lại trong quá trình kiểm tra, xử lý sữa chữa, bảo hành.
+<br>2. Quý khách vui lòng đăng xuất hoặc xóa tất cả tài khoản (ngân hàng, game, ứng dụng, điện thoại, mạng xã hội ... ) lưu trong sản phẩm ("Tài Khoản") trước khi gửi sản phẩm để kiểm tra, sửa chữa, bảo hành. PosApp sẽ không chịu trách nhiệm cho bất kỳ thiệt hại trực tiếp hoặc gián tiếp nào gây ra cho Quý khách từ sự tiết lộ hoặc lạm dụng trái phép các Tài Khoản này quá trình kiểm tra, xử lý sửa chữa, bảo hành.
+<br>3. Đối với sản phẩm bảo hành tại hãng/ nhà sản xuất, PosApp chỉ tiếp nhận sản phẩm với hiện trạng (bên ngoài) và chuyển đến bộ phận bảo hành của hãng/
+nhà sản xuất. Các thông tin liên quan đến sản phẩm, việc bảo hành/ sửa chữa sản phẩm sẽ được PosApp /Hãng/ Đối tác của PosApp thông báo đến quý khách theo thông tin liên lạc được cung cấp tại Mục I
+<br>4. Với các sản phẩm/linh kiện không phải do PosApp bán ra: PosApp sẽ tiếp nhận và xử lý sau đó báo lại thông tin cho khách hàng tại mục I
+<br>5. PosApp cho phép khách hàng nhận lại sản phẩm bằng Phiếu biên nhận (lưu ý người nhận sản phẩm có thể không phải là người giao sản phẩm hoặc không
+phải là người được ghi nhận tại phần Thông tin khách hàng ở Mục I). Người đến nhận sản phẩm phải mang theo Phiếu biên nhận này.
+<br>+ Trường hợp mất Phiếu biên nhận quý khách phải thông báo ngay cho PosApp qua số điện thoại hotline 1900 3016 và thực hiện theo quy trình giải
+quyết của PosApp.
+<br>+ PosApp không giải quyết nhận sản phẩm trong trường hợp quý khách không có Phiếu biên nhận, trừ trường hợp quý khách được PosApp đồng ý giải quyết theo quy trình nhận lại sản phẩm do mất Phiếu biên nhận.
+<br>+ Trong mọi trường hợp, PosApp không chịu trách nhiệm về việc mất sản phẩm khi quý khách không có hoặc mất Phiếu biên nhận.
+<br>6. Phiếu biên nhận này có giá trị từ ngày lập phiếu và hết hiệu lực khi một trong hai trường hợp sau xảy ra (căn cứ vào trường hợp nào xảy ra trước):
+<br>+ Trường hợp 1: PosApp giao trả lại sản phẩm.
+<br>+ Trường hợp 2: Hết Thời Hạn Lưu Kho*.
+<br>* Thời Hạn Lưu Kho là năm (05) ngày kể từ ngày dự kiến trả sản phẩm nêu tại Mục I hoặc kể từ ngày nhận lại Sản Phẩm theo thông báo của
+PosApp gửi đến Khách Hàng (nếu có) (căn cứ vào thời hạn nào đến sau). Khi khách hàng từ chối sửa chữa khi hai bên không có sự thống nhất về mức phí và cách xử lý thì thời gian lưu kho là 5 ngày kể từ ngày PosApp thông báo và khách hàng từ chối sửa chữa
+Nếu đến hết Thời Hạn Lưu Kho mà quý khách vẫn chưa đến nhận sẵn phẩm thì quý khách đã thực hiện hành vi từ bỏ quyền sở hữu đối với sản phẩm, PosApp có toàn quyền quyết định xử lý đối với sản phẩm.
+<br>7. Trường hợp khách hàng gửi máy bảo hành thông qua các đơn vị vận chuyển khác PosApp sẽ tiếp nhận máy từ đơn vị vận chuyển kiểm tra sản phẩm và báo lại thông tin cho khách hàng sau khi kiểm tra theo thông tin trên bưu kiện, quy trình gửi trả máy cũng sẽ do khách hàng tự lên PosApp lấy hoặc gửi qua đơn vị vận chuyển do khách hàng tự đặt hoặc do khách hàng nhờ PosApp đặt. Mọi hỏng hóc của thiết bị trong quá trình vận chuyển do bên thứ 3thì PosApp sẽ không phải chịu trách nhiệm.
+<br>8. Trong mọi trường hợp, PosApp có quyền quyết định cuối cùng.
+
+
+</p>
+<table width="100%" style="font-size: 12px; text-align:center;border: 1px solid black; border-collapse: collapse;">
+  <tr>
+    <td style="border: 1px solid black; padding-bottom: 30px;">Khách hàng<br>
+    (Ký và ghi rõ họ tên)</td>
+    <td style="border: 1px solid black; padding-bottom: 30px;">Người tiếp nhận<br>
+    (Ký và ghi rõ họ tên)</td>
+    <br>
+
+  </tr>
+</table>
+
+
+
+</p>
+
+
+
+<p><a href="javascript:void(0)" onclick="window.print()">INđsd</a></p>
 
 
 </body>
