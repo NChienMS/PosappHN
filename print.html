@@ -20,22 +20,30 @@
 input{
   border: hidden;
 }
+.panel {
+  max-height: 0;
+  background-color: white;
+  overflow: hidden;
+  width: auto;
+  transition: max-height 0.3s ease-out;
+
+}
 
 </style>
 <body>
-<article class="content" id="Content_ID" style="width: 210mm;" > 
+<article  style="width: 210mm;" > 
    
   <table width="100%">
     <tr>
-      <th style="width: 150px;"><img height="40px" src="https://ariesvn8.wordpress.com/wp-content/uploads/2024/06/posapp-logo.png"></th>
+      <th style="width: 150px;"><a href="javascript:void(0)" onclick="window.print()"><img height="40px" src="https://ariesvn8.wordpress.com/wp-content/uploads/2024/06/posapp-logo.png"></a></th>
     
     
       <td style="text-align:center; font-size: 12px;" >
-           <b> PHẦN MỀM BÁN HÀNG POSAPP.VN </b> <br>
+           <b style="font-size: 13px;"> PHẦN MỀM BÁN HÀNG POSAPP.VN </b> <br>
       Sản phẩm của Công Ty Cổ Phần Công Nghệ PosApp<br>
-      Trụ sở chính: 260/11 Nguyễn Thái Bình, P12, Q. Tân Bình, TP.HCM<br>
-      Chi nhánh Hà Nội: Tầng 4, 174 Đường Láng, Q. Đống Đa, HN<br>
-      Hotline 1900.3016                   Zalo: 0379 096 987           Email: support@posapp.vn<br>
+      <span style="font-weight: bold";>Trụ sở chính:</span> 260/11 Nguyễn Thái Bình, P12, Q. Tân Bình, TP.HCM<br>
+      <span style="font-weight: bold";>Chi nhánh Hà Nội:</span> Tầng 4, 174 Đường Láng, Q. Đống Đa, HN<br>
+      <span style="font-weight: bold";>Hotline</span> 1900.3016 &nbsp;&nbsp;                  <span style="font-weight: bold";>Zalo:</span>  0379 096 987       &nbsp;&nbsp;    <span style="font-weight: bold";>Email:</span> support@posapp.vn<br>
       </td>
        </tr>
   </table>
@@ -44,7 +52,7 @@ input{
 
 
 
-
+<hr style="width: 80%; text-align: center;">
 
 
 
@@ -57,12 +65,13 @@ input{
   </p>
 
 
-  <div style="font-size: 12px; font-weight: bold;" > I. Thông tin khách hàng</div>
+  <div style="font-size: 12px;margin-top:-15px; font-weight: bold;" > I. Thông tin khách hàng</div>
 
   <p style="font-size:12px; ">Tên khách hàng:
-    <input  title="" required="" class="nhaptext" type="text" style="border: hidden">
-  <span style="font-size:12px; margin-left: 30%"> SĐT:<input  title="" required="" class="nhaptext" type="text"> </p>
-  <p style="font-size:12px;margin-top: -5px;"> Địa chỉ:<input  style="font-weight: bold; width: 90%;" title="" required="" class="nhaptext" type="text"></p>
+    <input style="width: 400px;" title="" required="" class="nhaptext" type="text" style="border: hidden">
+  <span style="font-size:12px; "> SĐT:</span><input  title="" required="" class="nhaptext" type="text"> </p>
+
+  <p style="width: 100%;  font-size:12px;margin-top: -5px;"> Địa chỉ:<input  style="font-weight: bold; width: 90%;" title="" required="" class="nhaptext" type="text"></p>
 
 
 
@@ -83,20 +92,35 @@ input{
       <td style="border: 1px solid black;text-align: center;"><input  style="text-align: center; width: 40px;"title="" required="" class="nhaptext" type="number" min="1"></td>
       <td style="border: 1px solid black;"><input style="width: 100px;" title="" required="" class="nhaptext" type="text"></td>
       <td style="border: 1px solid black;"><input style="width: 100px;" title="" required="" class="nhaptext" type="date"></td>
-      <td style="border: 1px solid black;"><input style="width: 99%;" title="" required="" class="nhaptext" type="text"></td>
+      <td style="border: 1px solid black;"><input style="width: 98%;" title="" required="" class="nhaptext" type="text"></td>
       
     </tr>
     <tr>
-      <td style="border: 1px solid black;padding: 3px;text-align: center;"class="CEN">2</td>
-      <td style="border: 1px solid black;padding: 3px;"></td>
-      <td style="border: 1px solid black;padding: 3px;"></td>
-      <td style="border: 1px solid black;padding: 3px;"></td>
-      <td style="border: 1px solid black;padding: 3px;"></td>
-      <td style="border: 1px solid black;padding: 3px;"></td>
+      <td style="border: 1px solid black;padding: 3px; text-align: center;"class="CEN">2</td>
+      <td style="border: 1px solid black;padding: 3px;"><input style="width: 140px;" title="" required="" class="nhaptext" type="text"></td>
+      <td style="border: 1px solid black;text-align: center;"><input  style="text-align: center; width: 40px;"title="" required="" class="nhaptext" type="number" min="1"></td>
+      <td style="border: 1px solid black;"><input style="width: 100px;" title="" required="" class="nhaptext" type="text"></td>
+      <td style="border: 1px solid black;"><input style="width: 100px;" title="" required="" class="nhaptext" type="text"></td>
+      <td style="border: 1px solid black;"><input style="width: 98%;" title="" required="" class="nhaptext" type="text"></td>
+      
     </tr>
+      <tr>
+      <td style="border: 1px solid black;padding: 3px; text-align: center;"class="CEN">3</td>
+      <td style="border: 1px solid black;padding: 3px;"><input style="width: 140px;" title="" required="" class="nhaptext" type="text"></td>
+      <td style="border: 1px solid black;text-align: center;"><input  style="text-align: center; width: 40px;"title="" required="" class="nhaptext" type="number" min="1"></td>
+      <td style="border: 1px solid black;"><input style="width: 100px;" title="" required="" class="nhaptext" type="text"></td>
+      <td style="border: 1px solid black;"><input style="width: 100px;" title="" required="" class="nhaptext" type="text"></td>
+      <td style="border: 1px solid black;"><input style="width: 98%;" title="" required="" class="nhaptext" type="text"></td>
+      
+    </tr>
+
+
+
   </table>
-  <p style="font-size:12px;">Kết quả tiếp nhận:...</p> 
-  <p style="font-size:12px;">Ngày dự kiến trả:...</p>
+
+
+  <p style="font-size:12px;">Kết quả tiếp nhận: <span style="float: right;font-size:12px;">Ngày dự kiến trả:<input style="width: 100px;" title="" required="" class="nhaptext" type="date"></span><textarea name="kqtiepnhan" style="width: 100%;" title="" required="" class="nhaptext" type="text" rows="2" > </textarea> 
+ </p>
 
   <p style="font-size: 12px; font-weight: bold;"> III. Quy định bảo hành</p> 
   <p style="font-size:12px;">
@@ -111,7 +135,6 @@ input{
 </span>
 </div>
   </p>
-
   <p style="font-size: 12px; font-weight: bold;"> IV. Lưu ý</p>
   <p style="font-size:12px;" style="text-align:justify;">
 1. Để đảm bảo, bảo mật các dữ liệu bao gồm cả dữ liệu cá nhân ("Dữ Liệu"), quý khách vui lòng tự sao lưu hoặc xóa dữ liệu, các phần mềm, ứng dụng, hình ảnh hoặc bất kỳ nội dung nào khác được lưu trữ trong sản phẩm ("Dữ Liệu") trước khi gừi sản phẩm cho PosApp để bảo hành/sửa chữa. PosApp không chịu trách nhiệm cho bất kỳ thiệt hại trực tiếp hoặc gián tiếp nào gây ra cho Quý khách nếu Dữ Liệu lưu trong sản phẩm bị tiết lộ, bị mất, bị hư hỏng hoặc bị định dạng lại trong quá trình kiểm tra, xử lý sữa chữa, bảo hành.
@@ -133,9 +156,8 @@ PosApp gửi đến Khách Hàng (nếu có) (căn cứ vào thời hạn nào �
 Nếu đến hết Thời Hạn Lưu Kho mà quý khách vẫn chưa đến nhận sẵn phẩm thì quý khách đã thực hiện hành vi từ bỏ quyền sở hữu đối với sản phẩm, PosApp có toàn quyền quyết định xử lý đối với sản phẩm.
 <br>7. Trường hợp khách hàng gửi máy bảo hành thông qua các đơn vị vận chuyển khác PosApp sẽ tiếp nhận máy từ đơn vị vận chuyển kiểm tra sản phẩm và báo lại thông tin cho khách hàng sau khi kiểm tra theo thông tin trên bưu kiện, quy trình gửi trả máy cũng sẽ do khách hàng tự lên PosApp lấy hoặc gửi qua đơn vị vận chuyển do khách hàng tự đặt hoặc do khách hàng nhờ PosApp đặt. Mọi hỏng hóc của thiết bị trong quá trình vận chuyển do bên thứ 3thì PosApp sẽ không phải chịu trách nhiệm.
 <br>8. Trong mọi trường hợp, PosApp có quyền quyết định cuối cùng.
-
-
 </p>
+<p style="font-size:12px; float: right;"> Hà Nội, <input type="date"></p>
 <table width="100%" style="font-size: 12px; text-align:center;border: 1px solid black; border-collapse: collapse;">
   <tr>
     <td style="border: 1px solid black; padding-bottom: 30px;">Khách hàng<br>
@@ -149,12 +171,126 @@ Nếu đến hết Thời Hạn Lưu Kho mà quý khách vẫn chưa đến nh�
 
 
 
+
+
+
+
+
+<div style="page-break-before:always"></div>
+
+
+<p style="font-size: 12px; font-weight: bold;"> V. Phần xuất mượn thiết bị</p> 
+<p style="font-size: 12px">
+1. Thiết bị xuất cho mượn là thiết bị PosApp cung cấp cho khách hàng sử dụng tạm/thay thế nhằm đảm bảo khách hàng có thiết bị sử dụng trong quá trình bảo hành, sửa chữa sản phẩm mà PosApp đã tiếp nhận 
+<br>2. PosApp có thể xuất thiết bị cho khách hàng mượn hoặc không tùy vào yếu tố về số lượng thiết bị cho mượn có sẵn.
+<br>3. Thiết bị cho mượn PosApp đảm bảo về tình trạng hoạt động tốt và tương đương hoặc có giá trị sử dụng tương đồng với thiết bị PosApp tiếp nhận bảo hành.
+<br>4. Khách hàng sẽ chịu trách nhiệm đảm bảo thiết bị cho mượn không bị hỏng hóc trong quá trình khách hàng mượn sản phẩm
+<br>5. Khách hàng sẽ cần chi trả phí sửa chữa nếu thiết bị cho mượn hỏng hóc do lỗi người dùng trong quá trình sử dụng (PosApp sẽ đánh giá phần này khi nhận lại sản phẩm cho mượn
 </p>
 
+<span style="font-size: 12px; font-weight:bold;"> Xuất mượn thiết bị: </span>
+<span  style="font-size: 12px;font-weight:bold;">Không:</span><input class=""type="checkbox" name="chomuon">
+
+<span style="font-size: 12px;font-weight:bold;">/ Có:</span><input class="accordion"type="checkbox" name="chomuon">
+<div class="panel" style="font-size:12px;">
 
 
-<p><a href="javascript:void(0)" onclick="window.print()">INđsd</a></p>
+  <table width="100%" style="font-size:12px;border: 1px solid black;
+    border-collapse: collapse;">  
+    <tr>
+      <th style="border: 1px solid black; padding: 3px; width: 30px;">STT</th>
+      <th style="border: 1px solid black; padding: 3px;width: 140px;">Tên thiết bị</th>
+      <th style="border: 1px solid black; padding: 3px;width: 40px;">SL</th>
+      <th style="border: 1px solid black; padding: 3px;width: 100px;">SN</th>
+      <th style="border: 1px solid black; padding: 3px;width: 100px;">Ngày xuất</th>
+      <th style="border: 1px solid black; padding: 3px;">Tình trạng</th></tr>  
+    <tr>
+      <td style="border: 1px solid black;padding: 3px; text-align: center;"class="CEN">1</td>
+      <td style="border: 1px solid black;padding: 3px;"><input style="width: 140px;" title="" required="" class="nhaptext" type="text"></td>
+      <td style="border: 1px solid black;text-align: center;"><input  style="text-align: center; width: 40px;"title="" required="" class="nhaptext" type="number" min="1"></td>
+      <td style="border: 1px solid black;"><input style="width: 100px;" title="" required="" class="nhaptext" type="text"></td>
+      <td style="border: 1px solid black;"><input style="width: 100px;" title="" required="" class="nhaptext" type="date"></td>
+      <td style="border: 1px solid black;"><input style="width: 98%;" title="" required="" class="nhaptext" type="text"></td>
+      
+    </tr>
+    <tr>
+      <td style="border: 1px solid black;padding: 3px; text-align: center;"class="CEN">2</td>
+      <td style="border: 1px solid black;padding: 3px;"><input style="width: 140px;" title="" required="" class="nhaptext" type="text"></td>
+      <td style="border: 1px solid black;text-align: center;"><input  style="text-align: center; width: 40px;"title="" required="" class="nhaptext" type="number" min="1"></td>
+      <td style="border: 1px solid black;"><input style="width: 100px;" title="" required="" class="nhaptext" type="text"></td>
+      <td style="border: 1px solid black;"><input style="width: 100px;" title="" required="" class="nhaptext" type="text"></td>
+      <td style="border: 1px solid black;"><input style="width: 98%;" title="" required="" class="nhaptext" type="text"></td>
+      
+    </tr>
 
+
+
+  </table>
+
+ <p style="font-size:12px;">Mô tả thêm: <textarea name="kqtiepnhan" style="border: hidden;width: 99%;" title="" required="" class="nhaptext" type="text" rows="2" > </textarea> 
+ </p>
+
+
+</div>
+<hr style="width: 80%; text-align: center;">
+
+  <p style="text-align: center; width: 100%; font-size: 13px;"><b>THÔNG TIN TRẢ THIẾT BỊ BẢO HÀNH/ THU HỒI MÁY MƯỢN</b> <br>
+         
+  </p>
+<div style="word-wrap: break-word;"><p style="font-size: 12px;"><span style="font-weight: bold;">Trả thiết bị bảo hành:</span>  ........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................</p></div>
+
+<div style="word-wrap: break-word;"><p style="font-size: 12px;"><span style="font-weight: bold;">Nhận lại thiết bị cho mượn:</span>  ........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................</p></div>
+
+<p style="font-size:12px; float: right; margin-top: -10px;"> Hà Nội, <input type="date"></p>
+<table width="100%" style="font-size: 12px; text-align:center;border: 1px solid black; border-collapse: collapse; ">
+  <tr>
+    <td style="border: 1px solid black; padding-bottom: 30px;">Khách hàng<br>
+    (Ký và ghi rõ họ tên)</td>
+    <td style="border: 1px solid black; padding-bottom: 30px;">Người trả máy BH<br>
+    (Ký và ghi rõ họ tên)</td>
+    <br>
+
+  </tr>
+</table>
+
+
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <script>
+            
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+
+
+        </script>
 
 </body>
 </html>
