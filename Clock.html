@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .message {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .clock-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 350px;
+            height: 150px;
+            background-color: #fff;
+            border: 5px solid #333;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .clock {
+            font-size: 3rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+        .theme-toggle {
+            margin-top: 20px;
+            width: 60px;
+            height: 34px;
+            background-color: #ccc;
+            border-radius: 34px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .theme-toggle:before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .theme-toggle .icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            pointer-events: none;
+        }
+        .theme-toggle .icon.sun {
+            left: 5px;
+            fill: #ffcc33;
+        }
+        .theme-toggle .icon.moon {
+            right: 5px;
+            fill: #666;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        .dark-mode .clock-container {
+            background-color: #444;
+            border-color: #bbb;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+        }
+        .dark-mode .clock {
+            color: #fff;
+        }
+        .dark-mode .theme-toggle {
+            background-color: #666;
+        }
+        .dark-mode .theme-toggle:before {
+            transform: translateX(26px);
+        }
+        .dark-mode .message {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <img width="150px"  src="https://ariesvn8.wordpress.com/wp-content/uploads/2024/06/posapp-logo.png" alt="Your Image" style="max-width: 100%; height: auto; margin-bottom: 10px;">
+    <div class="message">Chúc bạn một ngày tốt lành!</div>
+    <div class="clock-container">
+        <div>Bây giờ là</div>
+        <div class="clock" id="clock"></div>
+    </div>
+    <div class="theme-toggle" id="theme-toggle">
+        <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4.75a7.25 7.25 0 1 0 0 14.5 7.25 7.25 0 0 0 0-14.5zm0 13a5.75 5.75 0 1 1 0-11.5 5.75 5.75 0 0 1 0 11.5zm0-15a1 1 0 0 1 1 1V2a1 1 0 1 1-2 0v1.75a1 1 0 0 1 1-1zm0 20a1 1 0 0 1 1 1v1.75a1 1 0 0 1-2 0V22.75a1 1 0 0 1 1-1zM4.22 4.22a1 1 0 0 1 1.42 0L6.64 5.22a1 1 0 0 1-1.42 1.42L4.22 5.64a1 1 0 0 1 0-1.42zm14.14 14.14a1 1 0 0 1 1.42 0l1.36 1.36a1 1 0 0 1-1.42 1.42l-1.36-1.36a1 1 0 0 1 0-1.42zM2 12a1 1 0 0 1 1-1H2a1 1 0 0 1 0 2h1a1 1 0 0 1-1-1zm20 0a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2h-1a1 1 0 0 1-1-1zM4.22 19.78a1 1 0 0 1 0-1.42L5.64 17a1 1 0 1 1 1.42 1.42l-1.36 1.36a1 1 0 0 1-1.42 0zm14.14-14.14a1 1 0 0 1 0 1.42L17 6.64a1 1 0 1 1-1.42-1.42l1.36-1.36a1 1 0 0 1 1.42 0z"/></svg>
+        <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10c4.84 0 8.94-3.47 9.87-8.07.14-.65-.28-1.26-.94-1.33-.54-.05-1.04.27-1.18.8A8.002 8.002 0 0 1 12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8c1.89 0 3.63.66 5.04 1.76.49.39 1.22.37 1.67-.06.51-.49.45-1.3-.13-1.72A10.014 10.014 0 0 0 12 2z"/></svg>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').textContent = timeString;
+        }
+
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call to display clock immediately
+    </script>
+</body>
+</html>
