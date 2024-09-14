@@ -7,8 +7,31 @@
 </head>
 <style type="text/css">
 
+        
+        /* Điện thoại - Màn hình nhỏ */
+        @media only screen and (max-width: 600px) {
+            .popup {
+                width: 80%; /* Popup sẽ chiếm 80% chiều rộng màn hình */
+            }
+        }
+
+        /* Máy tính bảng - Màn hình trung bình */
+        @media only screen and (min-width: 601px) and (max-width: 1024px) {
+            .popup {
+                width: 60%; /* Popup sẽ chiếm 60% chiều rộng màn hình */
+            }
+        }
+
+        /* Máy tính để bàn - Màn hình lớn */
+        @media only screen and (min-width: 1025px) {
+            .popup {
+                width: 40%; /* Popup sẽ chiếm 40% chiều rộng màn hình */
+            }
+        }
+
     .textleft{
       text-align:left;
+      font-size: 28px;
     }
   .overlay {
       position: fixed;
@@ -24,7 +47,7 @@
     /* CSS cho pop-up */
     .popup {
       position: fixed;
-      width: 400px;
+      width: 90%;
       background-color: white;
       border: 2px solid #FFC125;; /* Viền màu cam đậm */
       padding: 20px;
@@ -36,6 +59,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
       border-radius: 10px; /* Bo góc pop-up */
       font-family: Arial, sans-serif; /* Font chữ chung */
+      max-width:220mm;
     }
 
     .popup button {
@@ -46,8 +70,16 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      width: 150px; /* Đảm bảo các nút có kích thước giống nhau */
+      width: 50%; /* Đảm bảo các nút có kích thước giống nhau */
       font-family: Arial, sans-serif; /* Font chữ cho nút */
+      font-size: 30px;
+      max-width: 500px;
+
+    }
+  /* Nâng rộng popup đầu tiên */
+    #popup1 {
+      width: 90%;
+      max-width:220mm;
     }
 
     .popup button:hover {
@@ -66,18 +98,15 @@
 
     /* Căn chỉnh ảnh trong pop-up */
     .popup img {
-      max-width: 100px;
+      max-width: 200px;
       margin: 10px 0;
     }
 
-    /* Nâng rộng popup đầu tiên */
-    #popup1 {
-      width: 500px;
-    }
+  
 
     /* Tiêu đề */
     .popup-title {
-      font-size: 20px;
+      font-size: 35px;
       font-weight: bold;
       margin-bottom: 10px;
     }
@@ -236,7 +265,7 @@ input{
 
   <!-- Popup thứ hai -->
   <div id="popup2" class="popup">
-    <p>Bạn đã hiểu thật chưa?</p>
+    <p style="font-size:35px; font-weight:bold;">Bạn đã hiểu thật chưa?</p>
     <button id="btnUnderstand">Hiểu thật rồi</button>
     <button id="btnNotUnderstand" style="background: #FFC125;">Xem lại</button>
   </div>
@@ -286,7 +315,7 @@ input{
     };
   </script>
 
-<article  style="width: 210mm;" > 
+<article  style="width: 210mm; " > 
    
   <table width="100%">
     <tr>
