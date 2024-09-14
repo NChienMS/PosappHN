@@ -7,6 +7,90 @@
 </head>
 <style type="text/css">
 
+    .textleft{
+      text-align:left;
+    }
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* Màu đen với độ mờ 60% */
+      display: block; /* Hiển thị lớp phủ khi tải trang */
+      z-index: 900;
+    }
+
+    /* CSS cho pop-up */
+    .popup {
+      position: fixed;
+      width: 400px;
+      background-color: white;
+      border: 2px solid #FFC125;; /* Viền màu cam đậm */
+      padding: 20px;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+      border-radius: 10px; /* Bo góc pop-up */
+      font-family: Arial, sans-serif; /* Font chữ chung */
+    }
+
+    .popup button {
+      margin: 10px;
+      padding: 10px 20px; /* Kích thước nút */
+      background-color: #00BCD4; /* Màu xanh biển nhạt cho nút */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 150px; /* Đảm bảo các nút có kích thước giống nhau */
+      font-family: Arial, sans-serif; /* Font chữ cho nút */
+    }
+
+    .popup button:hover {
+      opacity: 0.9;
+    }
+
+    /* Nút đỏ nhạt */
+    .red-button {
+      background-color: #FF8A80; /* Màu đỏ nhạt */
+    }
+
+    /* Ẩn pop-up ban đầu */
+    #popup2 {
+      display: none;
+    }
+
+    /* Căn chỉnh ảnh trong pop-up */
+    .popup img {
+      max-width: 100px;
+      margin: 10px 0;
+    }
+
+    /* Nâng rộng popup đầu tiên */
+    #popup1 {
+      width: 500px;
+    }
+
+    /* Tiêu đề */
+    .popup-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* Chữ mờ, màu xám, đặt bên dưới phải */
+    .popup-subtext {
+      font-size: 12px;
+      color: #757575; /* Màu xám nhạt */
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      opacity: 0.9; /* Độ mờ 90% */
+    }
   .checkbox-container-new {
             margin-bottom: 5px;
         }
@@ -132,6 +216,76 @@ input{
 
 </style>
 <body >
+    <!-- Lớp phủ -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- Popup đầu tiên -->
+  <div id="popup1" class="popup">
+    <div class="popup-title">Hướng dẫn sử dụng</div>
+     <p class="textleft">1. Điền đủ các trường thông tin.</p>
+     <p class="textleft">2. Ấn vào logo PosApp để in tài liệu</p>
+    <img src="https://ariesvn8.wordpress.com/wp-content/uploads/2024/06/posapp-logo.png" alt="Example Image">
+     <p class="textleft">3. Ấn vào "STT" tại mỗi bảng để thêm 1 dòng</p>
+     <p class="textleft">4. Ấn vào "Trạng thái" tại mỗi bảng để xóa 1 dòng</p>
+     <p class="textleft">5. Tích vào "Có" tại mục xuất mượn để hiển thị bảng điền xuất mượn</p>
+
+   
+    <button id="btnClosePopup1">Đã hiểu</button>
+    <div class="popup-subtext">By NchienMs - Posapp company</div>
+  </div>
+
+  <!-- Popup thứ hai -->
+  <div id="popup2" class="popup">
+    <p>Bạn đã hiểu thật chưa?</p>
+    <button id="btnUnderstand">Hiểu thật rồi</button>
+    <button id="btnNotUnderstand" style="background: #FFC125;">Xem lại</button>
+  </div>
+
+  <script>
+    // Lấy các phần tử
+    const popup1 = document.getElementById('popup1');
+    const popup2 = document.getElementById('popup2');
+    const overlay = document.getElementById('overlay');
+    const btnClosePopup1 = document.getElementById('btnClosePopup1');
+    const btnUnderstand = document.getElementById('btnUnderstand');
+    const btnNotUnderstand = document.getElementById('btnNotUnderstand');
+
+    // Hàm để kiểm tra và cập nhật trạng thái của lớp phủ
+    function updateOverlay() {
+
+        overlay.style.display = 'block'; // Hiển thị lớp phủ
+    if (popup1.style.display === 'none' && popup2.style.display === 'none') {
+      
+        overlay.style.display = 'none';  // Ẩn lớp phủ
+      }
+    }
+
+    // Sự kiện khi ấn nút "Đã hiểu" trên popup1
+    btnClosePopup1.addEventListener('click', function() {
+      popup1.style.display = 'none';   // Ẩn popup1
+      popup2.style.display = 'block';  // Hiển thị popup2
+      updateOverlay(); // Cập nhật trạng thái của lớp phủ
+    });
+
+    // Sự kiện khi ấn nút "Hiểu thật rồi" trên popup2
+    btnUnderstand.addEventListener('click', function() {
+      popup2.style.display = 'none';   // Ẩn popup2
+      updateOverlay(); // Cập nhật trạng thái của lớp phủ
+    });
+
+    // Sự kiện khi ấn nút "Xem lại" trên popup2
+    btnNotUnderstand.addEventListener('click', function() {
+      popup2.style.display = 'none';   // Ẩn popup2
+      popup1.style.display = 'block';  // Hiển thị lại popup1
+      updateOverlay(); // Cập nhật trạng thái của lớp phủ
+    });
+
+    // Hiển thị lớp phủ ngay khi tải trang
+    window.onload = function() {
+      updateOverlay(); // Đảm bảo lớp phủ hiển thị ngay khi tải trang
+    };
+  </script>
+
 <article  style="width: 210mm;" > 
    
   <table width="100%">
