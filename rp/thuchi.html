@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <link rel="shortcut icon" href="https://posapp.vn/wp-content/themes/twentysixteen-child/images/favicon.png">
+    <title>PosApp HN - Thu Chi</title>
+    <style type="text/css">
+        * {
+            margin: 0 auto;
+            font-family: "Times New Roman", Times, serif;
+        }
+        td{
+            text-align: right;
+        }
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+        }
+        .cangiua {
+            text-align: center;
+        }
+      .pointer {
+            cursor: pointer;
+        }
+        .indam {
+            font-weight: bold;
+        }
+        /* Style for input fields */
+        input, input {
+            font-family: "Times New Roman", Times, serif;
+            border: none;
+            font-size: 18px;
+        }
+      
+        textarea {
+            width: 100%;
+        }
+        /* Layout for the new form section */
+        .form-section {
+            background-color: white;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+        }
+        .form-group label {
+            min-width: 100px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <article style="width: 210mm;  background: white; ">
+        <div style="display: flex; width: 100%;">
+            <div class="" style="width: 50%;line-height: 1.6;">
+                Cty CP Công Nghệ PosApp - Chi nhánh Hà Nội <br>
+                174 Đường Láng, Đống Đa, Hà Nội
+            </div>
+            <div class=" cangiua" style="width: 50%;">
+                <p><b>Mẫu số C41-BB</b> <br>
+                (Ban hành theo TT số 107/2017/TT-BTC <br>
+                Ngày 10/10/2017 của BTC)</p>
+            </div>
+        </div>
+
+        <div class="cangiua" style="display: flex; width: 100%; margin-top: 20px;">
+            <div style="width: 70%; align-items: center; background: white; display: flex;">
+                <span ><a class="indam pointer" onclick="window.print()" style="color: black; font-size: 20px;">PHIẾU CHI </a><br> 
+                    <span style="font-size:16px">Ngày 
+                        <input style="width: 20px;" type="text" placeholder="...">
+                        Tháng 
+                        <input style="width: 20px;" type="text" placeholder="...">
+                        Năm 2024
+                    </span>
+                </span>
+            </div>
+         
+            <table style="padding-right: 20px;">
+                <tr>
+                    <td style="text-align: right;">Quyển số:</td>
+                    <td style="text-align:left; padding-left: 5px;">01</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;">Số: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;">Nợ: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;">Có: </td>
+                    <td style="text-align:left; padding-left: 5px;">Quỹ TM HN</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- New form section for user input -->
+        <div class="form-section" style="line-height: 1.6;">
+            <div class="">
+                <label for="fullname">Họ và tên:</label>
+                <input type="text" id="" placeholder="Nhập họ và tên">
+            </div>
+
+            <div class="">
+                <label for="">Địa chỉ: </label>
+                <input style="width: 80%;" type="text" id="address" placeholder="174 Đường láng, Đống Đa, Hà Nội">
+            </div>
+
+            <div class="">
+                <label for="reason">Lý do chi:</label>
+                <input type="text" id="reason" placeholder="Nhập lý do chi">
+            </div>
+
+            <div class="">
+                <label for="amount">Số tiền:</label>
+                  <input style="text-align: right; width: 200px" type="text" placeholder="Nhập số tiền" id="numberInput" oninput="formatInput(); updateWords();" />
+                  <span> đ</span>
+            </div>
+
+            <div style="text-align: left;">
+                <label style="width: 120px;" >Viết bằng chữ:</label>
+                
+               <span id="wordsOutput"></span>
+            </div>
+   
+        </div>
+        <table style="width: 100%;text-align: center; font-size: 15px; margin:70px 0 0 0">
+            <tr>
+                <th style="text-align:center;">Giám đốc</th>
+                <th style="text-align:center;">Kế toán</th>
+                <th style="text-align:center;">Người lập</th>
+                <th style="text-align:center;">Thủ quỹ</th>
+                <th style="text-align:center;">Người nhận</th>
+            </tr>
+            <tr>
+                <td style="text-align:center;">(Ký, ghi rõ họ tên)</td>
+                <td style="text-align:center;">(Ký, ghi rõ họ tên)</td>
+                <td style="text-align:center;">(Ký, ghi rõ họ tên)</td>
+                <td style="text-align:center;">(Ký, ghi rõ họ tên)</td>
+                <td style="text-align:center;">(Ký, ghi rõ họ tên)</td>
+            </tr>
+        </table>
+    </article>
+
+    <script>
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function convertNumberToWords(num) {
+            const units = ["", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"];
+            const teens = ["mười", "mười một", "mười hai", "mười ba", "mười bốn", "mười lăm", "mười sáu", "mười bảy", "mười tám", "mười chín"];
+            const tens = ["", "", "hai mươi", "ba mươi", "bốn mươi", "năm mươi", "sáu mươi", "bảy mươi", "tám mươi", "chín mươi"];
+            const thousands = ["", "nghìn", "triệu", "tỷ"];
+
+            if (num === 0) return "Không đồng";
+
+            let words = "";
+            let i = 0;
+
+            while (num > 0) {
+                let chunk = num % 1000;
+                if (chunk) {
+                    let chunkWords = "";
+                    if (chunk > 99) {
+                        chunkWords += units[Math.floor(chunk / 100)] + " trăm ";
+                        chunk %= 100;
+                    }
+                    if (chunk > 19) {
+                        chunkWords += tens[Math.floor(chunk / 10)] + " ";
+                        chunk %= 10;
+                    }
+                    if (chunk > 0) {
+                        chunkWords += (chunk < 10 ? units[chunk] : teens[chunk - 10]) + " ";
+                    }
+                    words = chunkWords + thousands[i] + " " + words;
+                }
+                num = Math.floor(num / 1000);
+                i++;
+            }
+
+            words = words.trim();
+            words = words.charAt(0).toUpperCase() + words.slice(1);
+            return words + " đồng ./";
+        }
+
+        function updateWords() {
+            const numberInput = document.getElementById("numberInput").value.replace(/,/g, '');
+            const number = parseInt(numberInput, 10);
+            if (!isNaN(number)) {
+                document.getElementById("wordsOutput").innerText = convertNumberToWords(number);
+                document.getElementById("numberInput").value = formatNumber(number) ;
+            } else {
+                document.getElementById("wordsOutput").innerText = "Vui lòng nhập số hợp lệ.";
+            }
+        }
+
+        function formatInput() {
+            const numberInput = document.getElementById("numberInput");
+            numberInput.value = formatNumber(numberInput.value.replace(/,/g, ''));
+        }
+    </script>
+</body>
+</html>
