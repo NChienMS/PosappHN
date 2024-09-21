@@ -33,7 +33,13 @@
         }
       
         textarea {
-            width: 100%;
+            width: 90%;
+            /* Đặt số dòng mặc định là 1 */
+            min-height: 1.3em; /* Khoảng cao tương đương với 1 dòng văn bản */
+            line-height: 1.3em; /* Đảm bảo dòng có khoảng cách hợp lý */
+            white-space: pre-wrap; /* Đảm bảo xuống dòng khi vượt quá */
+            word-wrap: break-word; /* Đảm bảo từ ngắt khi cần thiết */
+            font-size: 16px;
         }
         /* Layout for the new form section */
         .form-section {
@@ -107,12 +113,13 @@
                 <input style="width: 80%;" type="text" id="address" placeholder="174 Đường láng, Đống Đa, Hà Nội">
             </div>
 
-            <div class="">
-                <label for="reason">Lý do chi:</label>
-                <input style="width: 90%;" type="text" id="reason" placeholder="Nhập lý do chi">
+            <div class=" ">
+                <div style=" position:absolute;">Lý do chi:</div>
+                <span style="color: ; width: 65px; height: 1.3em;"> </span>
+                <textarea style="margin-left: 68px;border: none;resize: none;" id="ly-do-chi" name="ly-do-chi" placeholder="Nhập lý do chi..." required rows="1"></textarea>
             </div>
 
-            <div class="">
+            <div class="" style="margin-top: -10px;">
                 <label for="amount">Số tiền:</label>
                   <input style="text-align: right; width: 200px" type="text" placeholder="Nhập số tiền" id="numberInput" oninput="formatInput(); updateWords();" />
                   <span> đ</span>
@@ -206,6 +213,28 @@
             const numberInput = document.getElementById("numberInput");
             numberInput.value = formatNumber(numberInput.value.replace(/,/g, ''));
         }
+
+
+            // Hàm tự động điều chỉnh chiều cao của textarea
+        function autoResizeTextarea(textarea) {
+            // Đặt lại chiều cao để tính toán chiều cao mới
+            textarea.style.height = 'auto';
+            // Thiết lập chiều cao mới dựa trên chiều cao cuộn
+            textarea.style.height = (textarea.scrollHeight) + 'px';
+        }
+
+        // Lấy phần tử textarea
+        const textarea = document.getElementById('ly-do-chi');
+
+        // Gọi hàm autoResizeTextarea khi trang được tải
+        window.addEventListener('load', () => {
+            autoResizeTextarea(textarea);
+        });
+
+        // Thêm sự kiện input để tự động điều chỉnh khi người dùng nhập
+        textarea.addEventListener('input', function() {
+            autoResizeTextarea(this);
+        });
     </script>
 </body>
 </html>
