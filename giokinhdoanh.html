@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Biểu đồ mô phỏng báo cáo theo giờ kinh doanh</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+    .timeline {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 60px;
+      background: linear-gradient(to right, #e0e0e0, #f8f8f8);
+      border: 1px solid #ccc;
+      margin: 40px 0;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #333;
+      transform: translateY(-50%);
+    }
+    .marker {
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 60px;
+      background: #999;
+    }
+    .marker-label {
+      position: absolute;
+      top: 65px;
+      transform: translateX(-50%);
+      font-size: 12px;
+    }
+    .draggable {
+      position: absolute;
+      top: 5px;
+      height: 50px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: grab;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 6px;
+      user-select: none;
+    }
+    .time-label {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Biểu đồ mô phỏng báo cáo theo giờ kinh doanh</h2>
+<h3>Vui lòng kéo khối doanh thu theo thời gian theo mốc tính doanh thu của cửa hàng</h3>
+
+<div class="timeline" id="timeline">
+  <div class="arrow"></div>
+  <!-- Các mốc 24h -->
+  <div class="marker" style="left: 0%;"><div class="marker-label">00:00 Ngày 01/05 </div></div>
+  <div class="marker" style="left: 33.33%;"><div class="marker-label">00:00 Ngày 02/05</div></div>
+  <div class="marker" style="left: 66.66%;"><div class="marker-label">00:00 Ngày 03/05</div></div>
+  <div class="marker" style="left: 100%;"><div class="marker-label">00:00 Ngày 04/05</div></div>
+
+  <div class="draggable" id="draggable">24 giờ</div>
+</div>
+<div style="height: 30px;"></div>
+
+<div class="time-label" id="timeLabel" >Từ: 00:00 (Ngày 1) đến 00:00 (Ngày 2)</div>
+
+<script>
+  const draggable = document.getElementById('draggable');
+  const timeline = document.getElementById('timeline');
+  const timeLabel = document.getElementById('timeLabel');
+
+  const totalMinutes = 3 * 24 * 60; // 3 ngày
+  const stepMinutes = 30;
+  const blockMinutes = 24 * 60;
+
+  const timelineWidth = timeline.offsetWidth;
+  const stepPx = timelineWidth * stepMinutes / totalMinutes;
+  const blockWidth = timelineWidth * blockMinutes / totalMinutes;
+
+  draggable.style.width = `${blockWidth}px`;
+
+  let isDragging = false;
+  let offsetX = 0;
+
+  const updateTime = (leftPx) => {
+    const startMinutes = Math.round((leftPx / timelineWidth) * totalMinutes);
+    const endMinutes = startMinutes + blockMinutes;
+
+ 
+      const toTimeStr = mins => {
+      const day = Math.floor(mins / 1440) + 1;
+      const h = String(Math.floor((mins % 1440) / 60)).padStart(2, '0');
+      const m = String(mins % 60).padStart(2, '0');
+     
+      return `${h}:${m} (Ngày 0${day}/05)`;
+    }
+
+    timeLabel.innerHTML = `Giờ kinh doanh từ: <span style="color: red;"> ${toTimeStr(startMinutes)} </span> đến <span style="color: red;"> ${toTimeStr(endMinutes)} </span> <br>
+    Tức là báo cáo sẽ ghi nhận doanh thu mọi đơn hàng từ ${toTimeStr(startMinutes)} đến ${toTimeStr(endMinutes)}`;
+  };
+
+  draggable.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    offsetX = e.clientX - draggable.offsetLeft;
+    draggable.style.cursor = 'grabbing';
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    draggable.style.cursor = 'grab';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    let left = e.clientX - timeline.getBoundingClientRect().left - offsetX;
+
+    // Làm tròn theo bước 30 phút
+    left = Math.round(left / stepPx) * stepPx;
+    left = Math.max(0, Math.min(left, timelineWidth - blockWidth));
+    draggable.style.left = `${left}px`;
+    updateTime(left);
+  });
+
+  // Khởi tạo
+  draggable.style.left = '0px';
+  updateTime(0);
+</script>
+
+</body>
+</html>
