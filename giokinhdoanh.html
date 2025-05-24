@@ -2,142 +2,198 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <title>Biểu đồ mô phỏng báo cáo theo giờ kinh doanh</title>
+  <title>Mô phỏng Giờ Kinh Doanh - Doanh số & Doanh thu</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 40px;
-    }
+    body { font-family: Arial, sans-serif; padding: 40px; }
     .timeline {
       position: relative;
       width: 100%;
       max-width: 900px;
-      height: 60px;
-      background: linear-gradient(to right, #e0e0e0, #f8f8f8);
+      height: 150px;
+      background: #f1f1f1;
       border: 1px solid #ccc;
-      margin: 40px 0;
+      margin-bottom: 50px;
     }
     .arrow {
       position: absolute;
-      top: 50%;
-      left: 0;
-      width: 100%;
-      height: 2px;
+      top: 50%; left: 0;
+      width: 100%; height: 2px;
       background: #333;
       transform: translateY(-50%);
     }
     .marker {
       position: absolute;
       top: 0;
-      width: 2px;
-      height: 60px;
+      width: 2px; height: 150px;
       background: #999;
     }
     .marker-label {
       position: absolute;
-      top: 65px;
+      top: 155px;
       transform: translateX(-50%);
       font-size: 12px;
     }
     .draggable {
       position: absolute;
-      top: 5px;
-      height: 50px;
-      background-color: #4CAF50;
-      color: white;
+      top: 0;
+      height: 150px;
+      background-color: rgba(255, 215, 0, 0.5);
+      color: black;
       cursor: grab;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       font-weight: bold;
-      border-radius: 6px;
+      border-radius: 0;
       user-select: none;
+      z-index: 1;
     }
-    .time-label {
-      margin-top: 20px;
+    .order-line {
+      position: absolute;
+      height: 8px;
+      border-radius: 5px;
+      z-index: 2;
+    }
+    .order-label {
+      position: absolute;
+      font-size: 11px;
+      text-align: center;
+      white-space: nowrap;
       font-weight: bold;
+      z-index: 2;
     }
+    .time-label { margin: 10px 0; font-weight: bold; }
+    .example { margin-top: 20px; background: #fafafa; padding: 10px; border: 1px solid #ddd; }
   </style>
 </head>
 <body>
 
-<h2>Biểu đồ mô phỏng báo cáo theo giờ kinh doanh</h2>
-<h3>Vui lòng kéo khối doanh thu theo thời gian theo mốc tính doanh thu của cửa hàng</h3>
+<h2>Mô phỏng giờ kinh doanh và tính doanh số - doanh thu</h2>
+<p>Kéo khối màu vàng để thay đổi khung giờ kinh doanh (24 giờ).</p>
 
 <div class="timeline" id="timeline">
   <div class="arrow"></div>
-  <!-- Các mốc 24h -->
-  <div class="marker" style="left: 0%;"><div class="marker-label">00:00 Ngày 01/05 </div></div>
-  <div class="marker" style="left: 33.33%;"><div class="marker-label">00:00 Ngày 02/05</div></div>
-  <div class="marker" style="left: 66.66%;"><div class="marker-label">00:00 Ngày 03/05</div></div>
-  <div class="marker" style="left: 100%;"><div class="marker-label">00:00 Ngày 04/05</div></div>
+  <div class="marker" style="left: 0%;"><div class="marker-label">00:00 01/05</div></div>
+  <div class="marker" style="left: 33.33%;"><div class="marker-label">00:00 02/05</div></div>
+  <div class="marker" style="left: 66.66%;"><div class="marker-label">00:00 03/05</div></div>
+  <div class="marker" style="left: 100%;"><div class="marker-label">00:00 04/05</div></div>
 
-  <div class="draggable" id="draggable">24 giờ</div>
+  <div class="draggable" id="draggable">Giờ KD</div>
 </div>
-<div style="height: 30px;"></div>
 
-<div class="time-label" id="timeLabel" >Từ: 00:00 (Ngày 1) đến 00:00 (Ngày 2)</div>
+<div class="time-label" id="timeLabel"></div>
+<div class="time-label" id="doanhSo"></div>
+<div class="time-label" id="doanhThu"></div>
+
+<div class="example">
+  <b>Ví dụ đơn hàng:</b>
+  <ul>
+    <li>ĐH01: Tạo và thanh toán trong ngày - 50.000đ (06:00 - 07:00 ngày 02/05)</li>
+    <li>ĐH02: Tạo và thanh toán - 100.000đ (09:00 - 17:00 ngày 02/05)</li>
+    <li>ĐH03: Tạo hôm nay thanh toán ngày hôm sau - 20.000đ (10:00 ngày 02/05 - 09:00 ngày 03/05)</li>
+  </ul>
+</div>
 
 <script>
-  const draggable = document.getElementById('draggable');
-  const timeline = document.getElementById('timeline');
-  const timeLabel = document.getElementById('timeLabel');
+const draggable = document.getElementById('draggable');
+const timeline = document.getElementById('timeline');
+const timeLabel = document.getElementById('timeLabel');
+const doanhSo = document.getElementById('doanhSo');
+const doanhThu = document.getElementById('doanhThu');
 
-  const totalMinutes = 3 * 24 * 60; // 3 ngày
-  const stepMinutes = 30;
-  const blockMinutes = 24 * 60;
+const totalMinutes = 3 * 24 * 60;
+const blockMinutes = 24 * 60;
 
-  const timelineWidth = timeline.offsetWidth;
-  const stepPx = timelineWidth * stepMinutes / totalMinutes;
-  const blockWidth = timelineWidth * blockMinutes / totalMinutes;
+const timelineWidth = timeline.offsetWidth;
+const pxPerMinute = timelineWidth / totalMinutes;
+const blockWidth = pxPerMinute * blockMinutes;
 
-  draggable.style.width = `${blockWidth}px`;
+const orders = [
+  { id: 'ĐH01: 50k', created: toMin('2024-05-02 06:00'), paid: toMin('2024-05-02 07:00'), amount: 50000, color: '#E91E63', top: 40 },
+  { id: 'ĐH02: 100k', created: toMin('2024-05-02 09:00'), paid: toMin('2024-05-02 17:00'), amount: 100000, color: '#3F51B5', top: 60 },
+  { id: 'ĐH03: 20k', created: toMin('2024-05-02 10:00'), paid: toMin('2024-05-03 09:00'), amount: 20000, color: '#4CAF50', top: 100 },
+];
 
-  let isDragging = false;
-  let offsetX = 0;
+function toMin(str) {
+  const dt = new Date(str);
+  const start = new Date('2024-05-01 00:00');
+  return (dt - start) / (1000 * 60);
+}
 
-  const updateTime = (leftPx) => {
-    const startMinutes = Math.round((leftPx / timelineWidth) * totalMinutes);
-    const endMinutes = startMinutes + blockMinutes;
+function drawOrders() {
+  for (const order of orders) {
+    const left = order.created * pxPerMinute;
+    const width = (order.paid - order.created) * pxPerMinute;
 
- 
-      const toTimeStr = mins => {
-      const day = Math.floor(mins / 1440) + 1;
-      const h = String(Math.floor((mins % 1440) / 60)).padStart(2, '0');
-      const m = String(mins % 60).padStart(2, '0');
-     
-      return `${h}:${m} (Ngày 0${day}/05)`;
-    }
+    const line = document.createElement('div');
+    line.className = 'order-line';
+    line.style.left = `${left}px`;
+    line.style.top = `${order.top}px`;
+    line.style.width = `${width}px`;
+    line.style.background = order.color;
+    timeline.appendChild(line);
 
-    timeLabel.innerHTML = `Giờ kinh doanh từ: <span style="color: red;"> ${toTimeStr(startMinutes)} </span> đến <span style="color: red;"> ${toTimeStr(endMinutes)} </span> <br>
-    Tức là báo cáo sẽ ghi nhận doanh thu mọi đơn hàng từ ${toTimeStr(startMinutes)} đến ${toTimeStr(endMinutes)}`;
+    const label = document.createElement('div');
+    label.className = 'order-label';
+    label.style.left = `${left}px`;
+    label.style.top = `${order.top - 15}px`;
+    label.style.color = order.color;
+    label.innerText = `${order.id}`;
+    timeline.appendChild(label);
+  }
+}
+
+draggable.style.width = `${blockWidth}px`;
+
+let isDragging = false;
+let offsetX = 0;
+
+function updateTime(leftPx) {
+  const startMinutes = Math.round(leftPx / pxPerMinute);
+  const endMinutes = startMinutes + blockMinutes;
+
+  const toTimeStr = (mins) => {
+    const day = Math.floor(mins / 1440) + 1;
+    const h = String(Math.floor((mins % 1440) / 60)).padStart(2, '0');
+    const m = String(mins % 60).padStart(2, '0');
+    return `${h}:${m} (Ngày 0${day}/05)`;
   };
 
-  draggable.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    offsetX = e.clientX - draggable.offsetLeft;
-    draggable.style.cursor = 'grabbing';
-  });
+  let ds = 0, dt = 0;
+  for (let o of orders) {
+    if (o.created >= startMinutes && o.created < endMinutes) ds += o.amount;
+    if (o.paid >= startMinutes && o.paid < endMinutes) dt += o.amount;
+  }
 
-  document.addEventListener('mouseup', () => {
-    isDragging = false;
-    draggable.style.cursor = 'grab';
-  });
+  timeLabel.innerHTML = `Giờ kinh doanh từ: <span style="color: red;">${toTimeStr(startMinutes)}</span> đến <span style="color: red;">${toTimeStr(endMinutes)}</span>`;
+  doanhSo.innerHTML = `Doanh số: <b style="color:blue">${ds.toLocaleString()} đ</b>`;
+  doanhThu.innerHTML = `Doanh thu: <b style="color:green">${dt.toLocaleString()} đ</b>`;
+}
 
-  document.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    let left = e.clientX - timeline.getBoundingClientRect().left - offsetX;
+draggable.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  offsetX = e.clientX - draggable.offsetLeft;
+  draggable.style.cursor = 'grabbing';
+});
 
-    // Làm tròn theo bước 30 phút
-    left = Math.round(left / stepPx) * stepPx;
-    left = Math.max(0, Math.min(left, timelineWidth - blockWidth));
-    draggable.style.left = `${left}px`;
-    updateTime(left);
-  });
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+  draggable.style.cursor = 'grab';
+});
 
-  // Khởi tạo
-  draggable.style.left = '0px';
-  updateTime(0);
+document.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  let left = e.clientX - timeline.getBoundingClientRect().left - offsetX;
+  left = Math.round(left);
+  left = Math.max(0, Math.min(left, timelineWidth - blockWidth));
+  draggable.style.left = `${left}px`;
+  updateTime(left);
+});
+
+const initLeft = timelineWidth * toMin('2024-05-02 08:00') / totalMinutes;
+draggable.style.left = `${initLeft}px`;
+updateTime(initLeft);
+drawOrders();
 </script>
 
 </body>
