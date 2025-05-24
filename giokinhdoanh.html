@@ -4,6 +4,57 @@
   <meta charset="UTF-8" />
   <title>Mô phỏng Giờ Kinh Doanh - Doanh số & Doanh thu</title>
   <style>
+        h1 {
+      color: #2a7a2a;
+      margin-bottom: 15px;
+    }
+    h2 {
+      color: #b58900;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+    h3 {
+      margin-top: 25px;
+      margin-bottom: 10px;
+      color: #2a7a2a;
+    }
+    p {
+      margin: 12px 0;
+    }
+    ul {
+      margin: 10px 0 15px 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 15px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #f0db4f;
+      color: #333;
+      font-weight: bold;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f7f7f7;
+    }
+    .highlight {
+      color: #2a7a2a;
+      font-weight: bold;
+    }
+    .note {
+      background: #fffbea;
+      border-left: 6px solid #f0db4f;
+      padding: 12px 15px;
+      margin-top: 30px;
+      font-style: italic;
+      color: #555;
+    }
     body { font-family: Arial, sans-serif; padding: 40px; }
     .timeline {
       position: relative;
@@ -68,8 +119,14 @@
 </head>
 <body>
 
-<h2>Mô phỏng giờ kinh doanh và tính doanh số - doanh thu</h2>
 <p>Kéo khối màu vàng để thay đổi khung giờ kinh doanh (24 giờ).</p>
+  <h2>🕒 Giờ kinh doanh là gì?</h2>
+  <p><strong>Giờ kinh doanh</strong> là thời điểm bắt đầu một kỳ bán hàng kéo dài 24 tiếng, được thiết lập tùy theo nhu cầu vận hành của cửa hàng.</p>
+  <p>Ví dụ:</p>
+  <ul>
+    <li>Nếu giờ kinh doanh là <span class="highlight">00:00</span>, thì kỳ bán hàng diễn ra từ <strong>00:00 đến 23:59</strong> mỗi ngày.</li>
+    <li>Nếu giờ kinh doanh là <span class="highlight">08:00</span>, thì kỳ bán hàng diễn ra từ <strong>08:00 hôm nay đến 07:59 ngày hôm sau</strong>.</li>
+  </ul>
 
 <div class="timeline" id="timeline">
   <div class="arrow"></div>
@@ -84,6 +141,31 @@
 <div class="time-label" id="timeLabel"></div>
 <div class="time-label" id="doanhSo"></div>
 <div class="time-label" id="doanhThu"></div>
+<h2>💰 Doanh số và Doanh thu</h2>
+  <table style="">
+    <thead>
+      <tr>
+        <th>Thuật ngữ</th>
+        <th>Định nghĩa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Doanh số</strong></td>
+        <td>Tổng giá trị của tất cả các đơn hàng được <strong>tạo</strong> trong khoảng thời gian giờ kinh doanh.</td>
+      </tr>
+      <tr>
+        <td><strong>Doanh thu</strong></td>
+        <td>Tổng giá trị của tất cả các đơn hàng được <strong>thanh toán</strong> trong khoảng thời gian giờ kinh doanh.</td>
+      </tr>
+    </tbody>
+  </table>
+   <div class="note" style="width: 800px;">
+    ✅ <strong>Lưu ý:</strong> Một đơn hàng có thể được tạo hôm nay, nhưng thanh toán vào ngày hôm sau. Doanh số sẽ được ghi nhận hôm nay, còn doanh thu sẽ được ghi nhận vào hôm sau – tùy theo thời gian thanh toán có nằm trong kỳ bán hàng đó hay không.
+  </div>
+
+  <h2>📘 Ví dụ minh họa</h2>
+  <p>Giả sử bạn cài đặt giờ kinh doanh là <strong>08:00 sáng</strong> mỗi ngày:</p>
 
 <div class="example">
   <b>Ví dụ đơn hàng:</b>
@@ -93,6 +175,47 @@
     <li>ĐH03: Tạo hôm nay thanh toán ngày hôm sau - 20.000đ (10:00 ngày 02/05 - 09:00 ngày 03/05)</li>
   </ul>
 </div>
+<h2>📘 Ví dụ minh họa</h2>
+  <p>Giả sử bạn cài đặt giờ kinh doanh là <strong>00:00 sáng</strong> mỗi ngày:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Đơn hàng</th>
+        <th>Tạo lúc</th>
+        <th>Thanh toán lúc</th>
+        <th>Giá trị</th>
+        <th>Ghi nhận Doanh số</th>
+        <th>Ghi nhận Doanh thu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ĐH01</td>
+        <td>08:30 (hôm nay)</td>
+        <td>08:45 (hôm nay)</td>
+        <td>50.000đ</td>
+        <td>✅ Hôm nay</td>
+        <td>✅ Hôm nay</td>
+      </tr>
+      <tr>
+        <td>ĐH02</td>
+        <td>09:00 (hôm nay)</td>
+        <td>17:00 (hôm nay)</td>
+        <td>100.000đ</td>
+        <td>✅ Hôm nay</td>
+        <td>✅ Hôm nay</td>
+      </tr>
+      <tr>
+        <td>ĐH03</td>
+        <td>10:00 (hôm nay)</td>
+        <td>09:00 (ngày mai)</td>
+        <td>20.000đ</td>
+        <td>✅ Hôm nay</td>
+        <td>✅ Ngày mai</td>
+      </tr>
+    </tbody>
+  </table>
 
 <script>
 const draggable = document.getElementById('draggable');
