@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Danh sách mẫu in</title>
+  <title>Danh sách mẫu in 1</title>
   <style>
 body {
   margin: 0;
@@ -180,10 +180,33 @@ function loadTemplate(name) {
 }
 
 function copyCode() {
-  const code = document.getElementById("code").textContent;
-  navigator.clipboard.writeText(code).then(() => {
-    alert("Đã sao chép!");
-  });
+  const codeContainer = document.getElementById("code");
+  const code = codeContainer.textContent;
+
+  if (!navigator.clipboard) {
+    // Fallback cho trình duyệt không hỗ trợ Clipboard API
+    try {
+      const textArea = document.createElement("textarea");
+      textArea.value = code;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      alert("Đã sao chép!");
+    } catch (err) {
+      alert("Lỗi khi sao chép: " + err.message);
+    }
+    return;
+  }
+
+  // Sử dụng Clipboard API
+  navigator.clipboard.writeText(code)
+    .then(() => {
+      alert("Đã sao chép!");
+    })
+    .catch(err => {
+      alert("Lỗi khi sao chép: " + err.message);
+    });
 }
   </script>
 </body>
