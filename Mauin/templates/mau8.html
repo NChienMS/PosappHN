@@ -153,15 +153,15 @@
 </tr>
 </tbody>
 </table>
-<table style="margin-top: 5px; width: 100%; font-size: 14px;">
+<table style="margin-top: 5px; width: 100%;">
 <tbody>
-<tr>
-<td style="text-align: center;">
-<div><img class="qr-code img-thumbnail img-responsive" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&amp;data={{QR_CODE_NGAN_HANG}}&amp;qzone=3" width="120px"> {{BANK_ACCOUNT_NAME}}<br>{{BANK_ACCOUNT_NO}}<br>{{BANK_NAME}}</div>
+<tr data-type="info_account_bank">
+<td style="font-size: 11px; text-align: center;">
+<div style="display: block;"><img class="qr-code img-thumbnail img-responsive" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&amp;data={{QR_CODE_NGAN_HANG}}&amp;qzone=3"><span style="margin-bottom: 2px; display: block;">{{BANK_ACCOUNT_NAME}}</span><span style="margin-bottom: 2px; display: block;">{{BANK_ACCOUNT_NO}}</span><span style="margin-bottom: 15px; display: block; width: 100%;">{{BANK_NAME}}</span></div>
 </td>
 </tr>
 <tr>
-<td style="text-align: center; font-size: 11px; font-style: italic;">PosApp {{APP_VERSION}}</td>
+<td class="mceNonEditable" style="font-size: 11px; font-style: italic; text-align: center; width: 100%;" colspan="2">PosApp {{APP_VERSION}}</td>
 </tr>
 </tbody>
 </table>
