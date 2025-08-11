@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>In QR Tingbox S</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="https://ariesvn8.wordpress.com/wp-content/uploads/2025/07/np-logo.png">
 <style>
 body {
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
@@ -19,13 +20,16 @@ body {
   padding: 12px;
   background: #fff;
 }
+.textsl{
+  color: black;
+}
 .controls {
   margin-top: 8px;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
-button {
+button, select {
   cursor: pointer;
   padding: 6px 14px;
   border: none;
@@ -35,19 +39,35 @@ button {
   font-size: 14px;
   transition: 0.2s;
 }
-button:hover {
+button:hover, select:hover {
   opacity: 0.9;
   transform: translateY(-1px);
 }
-@page { size: A4 landscape; margin: 10mm; }
-.a4-sheet { display: none; }
+select {
+  background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
+}
+.a4-sheet, .sheet-57, .sheet-80 {
+  display: none;
+  background: white;
+}
 .a4-sheet.printable {
   display: block;
   width: 297mm;
   height: 210mm;
-  box-sizing: border-box;
   padding: 10mm;
-  background: white;
+  box-sizing: border-box;
+}
+.sheet-57.printable {
+  display: block;
+  width: 57mm;
+  height: 57mm;
+  padding: 0;
+}
+.sheet-80.printable {
+  display: block;
+  width: 80mm;
+  height: 80mm;
+  padding: 0;
 }
 .qr-grid {
   display: grid;
@@ -57,16 +77,25 @@ button:hover {
   justify-content: center;
   align-content: start;
 }
-.qr-grid .cell {
+.cell {
   width: 6cm;
   height: 6cm;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
-.qr-grid img { width: 100%; height: 100%; object-fit: contain; display: block; }
-
+.cell img { width: 100%; height: 100%; object-fit: contain; }
+.qr-single {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.qr-single img {
+  display: block;
+  object-fit: contain;
+}
 .preview-wrapper {
   flex: 1;
   display: flex;
@@ -85,11 +114,9 @@ button:hover {
   justify-content: center;
   align-items: flex-start;
 }
-.preview-a4 .a4-sheet {
+.preview-a4 .printable {
   transform-origin: top center;
 }
-
-/* Popup crop fullscreen */
 .cropper-popup {
   position: fixed;
   top: 0; left: 0;
@@ -127,15 +154,21 @@ button:hover {
 }
 @media print {
   body * { visibility: hidden; }
-  .a4-sheet.printable, .a4-sheet.printable * { visibility: visible; }
-  .a4-sheet.printable { position: fixed; left: 0; top: 0; }
+  .printable, .printable * { visibility: visible; }
+  .printable { position: fixed; left: 0; top: 0; }
 }
 </style>
 </head>
 <body>
 <div class="uploader">
-  <img src="https://ariesvn8.wordpress.com/wp-content/uploads/2025/07/np-logo.png" width="150px" alt="Logo" class="uploader-logo">
+  <img src="https://ariesvn8.wordpress.com/wp-content/uploads/2025/07/np-logo.png" width="150px" alt="Logo">
   <h3>In QR Tingbox S</h3>
+    <select style="margin: 0 0 5px 0;" id="print-type">
+      <option class="textsl" value="a4">In A4</option>
+      <option class="textsl" value="57">In khổ 57mm</option>
+      <option class="textsl" value="80">In khổ 80mm</option>
+    </select>
+<br>
   <input id="file" type="file" accept="image/*"><br>
   <div class="controls">
     <button id="print-btn" disabled>In</button>
@@ -147,13 +180,12 @@ button:hover {
 
 <div class="preview-wrapper">
   <div class="preview-a4">
-    <div id="a4-preview" class="a4-sheet"></div>
+    <div id="a4-preview"></div>
   </div>
 </div>
 
 <canvas id="composeCanvas" style="display:none"></canvas>
 
-<!-- Popup Crop -->
 <div id="cropper-popup" class="cropper-popup">
   <img id="cropper-image" alt="crop source">
   <div class="cropper-buttons">
@@ -169,9 +201,9 @@ const printBtn = document.getElementById('print-btn');
 const downloadBtn = document.getElementById('download-png');
 const shareBtn = document.getElementById('share-btn');
 const resetBtn = document.getElementById('reset-btn');
+const printType = document.getElementById('print-type');
 const a4Preview = document.getElementById('a4-preview');
 const composeCanvas = document.getElementById('composeCanvas');
-
 const popup = document.getElementById('cropper-popup');
 const cropperImage = document.getElementById('cropper-image');
 const confirmCropBtn = document.getElementById('confirm-crop');
@@ -181,8 +213,8 @@ let cropper = null;
 let uploadedImageURL = '';
 let lastCroppedImage = null;
 
-fileInput.addEventListener('change', (e)=>{
-  const file = e.target.files && e.target.files[0];
+fileInput.addEventListener('change', e => {
+  const file = e.target.files[0];
   if (!file) return;
   uploadedImageURL = URL.createObjectURL(file);
   openCrop();
@@ -200,17 +232,7 @@ function openCrop(){
       cropBoxMovable: false,
       cropBoxResizable: false,
       autoCropArea: 1,
-      background: false,
-      ready() {
-        const size = Math.min(window.innerWidth, window.innerHeight) * 0.9;
-        cropper.setCropBoxData({
-          left: (window.innerWidth - size) / 2,
-          top: (window.innerHeight - size) / 2,
-          width: size,
-          height: size
-        });
-        cropper.zoomTo(1);
-      }
+      background: false
     });
   }, 50);
 }
@@ -222,79 +244,82 @@ cancelCropBtn.addEventListener('click', ()=>{
 
 confirmCropBtn.addEventListener('click', ()=>{
   if (!cropper) return;
-  const canvas = cropper.getCroppedCanvas({
-    width: 1200, height: 1200, imageSmoothingQuality: 'high'
-  });
+  const canvas = cropper.getCroppedCanvas({ width: 1200, height: 1200, imageSmoothingQuality: 'high' });
   lastCroppedImage = canvas.toDataURL('image/png');
   popup.classList.remove('active');
   cropper.destroy();
-  buildA4Preview(lastCroppedImage);
-  prepareA4PNG(lastCroppedImage);
+  buildPreview(lastCroppedImage);
+  preparePNG(lastCroppedImage);
   printBtn.disabled = false;
   downloadBtn.disabled = false;
   shareBtn.disabled = false;
 });
 
-function buildA4Preview(dataURL){
+function buildPreview(dataURL){
   a4Preview.innerHTML = '';
-  a4Preview.classList.add('printable');
-  const grid = document.createElement('div');
-  grid.className = 'qr-grid';
-  for(let i=0;i<12;i++){
-    const cell = document.createElement('div');
-    cell.className = 'cell';
+  const type = printType.value;
+  let sheet;
+
+  if(type === 'a4'){
+    sheet = document.createElement('div');
+    sheet.className = 'a4-sheet printable';
+    const grid = document.createElement('div');
+    grid.className = 'qr-grid';
+    for(let i=0;i<12;i++){
+      const cell = document.createElement('div');
+      cell.className = 'cell';
+      const img = document.createElement('img');
+      img.src = dataURL;
+      cell.appendChild(img);
+      grid.appendChild(cell);
+    }
+    sheet.appendChild(grid);
+
+  } else if(type === '80'){
+    sheet = document.createElement('div');
+    sheet.className = 'sheet-80 printable';
+    const box = document.createElement('div');
+    box.className = 'qr-single';
     const img = document.createElement('img');
     img.src = dataURL;
-    cell.appendChild(img);
-    grid.appendChild(cell);
+    img.style.width = '60mm';
+    img.style.height = '60mm';
+    box.appendChild(img);
+    sheet.appendChild(box);
+
+  } else if(type === '57'){
+    sheet = document.createElement('div');
+    sheet.className = 'sheet-57 printable';
+    const box = document.createElement('div');
+    box.className = 'qr-single';
+    const img = document.createElement('img');
+    img.src = dataURL;
+    img.style.width = '50mm';
+    img.style.height = '50mm';
+    box.appendChild(img);
+    sheet.appendChild(box);
   }
-  a4Preview.appendChild(grid);
+
+  a4Preview.appendChild(sheet);
+
   const previewBox = document.querySelector('.preview-a4');
   const scale = Math.min(
-    previewBox.clientWidth / a4Preview.offsetWidth,
-    previewBox.clientHeight / a4Preview.offsetHeight
+    previewBox.clientWidth / sheet.offsetWidth,
+    previewBox.clientHeight / sheet.offsetHeight
   );
-  a4Preview.style.transform = `scale(${scale})`;
+  sheet.style.transform = `scale(${scale})`;
 }
 
-printBtn.addEventListener('click', ()=>{
-  if (!lastCroppedImage) return;
-  setTimeout(()=> window.print(), 300);
-});
-
-downloadBtn.addEventListener('click', ()=>{
-  const dataURL = composeCanvas.toDataURL('image/png');
-  const a = document.createElement('a');
-  a.href = dataURL;
-  a.download = 'a4_qr_sheet.png';
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-});
-
-shareBtn.addEventListener('click', ()=>{
-  composeCanvas.toBlob(blob=>{
-    const file = new File([blob], 'a4_qr_sheet.png', {type: 'image/png'});
-    if (navigator.share) {
-      navigator.share({
-        files: [file],
-        title: 'QR A4',
-        text: 'Trang A4 chứa mã QR'
-      });
-    } else {
-      alert('Trình duyệt không hỗ trợ chia sẻ trực tiếp.');
-    }
-  });
-});
-
-resetBtn.addEventListener('click', ()=>{
-  location.reload();
-});
-
-function prepareA4PNG(dataURL){
+function preparePNG(dataURL){
   const DPI = 300;
-  const mmToInch = mm => mm/25.4;
-  const wMM = 297, hMM = 210;
+  const mmToInch = mm => mm / 25.4;
+  const type = printType.value;
+  let wMM, hMM, qrMM;
+
+  if(type === 'a4'){ wMM = 297; hMM = 210; qrMM = 60; }
+  else if(type === '80'){ wMM = hMM = 80; qrMM = 60; }
+  else if(type === '57'){ wMM = hMM = 57; qrMM = 50; }
+
   const canvasW = Math.round(mmToInch(wMM) * DPI);
   const canvasH = Math.round(mmToInch(hMM) * DPI);
   composeCanvas.width = canvasW;
@@ -302,32 +327,56 @@ function prepareA4PNG(dataURL){
   const ctx = composeCanvas.getContext('2d');
   ctx.fillStyle = '#fff';
   ctx.fillRect(0,0,canvasW,canvasH);
-  const cellCM = 6.0;
-  const gapMM = 6.0;
-  const cellPx = mmToInch(cellCM*10) * DPI;
-  const gapPx = mmToInch(gapMM) * DPI;
-  const pagePaddingMM = 10;
-  const padPx = mmToInch(pagePaddingMM) * DPI;
-  const gridW = 4 * cellPx + 3 * gapPx;
-  const startX = (canvasW - gridW) / 2;
-  const startY = padPx;
+
   const img = new Image();
   img.onload = ()=>{
-    for(let r=0;r<3;r++){
-      for(let c=0;c<4;c++){
-        const x = startX + c*(cellPx + gapPx);
-        const y = startY + r*(cellPx + gapPx);
-        const iw = img.width, ih = img.height;
-        const scale = Math.min(cellPx/iw, cellPx/ih);
-        const dw = iw*scale, dh = ih*scale;
-        const dx = x + (cellPx - dw)/2;
-        const dy = y + (cellPx - dh)/2;
-        ctx.drawImage(img, dx, dy, dw, dh);
+    if(type === 'a4'){
+      const cellPx = mmToInch(qrMM) * DPI;
+      const gapPx = mmToInch(6) * DPI;
+      const padPx = mmToInch(10) * DPI;
+      const gridW = 4 * cellPx + 3 * gapPx;
+      const startX = (canvasW - gridW) / 2;
+      const startY = padPx;
+      for(let r=0;r<3;r++){
+        for(let c=0;c<4;c++){
+          const x = startX + c*(cellPx + gapPx);
+          const y = startY + r*(cellPx + gapPx);
+          ctx.drawImage(img, x, y, cellPx, cellPx);
+        }
       }
+    } else {
+      const qrPx = mmToInch(qrMM) * DPI;
+      const x = (canvasW - qrPx) / 2;
+      const y = (canvasH - qrPx) / 2;
+      ctx.drawImage(img, x, y, qrPx, qrPx);
     }
   }
   img.src = dataURL;
 }
+
+printBtn.addEventListener('click', ()=> window.print());
+
+downloadBtn.addEventListener('click', ()=>{
+  const a = document.createElement('a');
+  a.href = composeCanvas.toDataURL('image/png');
+  a.download = 'qr_print.png';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+});
+
+shareBtn.addEventListener('click', ()=>{
+  composeCanvas.toBlob(blob=>{
+    const file = new File([blob], 'qr_print.png', {type: 'image/png'});
+    if (navigator.share) {
+      navigator.share({ files: [file], title: 'QR Print' });
+    } else {
+      alert('Trình duyệt không hỗ trợ chia sẻ trực tiếp.');
+    }
+  });
+});
+
+resetBtn.addEventListener('click', ()=> location.reload());
 </script>
 </body>
 </html>
