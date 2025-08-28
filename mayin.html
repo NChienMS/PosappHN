@@ -54,7 +54,7 @@
             <div class="form-group">
                 <label>1) IP máy in <b>hiện tại</b></label>
                 <div class="ip-row">
-                    <input id="ipCurrent" placeholder="vd: 192.168.0.168" type="tel" onkeydown="noSpace(event)" oninput="resetValidation()"/>
+                    <input id="ipCurrent" placeholder="vd: 192.168.0.168" type="text" onkeydown="noSpace(event)" oninput="resetValidation()"/>
                     <button class="btn" onclick="pingFromInput('ipCurrent')">Ping</button>
                     <span id="pingStatusCurrent" class="status-icon"></span>
                 </div>
@@ -62,18 +62,18 @@
             <div class="form-group">
                 <label>2) IP máy in <b>muốn đổi</b></label>
                 <div class="ip-row">
-                    <input id="ipTarget" placeholder="vd: 192.168.0.200" type="tel" onkeydown="noSpace(event)" oninput="resetValidation()"/>
+                    <input id="ipTarget" placeholder="vd: 192.168.0.200" type="text" onkeydown="noSpace(event)" oninput="resetValidation()"/>
                     <button class="btn" onclick="pingFromInput('ipTarget')">Ping</button>
                     <span id="pingStatusTarget" class="status-icon"></span>
                 </div>
             </div>
             <div class="form-group">
                 <label>3) Subnet Mask</label>
-                <input id="mask" value="255.255.255.0" style="margin-bottom:12px;" type="tel" onkeydown="noSpace(event)" oninput="resetValidation()"/>
+                <input id="mask" value="255.255.255.0" style="margin-bottom:12px;" type="text" onkeydown="noSpace(event)" oninput="resetValidation()"/>
             </div>
             <div class="form-group">
                 <label>4) Gateway</label>
-                <input id="gw" value="192.168.0.1" style="margin-bottom:12px;" type="tel" onkeydown="noSpace(event)" oninput="resetValidation()"/>
+                <input id="gw" value="192.168.0.1" style="margin-bottom:12px;" type="text" onkeydown="noSpace(event)" oninput="resetValidation()"/>
             </div>
             <div class="row" style="margin-bottom:0;">
                 <button class="btn btn-acc" onclick="applyChangeAndReboot()">Gửi lệnh Đổi IP và Reboot</button>
