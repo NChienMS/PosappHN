@@ -76,10 +76,10 @@
                 <input id="gw" value="192.168.0.1" style="margin-bottom:12px;" type="text" onkeydown="noSpace(event)" oninput="resetValidation()"/>
             </div>
             <div class="row" style="margin-bottom:0;">
-                <button class="btn btn-acc" onclick="applyChangeAndReboot()">Gửi lệnh Đổi IP và Reboot</button>
+                <button class="btn btn-acc" onclick="applyChangeAndReboot()">Xác nhận</button>
+                <button class="btn btn-warn" onclick="rebootPrinter()">Khởi động lại</button>
                 <button class="btn" onclick="previewUrl()">Xem URL lệnh</button>
             </div>
-            <div class="small muted" style="margin-top:8px">Hành động này sẽ gửi lệnh đổi IP và sau đó tự động reboot máy in sau 2 giây.</div>
         </div>
     </div>
 
@@ -89,9 +89,7 @@
       <div id="log" class="log small"></div>
     </div>
 
-    <div class="small muted" style="margin-top:10px">
-      Mẹo: Nếu trình duyệt chặn bật cửa sổ mới, hãy cho phép pop-up cho file này. Bạn có thể lưu trang này về máy và mở bằng <span class="mono">file:///</span> để dùng trong LAN.
-    </div>
+
   </div>
 
 <script>
@@ -250,28 +248,26 @@ function pingIP(ip, timeout=3000){
             return;
         }
         const url = buildChangeUrl();
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = url;
-        document.body.appendChild(iframe);
-        setStatus([badge('Đang đổi IP...', 'wait')]);
-        log('Đổi IP bằng: '+url);
-        iframe.onload = () => {
-            document.body.removeChild(iframe);
-            setTimeout(() => {
-                resetPrinter();
-                setStatus([badge('Đã đổi IP và gửi lệnh reboot', 'ok')]);
-                log('Đã gửi lệnh reboot.');
-            }, 2000);
-        };
-        iframe.onerror = () => {
-            document.body.removeChild(iframe);
-            setStatus([badge('Lỗi khi đổi IP', 'bad')]);
-            log('Lỗi khi đổi IP');
-        };
+        window.open(url, '_blank');
+        setStatus([badge('Đã gửi lệnh đổi IP', 'ok')]);
+        log('Đã mở tab mới để gửi lệnh đổi IP. Vui lòng kiểm tra và đóng tab này sau khi hoàn tất.');
+        log('Để reboot, vui lòng nhấn nút Reboot riêng.');
     }catch(e){ setStatus([badge('Lỗi dữ liệu','bad')]); log(e.message); }
   }
 
+  function rebootPrinter(){
+    const ipCur = $('ipCurrent').value.trim();
+    if(!isValidIP(ipCur)){ 
+      setStatus([badge('IP hiện tại không hợp lệ','bad')]);
+      log('Sai định dạng IP hiện tại'); 
+      return; 
+    }
+    const url = `http://${ipCur}/reset_prt.htm?reboot`;
+    window.open(url,'_blank');
+    setStatus([badge('Gửi lệnh reboot (mở tab mới)','warn')]);
+    log('Đã gửi lệnh reboot đến: '+url);
+  }
+  
   function resetPrinter(){
     const ipCur = $('ipCurrent').value.trim();
     if(!isValidIP(ipCur)){ setStatus([badge('IP hiện tại không hợp lệ','bad')]); log('Sai định dạng IP hiện tại'); return; }
