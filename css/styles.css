@@ -1,0 +1,120 @@
+/* ========== Theme tokens ========== */
+:root {
+  --bg: #f9fafb;
+  --bg-soft:#ffffff;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --brand:#4f46e5;
+  --brand-2:#06b6d4;
+  --ok:#10b981;
+  --warn:#f59e0b;
+  --danger:#ef4444;
+  --radius:16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+/* Dark theme (mặc định qua data-theme="dark") */
+html[data-theme="dark"] {
+  --bg: #0b1020;
+  --bg-soft:#12172a;
+  --card:#111827;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+/* Light theme khi toggle */
+html[data-theme="light"] {
+  --bg: #f9fafb;
+  --bg-soft:#ffffff;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+/* Tôn trọng system nếu chưa có localStorage */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    --bg: #0b1020;
+    --bg-soft:#12172a;
+    --card:#111827;
+    --text:#e5e7eb;
+    --muted:#9ca3af;
+    --shadow: 0 10px 30px rgba(0,0,0,.25);
+  }
+}
+
+/* ========== Base ========== */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+  background:
+    radial-gradient(1200px 600px at 10% -10%, color-mix(in srgb, var(--brand) 25%, transparent), transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, color-mix(in srgb, var(--brand-2) 18%, transparent), transparent 55%),
+    var(--bg);
+  background-attachment: fixed;      /* 👈 giữ nền cố định */
+  background-repeat: no-repeat;      /* tránh lặp */
+  background-size: cover;            /* phủ toàn màn hình */
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a{color:inherit; text-decoration:none}
+.container{width:min(1100px, 92vw); margin-inline:auto}
+
+/* ========== Header / Nav ========== */
+header.nav{
+  position:sticky; top:0; z-index:1000; backdrop-filter: blur(8px);
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 0}
+.brand{display:flex; align-items:center; gap:12px; font-weight:700}
+.brand .logo{
+  width:36px; height:36px; display:grid; place-items:center; border-radius:12px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: var(--shadow);
+}
+.brand span{letter-spacing:.2px}
+.links{display:flex; gap:10px; flex-wrap:wrap}
+.btn{display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04)}
+.btn:hover{border-color:rgba(255,255,255,.18); transform: translateY(-1px)}
+.btn.primary{background: linear-gradient(135deg, var(--brand), var(--brand-2)); border: none; color:white; font-weight:600}
+
+#themeToggle{white-space:nowrap}
+#themeToggle .toggle-text{font-size:14px}
+#themeToggle .theme-icon{display:inline-flex}
+
+/* ========== Sections / Common ========== */
+.section{margin:30px 0}
+.section h2{font-size: clamp(18px, 2.6vw, 22px); margin:0 0 14px}
+.grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:14px }
+.card{ background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:18px; box-shadow: var(--shadow) }
+.card h3{margin:0 0 10px; font-size:18px}
+.card p{margin:0 0 12px; color:var(--muted)}
+.cta{display:flex; flex-wrap:wrap; gap:10px}
+
+.links-list{ display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:10px }
+.link-btn{ display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.03)}
+.link-btn:hover{border-color: rgba(255,255,255,.25); transform: translateY(-1px)}
+.link-btn svg{width:18px; height:18px; opacity:.9}
+
+.kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; background:#0b1222; padding:2px 8px; border-radius:6px; border:1px solid rgba(255,255,255,.1)}
+
+.search{position:relative}
+.search input{width:100%; padding:12px 42px 12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); color:var(--text)}
+.search .icon{position:absolute; right:10px; top:50%; transform:translateY(-50%); opacity:.7}
+
+details{background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:12px 14px}
+details+details{margin-top:10px}
+summary{cursor:pointer; font-weight:600}
+.muted{margin-top:8px; color:var(--muted)}
+
+footer{border-top:1px solid rgba(255,255,255,.08); margin-top:26px}
+.foot{padding:18px 0; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; color:var(--muted)}
+
+/* small tweaks */
+@media (max-width:480px){ .links{display:none} }

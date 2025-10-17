@@ -1,449 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PosApp HN - Home</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./responsive.css">
-    <meta property="og:image"
-        content="https://aries908218.files.wordpress.com/2022/06/abc.png">
-    <link rel="shortcut icon" href="https://posapp.vn/wp-content/themes/twentysixteen-child/images/favicon.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kỹ thuật • Hỗ trợ khách hàng | YCSoft / Nextool</title>
+  <meta name="description" content="Trang hỗ trợ kỹ thuật, tổng hợp liên kết và tài liệu cho khách hàng YCSoft / Nextool." />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23005cff'/%3E%3Cpath d='M50 22 67 50 50 78 33 50z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Trang Kỹ thuật Nextool">
+        <span class="logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 12L12 4l8 8-8 8-8-8Z" fill="white"/>
+          </svg>
+        </span>
+        <span>Nextool • Kỹ thuật</span>
+      </a>
 
-<body id="home">
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <a href="">
-                        <img src="https://posapp.vn/wp-content/themes/twentysixteen-child/images/logo.png" style="width: 93px;" alt="">
-                    </a>
-                </div>
-                   <!--  tạo menu cho màn hình nhỏ  -->
-    <div class="containersub">
-        <div class="btnbnt">
-            <ion-icon name="add-outline"></ion-icon>
-        </div>
-        <ul id="menubnt">
-            <li class="itembnt"style="color: red; font-weight: bold;">
-                <ion-icon name="home"></ion-icon>
-                 <a href="index.html" style="color: red; font-weight: bold;">Home</a>
-            </li>
-            <li class="itembnt">
-                <ion-icon name="restaurant"></ion-icon>
-                <a href="https://posapphn.gitbook.io/posapphn">FnB</a>
-            </li>
-            <li class="itembnt">
-                <ion-icon name="storefront"></ion-icon>
-                <a href="https://posapphn.gitbook.io/retail/">Retail</a>
-            </li>
-            <li class="itembnt">
-                <ion-icon name="heart"></ion-icon>
-                <a href="https://posapphn.gitbook.io/spa/">Spa</a>
-            </li>
-            <li class="itembnt">
-                <ion-icon name="timer"></ion-icon>
-                <a href="ms/karaoke.html">Karaoke</a>
-            </li>
-            <li class="itembnt">
-                <ion-icon name="desktop-outline"></ion-icon>
-                <a href="https://posapphn.gitbook.io/posapphn">PosApp PC</a>
-            </li>
-            <li class="itembnt">
-                <ion-icon name="download"></ion-icon>
-                <a href="ms/download.html">Download</a>
-            </li>
-            <li class="itembnt">
-                <ion-icon name="desktop"></ion-icon>
-                <a href="ms/code/imgpos.html">Máy Pos</a>
-            </li>
-            <li class="itembnt">
-                <ion-icon name="lock-closed"></ion-icon>
-                <a href="ms/lock.html">Internal</a>
-            </li>
+      <nav class="links" aria-label="Liên kết nhanh">
+        <a class="btn" href="#lien-ket">Liên kết</a>
+        <a class="btn" href="#tai-lieu">Tài liệu</a>
+        <a class="btn" href="#ho-tro">Hỗ trợ</a>
+        <a class="btn primary" href="#lien-he">Liên hệ</a>
+      </nav>
 
-        </ul>
-
+      <!-- Theme toggle -->
+      <button id="themeToggle" class="btn" aria-pressed="false" aria-label="Đổi giao diện Sáng/Tối" title="Đổi giao diện (Sáng/Tối)">
+        <span class="theme-icon" aria-hidden="true">
+          <svg id="icon-moon" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="icon-sun" viewBox="0 0 24 24" width="18" height="18" style="display:none"><path fill="currentColor" d="M6.76 4.84 5.34 3.42 3.92 4.84l1.42 1.42L6.76 4.84zM1 13h3v-2H1v2zm10 10h2v-3h-2v3zM4.84 17.24 3.42 18.66l1.42 1.42 1.42-1.42-1.42-1.42zM20 11v2h3v-2h-3zm-1.76-6.16 1.42-1.42-1.42-1.42-1.42 1.42 1.42 1.42zM11 1h2V-2h-2V1zm6.76 16.24 1.42 1.42 1.42-1.42-1.42-1.42-1.42 1.42zM12 6a6 6 0 1 0 .001 12.001A6 6 0 0 0 12 6z"/></svg>
+        </span>
+        <span class="toggle-text">Sáng/Tối</span>
+      </button>
     </div>
-        <script>
-            const btnbnt = document.querySelector(".btnbnt")
-            btnbnt.addEventListener('click', e => {
-                btnbnt.classList.toggle("rotateBtn");
-                document.querySelector("#menubnt").classList.toggle('showMenu')
-            })
-        </script>
-                <ul class="menu" >
-                    <li class="item">
-                        <a href="index.html" style="color: red; font-weight: bold;">Home</a>
-                    </li>
-                    <li class="item">
-                        <a href="https://nchienms.gitbook.io/posapphn">FnB</a>
-                    </li>
-                    <li class="item">
-                        <a href="https://nchienms.gitbook.io/retail/">Retail</a>
-                    </li>
-                    <li class="item">
-                        <a href="https://nchienms.gitbook.io/spa/">Spa</a>
-                    </li>
-                    <li class="item">
-                        <a href="ms/karaoke.html">Karaoke</a>
-                    </li>
-                     <li class="item">
-                        <a href="ms/posapppc.html">PosApp PC</a>
-                    </li>
-                    <li class="item">
-                        <a href="ms/download.html">Download</a>
-                    </li>
-                    <li class="item">
-                        <a href="ms/lock.html">Internal</a>
-                    </li>
-                </ul>
+  </header>
 
-
-
-
-
-
-            </nav>
-
-
-        </div>
-    </header>
-
-
-<dir style="height: 60px; width: 100%;"></dir>
-
-<div class='my-menu'>
-
-<p style="background-color: Silver; margin: 0 0 10px -30px; padding-left: 30px; width: 300px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;"><span style="font-size: 20px; ">&#8226;  </span>Bạn đang ở "Home"</p>
-
-<div class="tiltehead">Hướng dẫn fix 1 số lỗi</div>
-<div class="accordion">Fix lỗi tải app không được trên máy PosApp</div>
-<div class="panel">
-  <p><i>Với dòng máy PAL</i></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/JKItom9FY1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-    <hr>
-    <p><i>Với dòng máy PAC (Máy Pos cầm tay)</i></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/BLZp7ixEZWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-</div>
-
-<div class="accordion">Fix lỗi Treo Logo không thể khởi động trên máy Pos</div>
-<div class="panel">
-  <p><i><b>Với dòng máy PAL 1 màn, 2 Màn</b></i></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/9oSfyT0nEsc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-    <hr>
-    <p><i><b>Với dòng máy PAC1</b></i></p>
-    <div class='sub-menu'>
-        <p>Nếu bạn đang có 1 máy PAC1 như hình ảnh dưới đây đang bị treo logo khi mở nguồn<a href="https://drive.google.com/file/d/1MYDq114Ab6mSIDYlEiIf9vhyGJxcj18E/view"><b> ►  Hướng dẫn chi tiết</b></a></p>
-        <img src="https://posapp.vn/wp-content/uploads/2019/01/sunmi-v1.png" width="150px">
-        
-    </div>
-
-
-
-    <hr>
-    <p><i><b>Với dòng máy PAC2</b></i></p>
-    <div class='sub-menu'>
-        <p>Nếu bạn đang có 1 máy PAC2 như hình ảnh dưới đây đang bị treo logo khi mở nguồn <a href="https://drive.google.com/file/d/1yJIm6hdgqP9D9Hq1fDDEyt413j79G1bT/view"><b>►  Hướng dẫn chi tiết</a></b></p>
-
-        <img src="https://posapp.vn/wp-content/uploads/2019/11/posapp-v2.gif" width="350px">
-        
-    </div>
-</div>
-
-<div style="width: 80%; height:80%;">
-    <h1 style="text-align:center;">THÔNG BÁO</h1>
-    <hr>
-    <p style="font-size:20px; text-align: center;">
-    Trang hướng dẫn về mô hình FnB, Bán lẻ, Spa được chuyển về đường dẫn <a href="https://posapphn.gitbook.io/posapp-hn/">Tại đây</a> hoặc nhấn vào biểu tượng menu màu đen góc phải
-</p>
-<p style="text-align:center; font-size: 20px; margin-top: 10px;">CHÂN THÀNH CẢM ƠN!</p>
-<div class="an">
-<div class="tiltehead">Các kết nối tới > Thu Ngân</div>
-<div class="accordion">Kết nối KDS > Thu Ngân</div>
-<div class="panel" style="width: 80%">   
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SzPqyw1-fDM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-</div>
-
-<div class="accordion">Kết nối Order > Thu Ngân là máy tính</div>
-    
-<div class="panel" style="width: 80%">   
-    <div class='sub-menu'>
-            <div class="content">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/fXcrCaUepRc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-            </div>   
-    </div>
-</div>
-
-
-<div class="tiltehead">Cố định IP máy thu ngân</div>
-<div class="accordion">Cố định IP máy PC (thu ngân) về tĩnh</div>
-<div class="panel">
-    <p><i>Chú ý: Nếu ko đổi ip máy thu ngân về tĩnh thì các máy order, máy in sẽ ko thể kết nối được khi ip máy in nhảy loạn sau mỗi lần mở máy hoặc bắt mạng khác</i></p>
-    <p>Ở video bên dưới có 2 cách đổi ip máy tính về tĩnh, đối với cách 2 sẽ cần Tools (1 số máy sẽ ko sử dụng được), và khi ip đã được đổi về tĩnh vui lòng ko quên mạng, ko được sử dụng mạng khác.</p>
-    <p><a href="https://drive.google.com/file/d/1KDEgmZCB-Phj2ipPWn1GfT3UeKVsKbbj/view?usp=sharing"><b>►  Tools đổi IP</b></a></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MXVMfI1G3Xg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-   
-</div>
-
-<div class="accordion">Cố định IP máy PosApp D3 về tĩnh</div>
-<div class="panel">
-    <p><i>Chú ý: Đối với các dòng D3 FHĐ sẽ không cố định được ip mạng wifi, chỉ cố định được ip mạng dây khi cắm vào máy</i></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/yLRi2na98VU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-   
-</div>
-    
-  <div class="accordion">Cố định IP máy PosApp PAM2 về tĩnh</div>
-<div class="panel">
-    <p><i>Chú ý: Nếu ko đổi ip máy thu ngân về tĩnh thì các máy order, máy in sẽ ko thể kết nối được khi ip máy in nhảy loạn sau mỗi lần mở máy hoặc bắt mạng khác</i></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VOc6vipqdbs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-   
-</div>
-
-
-<div class="accordion">Cố định IP máy PosApp PAL về tĩnh</div>
-<div class="panel">
-    <p><i>Chú ý: Nếu ko đổi ip máy thu ngân về tĩnh thì các máy order, máy in sẽ ko thể kết nối được khi ip máy in nhảy loạn sau mỗi lần mở máy hoặc bắt mạng khác</i></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/V76b8BlGNuk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-   
-</div>
-
-<div class="tiltehead">Hướng dẫn fix 1 số lỗi</div>
-<div class="accordion">Fix lỗi tải app không được trên máy PosApp</div>
-<div class="panel">
-  <p><i>Với dòng máy PAL</i></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/JKItom9FY1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-    <hr>
-    <p><i>Với dòng máy PAC (Máy Pos cầm tay)</i></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/BLZp7ixEZWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-</div>
-
-<div class="accordion">Fix lỗi Treo Logo không thể khởi động trên máy Pos</div>
-<div class="panel">
-  <p><i><b>Với dòng máy PAL 1 màn, 2 Màn</b></i></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/9oSfyT0nEsc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-    <hr>
-    <p><i><b>Với dòng máy PAC1</b></i></p>
-    <div class='sub-menu'>
-        <p>Nếu bạn đang có 1 máy PAC1 như hình ảnh dưới đây đang bị treo logo khi mở nguồn<a href="https://drive.google.com/file/d/1MYDq114Ab6mSIDYlEiIf9vhyGJxcj18E/view"><b> ►  Hướng dẫn chi tiết</b></a></p>
-        <img src="https://posapp.vn/wp-content/uploads/2019/01/sunmi-v1.png" width="150px">
-        
-    </div>
-
-
-
-    <hr>
-    <p><i><b>Với dòng máy PAC2</b></i></p>
-    <div class='sub-menu'>
-        <p>Nếu bạn đang có 1 máy PAC2 như hình ảnh dưới đây đang bị treo logo khi mở nguồn <a href="https://drive.google.com/file/d/1yJIm6hdgqP9D9Hq1fDDEyt413j79G1bT/view"><b>►  Hướng dẫn chi tiết</a></b></p>
-
-        <img src="https://posapp.vn/wp-content/uploads/2019/11/posapp-v2.gif" width="350px">
-        
-    </div>
-</div>
-
-
-
-
-<div class="tiltehead">Lỗi báo cáo </div>
-<div class="accordion">Hướng dẫn đẩy các hóa đơn lên báo cáo</div>
-<div class="panel">
-    <div class='sub-menu'>
-        <p> Thao tác này sử dụng trong trường hợp 1 số hoặc tất cả hóa đơn ko lên báo cáo (bán hàng mà không lên doanh thu)</p>
-        <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xcG2V_AESNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-        </div>    
-    </div>
-</div>
-<div class="accordion">Hướng dẫn Gửi dữ liệu lên server</div>
-<div class="panel">
-    <div class='sub-menu'>
-        <p> Thao tác này để gửi dữ liệu lên server làm cơ sở kỹ thuật kiểm tra các lỗi</p>
-        <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4BsmTv8QVEA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-        </div>    
-    </div>
-</div>
-
-<div class="tiltehead">Hướng dẫn khác về máy in</div>
-
-
-<div class="accordion">Hướng dẫn lắp giấy máy in tem, mã vạch</div>
-<div class="panel">
-    <div class='sub-menu'>
-        
-        <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7hOFI5lsx0I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-        </div>    
-    </div>
-</div>
-
-<div class="accordion">Hướng dẫn chuyển chế độ USB <-> Lan trên Epson T82 II và T82 III </div>
-<div class="panel" style="width: 100%">
-    <div class='sub-menu'>
-        <p><b>Hướng dẫn bằng video</b></p>
-        <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ASLRiqUIW3g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-        </div>   
-           
-    </div>
-    <p><b>Hướng dẫn bàng hình ảnh</b></p> 
-        <iframe width="800px" height="500px" src="https://drive.google.com/file/d/1wJZrTRwNw9cTMNFcW-z4EPmeDjidaAOj/preview" ></iframe>
-</div>
-
-<div class="accordion">Hướng dẫn lắp giấy máy in hóa đơn</div>
-<div class="panel">
-    <div class='sub-menu'>
-        
-        <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6RTX0vi_Xh8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-        </div>    
-    </div>
-</div>
-<div class="accordion">Hướng dẫn cài máy in thanh toán có tích hợp máy in trên thân máy</div>
-<div class="panel">
-  <p><i><b>Với dòng máy PAL</b></i></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mYpXFKpaBHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-    <hr>
-    <p><i><b>Với dòng máy PAC (Máy Pos cầm tay)</b></i></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ob8on9QHf48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-</div>
-
-<div class="accordion">Hướng dẫn cách lấy địa chỉ ip máy in Lan, in Bếp</div>
-<div class="panel">
-  <p><i><b>Tại đây</b></i></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/avteKw7gTXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-    
-</div>
-
-<div class="accordion">Hướng dẫn đổi ip Máy in Lan (Bill và Tem)</div>
-<div class="panel">
-    <p style="text-align:justify"><i>Việc đổi ip này cần thực hiện khi máy in đang khác với dải mạng nhà bạn và video dẫn bạn chuyển nó về cùng dải</i></p>
-    <p><b>Video này hướng dẫn cho máy in hóa đơn lan</b></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/iBsTurM86f4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-    <hr>
-    <p><b>Video này hướng dẫn cho máy in tem lan</b></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6si_FG4ISLM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-   
-</div>
-
-<div class="tiltehead">Thẻ rung</div>
-<div class="accordion">Hướng dẫn cách Set số cho thẻ rung</div>
-<div class="panel">
-  <p><i><b>Tại đây</b></i></p>
-    <div class='sub-menu'>
-                <div class="content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wv4V1A9gHXc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-                </div>
-    </div>
-    
-</div>
-    
-
-
-<!-- ====================End: menu ====================-->
-
-
-
-
-         
-    </div>
-
-
-
-</div>
-
-<div class="an">
-    <section id="contact" style="background-color: #3d4351; color: white; padding-top: 30px; padding-bottom: 30px;">
-        <div class="container">
-            <div class="bt">
-            <div class="address"> <b>ĐỊA CHỈ CÔNG TY </b>
-            <P style="margin-left:20px;font-size: 14px;">- Trụ sở TPHCM: 260/11 Nguyễn Thái Bình Phường 12 Quận Tân Bình HS Building Floor 5</P>
-            <P style="margin-left:20px;font-size: 14px;">- Chi nhánh Hà Nội: Tầng 4, 174 đường Láng, Phường Thịnh Quang, Quận Đống Đa, Hà Nội</P>
-            <P style="margin-left:20px;font-size: 14px;">- Đà Nẵng: Số 21 Trần Quốc Toản, Hải Châu, Đà Nẵng</P>
-            <P style="margin-left:20px;font-size: 14px;">- Cần Thơ: 191 Phan Huy Chú, phường An Khánh, quận Ninh Kiều, TP Cần Thơ</P>
-            <P style="margin-left:20px;font-size: 14px;">- Quảng Ninh: Số 2, Ngõ 430 Trần Quốc Tảng, Cẩm Phú, Tp.Cẩm Phả, Quảng Ninh</P>
-            </div>
-</div>
-        </div>
+  <main class="container">
+    <!-- Ô tìm kiếm (giữ nguyên) -->
+    <section class="section" id="search-block">
+      <div class="search" role="search">
+        <input id="search" type="search" placeholder="Tìm nhanh: Printer, cập nhật, đổi IP, QR, ... (phím /)" aria-label="Tìm kiếm nội dung" />
+        <span class="icon" aria-hidden="true">⌘K</span>
+      </div>
     </section>
-</div>
-    <!-- Jquery  -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <!-- TÀI LIỆU & HƯỚNG DẪN (đã đưa lên ngay sau ô tìm kiếm) -->
+    <section id="tai-lieu" class="section">
+      <h2>Tài liệu & hướng dẫn</h2>
+      <div class="grid" id="cards">
+        <article class="card" data-tags="printer ip dhcp testpage">
+          <h3>Printer NT • Cấu hình nhanh</h3>
+          <p>Đổi IP (B2/22), bật/tắt DHCP, in Test Page, mở két, beep sau cắt giấy...</p>
+          <div class="cta">
+            <a class="btn" href="LINK_DOC_PRINTERNT" target="_blank" rel="noopener">Mở hướng dẫn</a>
+            <a class="btn" href="LINK_FAQ_PRINTERNT" target="_blank" rel="noopener">FAQ</a>
+          </div>
+        </article>
+        <article class="card" data-tags="hoa don dien tu nghi dinh 70 thong tu 88">
+          <h3>Hóa đơn điện tử từ máy tính tiền</h3>
+          <p>Tổng quan Nghị định 70, Thông tư 88 và 7 sổ kế toán áp dụng cho hộ KD.</p>
+          <div class="cta">
+            <a class="btn" href="LINK_DOC_HDĐT" target="_blank" rel="noopener">Xem tài liệu</a>
+            <a class="btn" href="LINK_TRAINING_SALES" target="_blank" rel="noopener">Slide training</a>
+          </div>
+        </article>
+        <article class="card" data-tags="qr code website chyen love moi cuoi">
+          <h3>QR • Tạo & xử lý liên kết</h3>
+          <p>Trang tạo nhiều QR cùng lúc, tải hàng loạt; xử lý dấu + thành khoảng trắng.</p>
+          <div class="cta">
+            <a class="btn" href="LINK_QR_TOOL" target="_blank" rel="noopener">Mở công cụ QR</a>
+          </div>
+        </article>
+        <article class="card" data-tags="cloudflare worker telegram file proxy 100mb">
+          <h3>Chia sẻ file lớn • Worker + Telegram</h3>
+          <p>Proxy tải file & link Telegram > 100MB, chỉ áp dụng trong nhóm riêng.</p>
+          <div class="cta">
+            <a class="btn" href="LINK_DOC_WORKER" target="_blank" rel="noopener">Hướng dẫn Worker</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <!-- font lib  -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <!-- LIÊN KẾT NHANH (giữ nguyên, đặt sau phần tài liệu) -->
+    <section id="lien-ket" class="section">
+      <h2>Liên kết nhanh</h2>
+      <div class="links-list" id="links">
+        <a class="link-btn" href="https://chyen.love/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M3 5a2 2 0 0 1 2-2h6l2 2h6a2 2 0 0 1 2 2v3H3V5Zm0 6h20v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8Z"/></svg>
+          <span>Trang web: chyen.love</span>
+        </a>
+        <a class="link-btn" href="https://printernt-worker.nchien9xnb.workers.dev/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 14.93V20h-2v-3.07a8.016 8.016 0 0 1-5.93-5.93H2v-2h3.07A8.016 8.016 0 0 1 11 4V2h2v2.07a8.016 8.016 0 0 1 5.93 5.93H22v2h-3.07A8.016 8.016 0 0 1 13 16.93Z"/></svg>
+          <span>Worker: Link tải qua Telegram</span>
+        </a>
+        <a class="link-btn" href="LINK_TAI_PRINTER_NT" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M5 20h14v-2H5v2Zm7-18L5.33 9h3.84v4h5.66V9h3.84L12 2Z"/></svg>
+          <span>Tải Printer NT (APK/ABB)</span>
+        </a>
+        <a class="link-btn" href="LINK_GOOGLE_PLAY_APP" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="m3 20 14-8L3 4v16Zm16-1V5h2v14h-2Z"/></svg>
+          <span>Google Play (nếu đã public)</span>
+        </a>
+        <a class="link-btn" href="LINK_TAI_LIEU_HO_TRO" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm7 1 5 5h-5V3Z"/></svg>
+          <span>Tài liệu HDSD / Quy định</span>
+        </a>
+        <a class="link-btn" href="LINK_FORM_BAO_LOI" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M11 7h2v6h-2V7Zm0 8h2v2h-2v-2Z"/></svg>
+          <span>Form báo lỗi / yêu cầu</span>
+        </a>
+        <a class="link-btn" href="LINK_TELEGRAM_GROUP" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M9.04 15.81 8.9 19.2a.8.8 0 0 0 1.26.66l2.84-2.06 3.47 2.56c.63.37 1.43.09 1.66-.62L21.94 5.2c.25-.8-.52-1.52-1.29-1.22L2.76 11.1c-.86.35-.83 1.6.05 1.89l4.47 1.48 10.36-6.51-8.6 8.85Z"/></svg>
+          <span>Nhóm Telegram hỗ trợ</span>
+        </a>
+        <a class="link-btn" href="LINK_ZALO_OA_HO_TRO" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 14h-2v-2h2v2Zm0-4h-2V6h2v6Z"/></svg>
+          <span>Zalo OA / CSKH</span>
+        </a>
+        <a class="link-btn" href="LINK_FACEBOOK_PAGE" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-2.9h2V9.5c0-2 1.2-3.1 3-3.1 .9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.4h2.3L16 15h-2v7A10 10 0 0 0 22 12Z"/></svg>
+          <span>Facebook Page</span>
+        </a>
+        <a class="link-btn" href="mailto:SUPPORT_EMAIL_HERE">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v1.2l10 5.8 10-5.8V6a2 2 0 0 0-2-2Zm0 6.4-8 4.6-8-4.6V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-7.6Z"/></svg>
+          <span>Email hỗ trợ</span>
+        </a>
+      </div>
+    </section>
 
-    <!-- Js custom file -->
-    <script src="./script-jquery.js"></script>
+    <!-- HỖ TRỢ & CÂU HỎI THƯỜNG GẶP -->
+    <section id="ho-tro" class="section">
+      <h2>Hỗ trợ nhanh</h2>
+      <details>
+        <summary>App trên Google Play báo lỗi quốc gia/phân phối?</summary>
+        <div class="muted">Kiểm tra: (1) Regions đã bật đủ; (2) Pricing/Products có quốc gia; (3) Policy & Privacy Policy URL hợp lệ HTTPS; (4) Min/Target SDK phù hợp.</div>
+      </details>
+      <details>
+        <summary>Đổi IP máy in XPrinter/Rongta không thành công?</summary>
+        <div class="muted">Dùng TCP 9100 <span class="kbd">1F 1B 1F B2 ...</span> hoặc TCP 4000 <span class="kbd">1F 1B 1F 22 ...</span>. Kiểm tra cáp, subnet và khóa cấu hình.</div>
+      </details>
+      <details>
+        <summary>QR quét lỗi tiếng Việt dấu +?</summary>
+        <div class="muted">Mã hóa URL: <span class="kbd">+</span> là khoảng trắng. Công cụ QR đã xử lý tự động.</div>
+      </details>
+    </section>
+
+    <!-- LIÊN HỆ -->
+    <section id="lien-he" class="section">
+      <h2>Liên hệ</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Kênh hỗ trợ</h3>
+          <p>Ưu tiên nhắn trên Telegram/Zalo để được phản hồi nhanh.</p>
+          <div class="cta">
+            <a class="btn" href="LINK_TELEGRAM_GROUP" target="_blank" rel="noopener">Mở Telegram</a>
+            <a class="btn" href="LINK_ZALO_OA_HO_TRO" target="_blank" rel="noopener">Mở Zalo</a>
+            <a class="btn" href="mailto:SUPPORT_EMAIL_HERE">Gửi email</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Thông tin công ty</h3>
+          <p>YCSoft / Nextool VN — giải pháp cho hộ kinh doanh, SME: máy in, phần mềm bán hàng, quy định thuế, QR và hơn nữa.</p>
+          <div class="cta">
+            <a class="btn" href="LINK_WEBSITE_CONG_TY" target="_blank" rel="noopener">Website công ty</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <span>© <span id="y"></span> YCSoft / Nextool • All rights reserved</span>
+      <span>Build: <span class="kbd">HTML/CSS thuần</span> • Responsive • A11y</span>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
-
 </html>
