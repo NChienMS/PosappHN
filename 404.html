@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Không tìm thấy trang | Kỹ thuật YCSoft / Nextool</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --text: #e5e7eb;
+      --accent1: #4f46e5;
+      --accent2: #06b6d4;
+      --muted: #9ca3af;
+    }
+    html[data-theme='light'] {
+      --bg: #f9fafb;
+      --text: #111827;
+      --muted: #6b7280;
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, color-mix(in srgb, var(--accent1) 25%, transparent), transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, color-mix(in srgb, var(--accent2) 18%, transparent), transparent 55%),
+        var(--bg);
+      background-attachment: fixed;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      text-align: center;
+      overflow: hidden;
+    }
+    .gear {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+      animation: spin 6s linear infinite;
+      fill: var(--accent2);
+      opacity: 0.9;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    h1 {
+      font-size: 4em;
+      margin: 0;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    p {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+    a.btn {
+      display: inline-block;
+      margin-top: 25px;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      color: white;
+      padding: 10px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    a.btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.9em;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <svg class="gear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M19.14,12.94c0.04-0.31,0.06-0.63,0.06-0.94s-0.02-0.63-0.06-0.94l2.03-1.58c0.18-0.14,0.23-0.4,0.12-0.61l-1.92-3.32
+      c-0.11-0.21-0.36-0.3-0.58-0.22l-2.39,0.96c-0.5-0.38-1.04-0.7-1.64-0.94L14.5,2.5c-0.03-0.23-0.23-0.4-0.47-0.4h-3.06
+      c-0.24,0-0.44,0.17-0.47,0.4L10.1,5.35c-0.6,0.24-1.15,0.56-1.64,0.94L6.07,5.33c-0.22-0.09-0.47,0.01-0.58,0.22L3.57,8.87
+      c-0.11,0.21-0.06,0.47,0.12,0.61l2.03,1.58C5.68,11.37,5.66,11.69,5.66,12s0.02,0.63,0.06,0.94l-2.03,1.58
+      c-0.18,0.14-0.23,0.4-0.12,0.61l1.92,3.32c0.11,0.21,0.36,0.3,0.58,0.22l2.39-0.96c0.5,0.38,1.04,0.7,1.64,0.94l0.4,2.85
+      c0.03,0.23,0.23,0.4,0.47,0.4h3.06c0.24,0,0.44-0.17,0.47-0.4l0.4-2.85c0.6-0.24,1.15-0.56,1.64-0.94l2.39,0.96
+      c0.22,0.09,0.47-0.01,0.58-0.22l1.92-3.32c0.11-0.21,0.06-0.47-0.12-0.61L19.14,12.94z M12,15.5c-1.93,0-3.5-1.57-3.5-3.5
+      s1.57-3.5,3.5-3.5s3.5,1.57,3.5,3.5S13.93,15.5,12,15.5z"/>
+  </svg>
+
+  <h1>404</h1>
+  <p>Trang bạn tìm không tồn tại hoặc đã được di chuyển.</p>
+  <a class="btn" href="http://kythuat.xyz">← Quay lại trang chính</a>
+
+  <footer>© YCSoft / Nextool • Kỹ thuật hỗ trợ</footer>
+</body>
+</html>
