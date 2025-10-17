@@ -1,0 +1,177 @@
+<div style="font-family: Arial, sans-serif; font-size: 13px;"><!-- Thông tin cửa hàng -->
+<table style="width: 100%; border-collapse: collapse;">
+<tbody>
+<tr style="page-break-inside: avoid; page-break-after: auto;">
+<td style="text-align: center;">
+<table style="width: 100%;">
+<tbody>
+<tr>
+<td style="font-size: 13px; text-align: center;">{{SHOP_LOGO}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: center;"><strong>{{SHOP_NAME}}</strong></td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: center;">{{SHOP_ADDRESS}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: center;">{{SHOP_PHONE}}</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Tiêu đề hóa đơn -->
+<p style="font-size: 22px; text-align: center; margin-bottom: 2px;">H&Oacute;A ĐƠN THANH TO&Aacute;N</p>
+<p style="font-size: 14px; text-align: center; margin-top: 2px;">Số phiếu <strong>{{ORDER_CODE}}</strong></p>
+<!-- Ngày tạo -->
+<table style="width: 100%;">
+<tbody>
+<tr>
+<td style="font-size: 13px; text-align: left;">Ng&agrave;y tạo</td>
+<td style="font-size: 13px; text-align: right;">{{DATE_CREATED}}</td>
+</tr>
+</tbody>
+</table>
+<!-- Thông tin khách hàng -->
+<table style="width: 100%;">
+<tbody>
+<tr>
+<td style="font-size: 13px; text-align: left;">Kh&aacute;ch h&agrave;ng</td>
+<td style="font-size: 13px; text-align: right;">{{CUSTOMER_NAME}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: left;">Điện thoại</td>
+<td style="font-size: 13px; text-align: right;">{{CUSTOMER_PHONE}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: left;">Địa chỉ</td>
+<td style="font-size: 13px; text-align: right;">{{CUSTOMER_ADDRESS}}</td>
+</tr>
+</tbody>
+</table>
+<!-- Thông tin nhân viên và địa điểm -->
+<table style="width: 100%; margin-bottom: 5px;">
+<tbody>
+<tr>
+<td style="font-size: 13px; text-align: left; width: 50%;">Thu ng&acirc;n: {{CASHIER_NAME}}</td>
+<td style="font-size: 13px; text-align: right; width: 50%;">{{PLACE_NAME}}</td>
+</tr>
+</tbody>
+</table>
+<!-- Danh sách sản phẩm -->
+<table style="width: 100%;" cellpadding="3">
+<thead>
+<tr>
+<th style="border-top: 1px solid black; border-bottom: 1px solid black; text-align: left;">SL</th>
+<th style="border-top: 1px solid black; border-bottom: 1px solid black; text-align: right;">Gi&aacute;</th>
+<th style="border-top: 1px solid black; border-bottom: 1px solid black; text-align: right;">Tổng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="3"><strong>{{PRODUCT_CODE}} - {{ITEM_NAME}} ({{UNIT_NAME}})</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>{{ITEM_QUANTITY}}</strong></td>
+<td style="text-align: right;"><strong>{{ITEM_PRICE}}</strong></td>
+<td style="text-align: right;"><strong>{{ITEM_TOTAL_PRICE}}</strong></td>
+</tr>
+<tr>
+<td colspan="3"><strong>{{ITEM_NOTE}}</strong></td>
+</tr>
+<tr>
+<td colspan="2">+ {{TOPPING_NAME}} {{TOPPING_QUANTITY}}</td>
+<td style="text-align: right;">{{TOPPING_TOTAL_PRICE}}</td>
+</tr>
+<tr>
+<td colspan="2">+ Giảm gi&aacute; ({{ITEM_DISCOUNT_PERCENT}})</td>
+<td style="text-align: right;">-{{ITEM_DISCOUNT_PRICE}}</td>
+</tr>
+<tr>
+<td colspan="2">+ Phụ thu ({{ITEM_SURCHARGE_PERCENT}})</td>
+<td style="text-align: right;">+{{ITEM_SURCHARGE_PRICE}}</td>
+</tr>
+<tr>
+<td colspan="2">+ Thuế ({{ITEM_TAX_PERCENT}})</td>
+<td style="text-align: right;">{{ITEM_TAX_PRICE}}</td>
+</tr>
+</tbody>
+</table>
+<hr><!-- Tổng kết đơn hàng -->
+<table style="border-collapse: collapse; margin-top: 20px; width: 100%;" cellpadding="3">
+<tfoot>
+<tr>
+<td style="font-size: 13px; text-align: left;">Tổng SL m&oacute;n</td>
+<td style="font-size: 13px; text-align: right; font-weight: bold;">{{TOTAL_OF_ITEMS}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: left;">Th&agrave;nh tiền</td>
+<td style="font-size: 13px; text-align: right; font-weight: bold;">{{TOTAL_PRICE}}</td>
+</tr>
+</tfoot>
+</table>
+<!-- Chiết khấu, phụ thu, lý do -->
+<table style="border-collapse: collapse; width: 100%;" cellpadding="3">
+<tfoot>
+<tr>
+<td style="font-size: 13px; text-align: left;">Giảm gi&aacute; ({{DISCOUNT_PERCENT}})</td>
+<td style="font-size: 13px; text-align: right; font-weight: bold;">{{DISCOUNT_PRICE}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: left;" colspan="2">L&yacute; do: {{DISCOUNT_REASON}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: left;">Phụ thu ({{SURCHARGE_PERCENT}})</td>
+<td style="font-size: 13px; text-align: right; font-weight: bold;">{{SURCHARGE_PRICE}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: left;" colspan="2">L&yacute; do phụ thu: {{SURCHARGE_REASON}}</td>
+</tr>
+</tfoot>
+</table>
+<!-- Thuế và tổng thanh toán -->
+<table style="border-collapse: collapse; width: 100%;" cellpadding="3">
+<tfoot>
+<tr>
+<td style="font-size: 13px; text-align: left;">Tổng tiền thuế</td>
+<td style="font-size: 13px; text-align: right; font-weight: bold;">{{TOTAL_TAX_PRICE_BY_ITEM}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: left;">+ Thuế {{TAX_PERCENT}}</td>
+<td style="font-size: 13px; text-align: right; font-weight: bold;">{{TAX_PRICE}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: left;">Tổng thanh to&aacute;n</td>
+<td style="font-size: 13px; text-align: right; font-weight: bold;">{{TOTAL_PAY}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: left;">{{PAYMENT_NAME}}</td>
+<td style="font-size: 13px; text-align: right; font-weight: bold;">{{PAYMENT_AMOUNT}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: left;">Tiền thối</td>
+<td style="font-size: 13px; text-align: right; font-weight: bold;">{{CHANGE_MONEY}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: left;">Ghi ch&uacute;:</td>
+<td style="font-size: 13px; text-align: right; font-weight: bold;">{{ORDER_NOTE}}</td>
+</tr>
+</tfoot>
+</table>
+<!-- Thông tin ngân hàng -->
+<table style="margin-top: 5px; width: 100%;">
+<tbody>
+<tr data-type="info_account_bank">
+<td style="font-size: 11px; text-align: center;">
+<div style="display: block;"><img class="qr-code img-thumbnail img-responsive" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&amp;data={{QR_CODE_NGAN_HANG}}&amp;qzone=3"><span style="margin-bottom: 2px; display: block;">{{BANK_ACCOUNT_NAME}}</span><span style="margin-bottom: 2px; display: block;">{{BANK_ACCOUNT_NO}}</span><span style="margin-bottom: 15px; display: block; width: 100%;">{{BANK_NAME}}</span></div>
+</td>
+</tr>
+<tr>
+<td class="mceNonEditable" style="font-size: 11px; font-style: italic; text-align: center; width: 100%;" colspan="2">PosApp {{APP_VERSION}}</td>
+</tr>
+</tbody>
+</table>
+</div>
