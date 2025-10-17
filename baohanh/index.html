@@ -1,0 +1,656 @@
+<!DOCTYPE html >
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="https://posapp.vn/wp-content/themes/twentysixteen-child/images/favicon.png">
+<title>PosApp - Phiếu biên nhận bảo hành</title>
+  
+</head>
+<style type="text/css">
+
+        
+        /* Điện thoại - Màn hình nhỏ */
+        @media only screen and (max-width: 600px) {
+            .popup {
+                width: 80%; /* Popup sẽ chiếm 80% chiều rộng màn hình */
+            }
+        }
+
+        /* Máy tính bảng - Màn hình trung bình */
+        @media only screen and (min-width: 601px) and (max-width: 1024px) {
+            .popup {
+                width: 60%; /* Popup sẽ chiếm 60% chiều rộng màn hình */
+            }
+        }
+
+        /* Máy tính để bàn - Màn hình lớn */
+        @media only screen and (min-width: 1025px) {
+            .popup {
+                width: 40%; /* Popup sẽ chiếm 40% chiều rộng màn hình */
+            }
+        }
+
+    .textleft{
+      text-align:left;
+      font-size: 28px;
+    }
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* Màu đen với độ mờ 60% */
+      display: block; /* Hiển thị lớp phủ khi tải trang */
+      z-index: 900;
+    }
+
+    /* CSS cho pop-up */
+    .popup {
+      position: fixed;
+      width: 90%;
+      background-color: white;
+      border: 2px solid #FFC125;; /* Viền màu cam đậm */
+      padding: 20px;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+      border-radius: 10px; /* Bo góc pop-up */
+      font-family: Arial, sans-serif; /* Font chữ chung */
+      max-width:220mm;
+    }
+
+    .popup button {
+      margin: 10px;
+      padding: 10px 20px; /* Kích thước nút */
+      background-color: #00BCD4; /* Màu xanh biển nhạt cho nút */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 50%; /* Đảm bảo các nút có kích thước giống nhau */
+      font-family: Arial, sans-serif; /* Font chữ cho nút */
+      font-size: 30px;
+      max-width: 500px;
+
+    }
+  /* Nâng rộng popup đầu tiên */
+    #popup1 {
+      width: 90%;
+      max-width:220mm;
+    }
+
+    .popup button:hover {
+      opacity: 0.9;
+    }
+
+    /* Nút đỏ nhạt */
+    .red-button {
+      background-color: #FF8A80; /* Màu đỏ nhạt */
+    }
+
+    /* Ẩn pop-up ban đầu */
+    #popup2 {
+      display: none;
+    }
+
+    /* Căn chỉnh ảnh trong pop-up */
+    .popup img {
+      max-width: 200px;
+      margin: 10px 0;
+    }
+
+  
+
+    /* Tiêu đề */
+    .popup-title {
+      font-size: 35px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* Chữ mờ, màu xám, đặt bên dưới phải */
+    .popup-subtext {
+      font-size: 12px;
+      color: #757575; /* Màu xám nhạt */
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      opacity: 0.9; /* Độ mờ 90% */
+    }
+  .checkbox-container-new {
+            margin-bottom: 5px;
+        }
+        .checkbox-container-new label {
+            margin-right: 15px;
+        }
+        .table-new {
+            width: 100%;
+            border-collapse: collapse;
+            display: none; /* Ẩn bảng theo mặc định */
+        }
+        .table-header-new {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            font-size: 12px;
+            background-color: #f2f2f2;
+            cursor: pointer; /* Thay đổi con trỏ khi hover vào tiêu đề */
+        }
+        .table-cell-new {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            font-size: 12px;
+        }
+        .table-header-stt-new {
+            width: 30px;
+        }
+        .table-header-name-new {
+            width: 140px;
+        }
+        .table-header-quantity-new {
+            width: 40px;
+        }
+        .table-header-tem-bh-new {
+            width: 100px;
+        }
+        .table-header-date-new {
+            width: 100px;
+        }
+        .table-header-status-new {
+            width: auto;
+        }
+        .input-field-new {
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 12px;
+            font-family: 'Times New Roman', Times, serif; /* Font chữ Times New Roman cho các trường nhập liệu */
+        }
+        .description-new {
+            margin-top: 5px;
+            display: none; /* Ẩn mô tả thêm theo mặc định */
+        }
+.tieudene{
+  margin: 5px 0;
+
+
+}
+.nhap{
+  font-size: 12px; 
+  font-family: Times New Roman;
+}
+
+.CEN{
+  text-align: center;
+}
+.noidungne{
+  font-size: 9px;
+}
+input{
+  border: hidden;
+}
+.panel {
+  max-height: 0;
+  background-color: white;
+  overflow: hidden;
+  width: auto;
+  transition: max-height 0.3s ease-out;
+
+}
+*{
+  margin: 0 auto;
+
+}
+ .table-header, .table-cell {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            font-size: 12px; /* Kích thước chữ 12px */
+        }
+        .table-header {
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+        .col-stt {
+            width: 30px;
+        }
+        .col-name {
+            width: 140px;
+        }
+        .col-quantity {
+            width: 40px;
+        }
+        .col-tem-bh {
+            width: 100px;
+        }
+        .col-date {
+            width: 100px;
+        }
+        .col-status {
+            width: auto; /* Khoảng cách còn lại */
+        }
+        .input-field {
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 12px; /* Kích thước chữ 12px */
+            font-family: 'Times New Roman', Times, serif; /* Font chữ Times New Roman */
+        }
+
+
+
+</style>
+<body >
+    <!-- Lớp phủ -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- Popup đầu tiên -->
+  <div id="popup1" class="popup">
+    <div class="popup-title">Hướng dẫn sử dụng</div>
+     <p class="textleft">1. Điền đủ các trường thông tin.</p>
+     <p class="textleft">2. Ấn vào logo PosApp để in tài liệu</p>
+    <img src="https://ariesvn8.wordpress.com/wp-content/uploads/2024/06/posapp-logo.png" alt="Example Image">
+     <p class="textleft">3. Ấn vào "STT" tại mỗi bảng để thêm 1 dòng</p>
+     <p class="textleft">4. Ấn vào "Trạng thái" tại mỗi bảng để xóa 1 dòng</p>
+     <p class="textleft">5. Tích vào "Có" tại mục xuất mượn để hiển thị bảng điền xuất mượn</p>
+
+   
+    <button id="btnClosePopup1">Đã hiểu</button>
+    <div class="popup-subtext">By NchienMs - Posapp company</div>
+  </div>
+
+  <!-- Popup thứ hai -->
+  <div id="popup2" class="popup">
+    <p style="font-size:35px; font-weight:bold;">Bạn đã hiểu thật chưa?</p>
+    <button id="btnUnderstand">Hiểu thật rồi</button>
+    <button id="btnNotUnderstand" style="background: #FFC125;">Xem lại</button>
+  </div>
+
+  <script>
+    // Lấy các phần tử
+    const popup1 = document.getElementById('popup1');
+    const popup2 = document.getElementById('popup2');
+    const overlay = document.getElementById('overlay');
+    const btnClosePopup1 = document.getElementById('btnClosePopup1');
+    const btnUnderstand = document.getElementById('btnUnderstand');
+    const btnNotUnderstand = document.getElementById('btnNotUnderstand');
+
+    // Hàm để kiểm tra và cập nhật trạng thái của lớp phủ
+    function updateOverlay() {
+
+        overlay.style.display = 'block'; // Hiển thị lớp phủ
+    if (popup1.style.display === 'none' && popup2.style.display === 'none') {
+      
+        overlay.style.display = 'none';  // Ẩn lớp phủ
+      }
+    }
+
+    // Sự kiện khi ấn nút "Đã hiểu" trên popup1
+    btnClosePopup1.addEventListener('click', function() {
+      popup1.style.display = 'none';   // Ẩn popup1
+      popup2.style.display = 'block';  // Hiển thị popup2
+      updateOverlay(); // Cập nhật trạng thái của lớp phủ
+    });
+
+    // Sự kiện khi ấn nút "Hiểu thật rồi" trên popup2
+    btnUnderstand.addEventListener('click', function() {
+      popup2.style.display = 'none';   // Ẩn popup2
+      updateOverlay(); // Cập nhật trạng thái của lớp phủ
+    });
+
+    // Sự kiện khi ấn nút "Xem lại" trên popup2
+    btnNotUnderstand.addEventListener('click', function() {
+      popup2.style.display = 'none';   // Ẩn popup2
+      popup1.style.display = 'block';  // Hiển thị lại popup1
+      updateOverlay(); // Cập nhật trạng thái của lớp phủ
+    });
+
+    // Hiển thị lớp phủ ngay khi tải trang
+    window.onload = function() {
+      updateOverlay(); // Đảm bảo lớp phủ hiển thị ngay khi tải trang
+    };
+  </script>
+
+<article  style="width: 210mm; " > 
+   
+  <table width="100%">
+    <tr>
+      <th style="width: 150px;"><a href="javascript:void(0)" onclick="window.print()"><img height="40px" src="https://ariesvn8.wordpress.com/wp-content/uploads/2024/06/posapp-logo.png"></a></th>
+    
+  
+      <td style="text-align:center; font-size: 12px;" >
+           <b style="font-size: 13px;"> PHẦN MỀM BÁN HÀNG POSAPP.VN </b> <br>
+      Sản phẩm của Công Ty Cổ Phần Công Nghệ PosApp<br>
+      <span style="font-weight: bold";>Trụ sở chính:</span> 260/11 Nguyễn Thái Bình, P12, Q. Tân Bình, TP.HCM<br>
+      <span style="font-weight: bold";>Chi nhánh Hà Nội:</span> Tầng 4, 174 Đường Láng, Q. Đống Đa, HN<br>
+      <span style="font-weight: bold";>Hotline</span> 1900.3016 &nbsp;&nbsp;                  <span style="font-weight: bold";>Zalo:</span>  0379 096 987       &nbsp;&nbsp;    <span style="font-weight: bold";>Email:</span> support@posapp.vn<br>
+      </td>
+       </tr>
+  </table>
+
+
+
+
+
+<hr style="width: 80%; text-align: center;margin: 5px auto;">
+
+
+
+
+
+
+<!-- #Ngắt -->
+  <p style="text-align: center; width: 100%; font-size: 13px;"><b>PHIẾU TIẾP NHẬN THÔNG TIN KHÁCH HÀNG</b> <br>
+            <span style="font-size: 12px">Số phiếu:.......</span>
+  </p>
+
+
+  <div class="tieudene"  style="font-size: 12px; font-weight: bold;" > I. Thông tin khách hàng</div>
+
+  <p style="font-size:12px; ">Tên khách hàng:
+    <input title="" required="" class="nhaptext nhap" type="text" style=" width: 400px; border: hidden;">
+  <span style="font-size:12px; "> SĐT:</span>
+    <input   title="" required="" class="nhaptext nhap" type="text"> </p>
+
+  <p style="width: 100%;  font-size:12px;"> Địa chỉ:<input   style=" width: 90%;" title="" required="" class="nhaptext nhap" type="text"></p>
+
+
+
+  <p class="tieudene" style="font-size: 12px; font-weight: bold;"> II. Thông tin thiếu bị tiếp nhận</p> 
+
+<table id="deviceTable" style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th class="table-header col-stt" onclick="addRow()">STT</th>
+                <th class="table-header col-name">Tên Thiết Bị</th>
+                <th class="table-header col-quantity">SL</th>
+                <th class="table-header col-tem-bh">Tem BH</th>
+                <th class="table-header col-date">Ngày Nhận</th>
+                <th class="table-header col-status" onclick="deleteLastRow()">Tình Trạng</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="table-cell">1</td>
+                <td class="table-cell"><input type="text" class="input-field" placeholder="Nhập tên thiết bị"></td>
+                <td class="table-cell"><input type="number" class="input-field" placeholder="Nhập số lượng"></td>
+                <td class="table-cell"><input type="text" class="input-field" placeholder="Nhập tem BH"></td>
+                <td class="table-cell"><input type="date" class="input-field"></td>
+                <td class="table-cell"><input type="text" class="input-field" placeholder="Nhập tình trạng"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+  <p style="font-size:12px;margin: 5px auto;">Kết quả tiếp nhận: <span style="float: right;font-size:12px;">Ngày dự kiến trả:<input style="width: 200px;" title="" required="" class="nhaptext nhap" type="date"></span></p>
+    <textarea name="kqtiepnhan" style="width: 100%;" title="" required="" class="nhaptext nhap" type="text" rows="2" > </textarea> 
+ 
+
+  <p class="tieudene"  style="font-size: 12px; font-weight: bold;"> III. Quy định bảo hành</p> 
+  <p style="font-size:12px;">
+1. Điều kiện bảo hành: Sản phẩm theo đúng tiêu chuẩn của nhà sản xuất, có phiếu bảo hành, tem bảo hành. <br>
+2. Những trường hợp không bảo hành: <br>
+<div style="margin: 0 0 0 10px;" style="font-size:12px;" >
+  <span style="font-size:12px;">
+  - Thiết bị hết thời hạn bảo hành, tem bảo hành không còn nguyên vẹn, bị dán đè, không tự ý thảo gỡ, sửa chữa thiết bị <br>
+  - Đầu bị trầy, xước, rơi vỡ do người sử dụng tạo ra. <br>
+  - Thiết bị hỏng hóc do tác động cơ học làm biến dạng; rơi, vỡ, va đập <br>
+  - Bị ẩm ướt, hoen rỉ, sử dụng sai điện áp quy định; cháy nổ, chuột bọ, côn trùng gây ra, hoặc do con người sử dụng làm hư.
+</span>
+</div>
+  </p>
+  <p class="tieudene"  style="font-size: 12px; font-weight: bold;"> IV. Lưu ý</p>
+  <p style="font-size:12px;" style="text-align:justify;">
+1. Để đảm bảo, bảo mật các dữ liệu bao gồm cả dữ liệu cá nhân ("Dữ Liệu"), quý khách vui lòng tự sao lưu hoặc xóa dữ liệu, các phần mềm, ứng dụng, hình ảnh hoặc bất kỳ nội dung nào khác được lưu trữ trong sản phẩm ("Dữ Liệu") trước khi gừi sản phẩm cho PosApp để bảo hành/sửa chữa. PosApp không chịu trách nhiệm cho bất kỳ thiệt hại trực tiếp hoặc gián tiếp nào gây ra cho Quý khách nếu Dữ Liệu lưu trong sản phẩm bị tiết lộ, bị mất, bị hư hỏng hoặc bị định dạng lại trong quá trình kiểm tra, xử lý sữa chữa, bảo hành.
+<br>2. Quý khách vui lòng đăng xuất hoặc xóa tất cả tài khoản (ngân hàng, game, ứng dụng, điện thoại, mạng xã hội ... ) lưu trong sản phẩm ("Tài Khoản") trước khi gửi sản phẩm để kiểm tra, sửa chữa, bảo hành. PosApp sẽ không chịu trách nhiệm cho bất kỳ thiệt hại trực tiếp hoặc gián tiếp nào gây ra cho Quý khách từ sự tiết lộ hoặc lạm dụng trái phép các Tài Khoản này quá trình kiểm tra, xử lý sửa chữa, bảo hành.
+<br>3. Đối với sản phẩm bảo hành tại hãng/ nhà sản xuất, PosApp chỉ tiếp nhận sản phẩm với hiện trạng (bên ngoài) và chuyển đến bộ phận bảo hành của hãng/
+nhà sản xuất. Các thông tin liên quan đến sản phẩm, việc bảo hành/ sửa chữa sản phẩm sẽ được PosApp /Hãng/ Đối tác của PosApp thông báo đến quý khách theo thông tin liên lạc được cung cấp tại Mục I
+<br>4. Với các sản phẩm/linh kiện không phải do PosApp bán ra: PosApp sẽ tiếp nhận và xử lý sau đó báo lại thông tin cho khách hàng tại mục I
+<br>5. PosApp cho phép khách hàng nhận lại sản phẩm bằng Phiếu biên nhận (lưu ý người nhận sản phẩm có thể không phải là người giao sản phẩm hoặc không
+phải là người được ghi nhận tại phần Thông tin khách hàng ở Mục I). Người đến nhận sản phẩm phải mang theo Phiếu biên nhận này.
+<br>+ Trường hợp mất Phiếu biên nhận quý khách phải thông báo ngay cho PosApp qua số điện thoại hotline 1900 3016 và thực hiện theo quy trình giải
+quyết của PosApp.
+<br>+ PosApp không giải quyết nhận sản phẩm trong trường hợp quý khách không có Phiếu biên nhận, trừ trường hợp quý khách được PosApp đồng ý giải quyết theo quy trình nhận lại sản phẩm do mất Phiếu biên nhận.
+<br>+ Trong mọi trường hợp, PosApp không chịu trách nhiệm về việc mất sản phẩm khi quý khách không có hoặc mất Phiếu biên nhận.
+<br>6. Phiếu biên nhận này có giá trị từ ngày lập phiếu và hết hiệu lực khi một trong hai trường hợp sau xảy ra (căn cứ vào trường hợp nào xảy ra trước):
+<br>+ Trường hợp 1: PosApp giao trả lại sản phẩm.
+<br>+ Trường hợp 2: Hết Thời Hạn Lưu Kho*.
+<br>* Thời Hạn Lưu Kho là năm (05) ngày kể từ ngày dự kiến trả sản phẩm nêu tại Mục I hoặc kể từ ngày nhận lại Sản Phẩm theo thông báo của
+PosApp gửi đến Khách Hàng (nếu có) (căn cứ vào thời hạn nào đến sau). Khi khách hàng từ chối sửa chữa khi hai bên không có sự thống nhất về mức phí và cách xử lý thì thời gian lưu kho là 5 ngày kể từ ngày PosApp thông báo và khách hàng từ chối sửa chữa
+Nếu đến hết Thời Hạn Lưu Kho mà quý khách vẫn chưa đến nhận sẵn phẩm thì quý khách đã thực hiện hành vi từ bỏ quyền sở hữu đối với sản phẩm, PosApp có toàn quyền quyết định xử lý đối với sản phẩm.
+<br>7. Trường hợp khách hàng gửi máy bảo hành thông qua các đơn vị vận chuyển khác PosApp sẽ tiếp nhận máy từ đơn vị vận chuyển kiểm tra sản phẩm và báo lại thông tin cho khách hàng sau khi kiểm tra theo thông tin trên bưu kiện, quy trình gửi trả máy cũng sẽ do khách hàng tự lên PosApp lấy hoặc gửi qua đơn vị vận chuyển do khách hàng tự đặt hoặc do khách hàng nhờ PosApp đặt. Mọi hỏng hóc của thiết bị trong quá trình vận chuyển do bên thứ 3thì PosApp sẽ không phải chịu trách nhiệm.
+<br>8. Trong mọi trường hợp, PosApp có quyền quyết định cuối cùng.
+</p>
+<p style="font-size:12px; float: right;"> Hà Nội, <input class ="nhap" type="date"></p>
+<table width="100%" style="font-size: 12px; text-align:center;border: 1px solid black; border-collapse: collapse;">
+  <tr>
+    <td style="border: 1px solid black; padding-bottom: 30px;">Khách hàng<br>
+    (Ký và ghi rõ họ tên)</td>
+    <td style="border: 1px solid black; padding-bottom: 30px;">Người tiếp nhận<br>
+    (Ký và ghi rõ họ tên)</td>
+    <br>
+
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+<div style="page-break-before:always"></div>
+
+
+<p class="tieudene"  style="font-size: 12px; font-weight: bold;"> V. Phần xuất mượn thiết bị</p> 
+<p style="font-size: 12px">
+1. Thiết bị xuất cho mượn là thiết bị PosApp cung cấp cho khách hàng sử dụng tạm/thay thế nhằm đảm bảo khách hàng có thiết bị sử dụng trong quá trình bảo hành, sửa chữa sản phẩm mà PosApp đã tiếp nhận 
+<br>2. PosApp có thể xuất thiết bị cho khách hàng mượn hoặc không tùy vào yếu tố về số lượng thiết bị cho mượn có sẵn.
+<br>3. Thiết bị cho mượn PosApp đảm bảo về tình trạng hoạt động tốt và tương đương hoặc có giá trị sử dụng tương đồng với thiết bị PosApp tiếp nhận bảo hành.
+<br>4. Khách hàng sẽ chịu trách nhiệm đảm bảo thiết bị cho mượn không bị hỏng hóc trong quá trình khách hàng mượn sản phẩm
+<br>5. Khách hàng sẽ cần chi trả phí sửa chữa nếu thiết bị cho mượn hỏng hóc do lỗi người dùng trong quá trình sử dụng (PosApp sẽ đánh giá phần này khi nhận lại sản phẩm cho mượn
+</p>
+
+
+    <div class="checkbox-container-new">
+        <span style="font-size: 12px; font-weight:bold;"> Xuất mượn thiết bị: </span>
+        <label style="font-size: 12px;"><input type="checkbox" id="showTableCheckboxNew" onclick="handleCheckboxChangeNew('show')"> Có</label>
+        <label style="font-size: 12px;"><input type="checkbox" id="hideTableCheckboxNew" onclick="handleCheckboxChangeNew('hide')" checked> Không</label>
+    </div>
+
+    <table id="newDeviceTableNew" class="table-new" >
+        <thead>
+            <tr>
+                <th class="table-header-new table-header-stt-new" onclick="addRowNew()">STT</th>
+                <th class="table-header-new table-header-name-new">Tên Thiết Bị</th>
+                <th class="table-header-new table-header-quantity-new">SL</th>
+                <th class="table-header-new table-header-tem-bh-new">SN</th>
+                <th class="table-header-new table-header-date-new">Ngày Xuất</th>
+                <th class="table-header-new table-header-status-new" onclick="removeLastRowNew()">Tình Trạng</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="table-cell-new">1</td>
+                <td class="table-cell-new"><input type="text" class="input-field-new" placeholder="Nhập tên thiết bị"></td>
+                <td class="table-cell-new"><input type="number" class="input-field-new" placeholder="Nhập số lượng"></td>
+                <td class="table-cell-new"><input type="text" class="input-field-new" placeholder="Nhập SN"></td>
+                <td class="table-cell-new"><input type="date" class="input-field-new"></td>
+                <td class="table-cell-new"><input type="text" class="input-field-new" placeholder="Nhập tình trạng"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="descriptionNew" class="description-new" >
+        <label style="font-size: 12px;"for="additionalDescription">Mô tả thêm:</label>
+        <textarea type="text" id="additionalDescription" class="input-field-new" rows="2" ></textarea>
+    </div>
+
+
+
+
+</div>
+<hr style="width: 80%; text-align: center; margin: 5px auto;">
+
+  <p style="text-align: center; width: 100%; font-size: 13px;"><b>THÔNG TIN TRẢ THIẾT BỊ BẢO HÀNH/ THU HỒI MÁY MƯỢN</b> <br>
+         
+  </p>
+<div style="word-wrap: break-word;"><p style="font-size: 12px;"><span style="font-weight: bold;">Trả thiết bị bảo hành:</span>  ........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................</p></div>
+
+<div style="word-wrap: break-word;"><p style="font-size: 12px;"><span style="font-weight: bold;">Nhận lại thiết bị cho mượn:</span>  ........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................</p></div>
+
+<p style="font-size:12px; float: right; "> Hà Nội, Ngày... Tháng... Năm 2024</p>
+<table width="100%" style=" margin-bottom: 30px; font-size: 12px; text-align:center;border: 1px solid black; border-collapse: collapse; ">
+  <tr >
+    <td style="border: 1px solid black; padding-bottom: 30px;font-size: 12px;">Khách hàng<br>
+    (Ký và ghi rõ họ tên)</td>
+    <td style="border: 1px solid black; padding-bottom: 30px;font-size: 12px;">Người trả máy BH<br>
+    (Ký và ghi rõ họ tên)</td>
+    <br>
+
+  </tr>
+</table>
+
+
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <script>
+            
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+
+ function addRow() {
+            var table = document.getElementById("deviceTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow();
+            var rowCount = table.rows.length;
+
+            var sttCell = newRow.insertCell(0);
+            var nameCell = newRow.insertCell(1);
+            var quantityCell = newRow.insertCell(2);
+            var temBHCell = newRow.insertCell(3);
+            var dateCell = newRow.insertCell(4);
+            var statusCell = newRow.insertCell(5);
+
+            sttCell.className = 'table-cell';
+            nameCell.className = 'table-cell';
+            quantityCell.className = 'table-cell';
+            temBHCell.className = 'table-cell';
+            dateCell.className = 'table-cell';
+            statusCell.className = 'table-cell';
+
+            sttCell.innerHTML = rowCount;
+            nameCell.innerHTML = '<input type="text" class="input-field" placeholder="Nhập tên thiết bị">';
+            quantityCell.innerHTML = '<input type="number" class="input-field" placeholder="Nhập số lượng">';
+            temBHCell.innerHTML = '<input type="text" class="input-field" placeholder="Nhập tem BH">';
+            dateCell.innerHTML = '<input type="date" class="input-field">';
+            statusCell.innerHTML = '<input type="text" class="input-field" placeholder="Nhập tình trạng">';
+        }
+
+        function deleteLastRow() {
+            var table = document.getElementById("deviceTable").getElementsByTagName('tbody')[0];
+            var rowCount = table.rows.length;
+
+            if (rowCount > 0) {
+                table.deleteRow(rowCount - 1);
+            }
+
+            // Update the STT column
+            for (var i = 0; i < table.rows.length; i++) {
+                table.rows[i].cells[0].innerHTML = i + 1;
+            }
+        }
+
+
+        // bảng 2
+                function handleCheckboxChangeNew(type) {
+            var showCheckboxNew = document.getElementById("showTableCheckboxNew");
+            var hideCheckboxNew = document.getElementById("hideTableCheckboxNew");
+            var tableNew = document.getElementById("newDeviceTableNew");
+            var descriptionNew = document.getElementById("descriptionNew");
+
+            if (type === 'show') {
+                showCheckboxNew.checked = true;
+                hideCheckboxNew.checked = false;
+                tableNew.style.display = "table"; // Hiển thị bảng
+                descriptionNew.style.display = "block"; // Hiển thị mô tả thêm
+            } else if (type === 'hide') {
+                hideCheckboxNew.checked = true;
+                showCheckboxNew.checked = false;
+                tableNew.style.display = "none"; // Ẩn bảng
+                descriptionNew.style.display = "none"; // Ẩn mô tả thêm
+            }
+        }
+
+        function addRowNew() {
+            var tableBodyNew = document.querySelector("#newDeviceTableNew tbody");
+            var rowCountNew = tableBodyNew.rows.length;
+            var newRowNew = tableBodyNew.insertRow();
+            newRowNew.innerHTML = `
+                <td class="table-cell-new">${rowCountNew + 1}</td>
+                <td class="table-cell-new"><input type="text" class="input-field-new" placeholder="Nhập tên thiết bị"></td>
+                <td class="table-cell-new"><input type="number" class="input-field-new" placeholder="Nhập số lượng"></td>
+                <td class="table-cell-new"><input type="text" class="input-field-new" placeholder="Nhập tem BH"></td>
+                <td class="table-cell-new"><input type="date" class="input-field-new"></td>
+                <td class="table-cell-new"><input type="text" class="input-field-new" placeholder="Nhập tình trạng"></td>
+            `;
+        }
+
+        function removeLastRowNew() {
+            var tableBodyNew = document.querySelector("#newDeviceTableNew tbody");
+            if (tableBodyNew.rows.length > 0) {
+                tableBodyNew.deleteRow(tableBodyNew.rows.length - 1);
+            }
+        }
+
+        // Thiết lập trạng thái ban đầu của bảng và mô tả thêm
+        window.onload = function() {
+            var hideCheckboxNew = document.getElementById("hideTableCheckboxNew");
+            var tableNew = document.getElementById("newDeviceTableNew");
+            var descriptionNew = document.getElementById("descriptionNew");
+            
+            if (hideCheckboxNew.checked) {
+                tableNew.style.display = "none"; // Ẩn bảng nếu hộp kiểm "Không" được chọn
+                descriptionNew.style.display = "none"; // Ẩn mô tả thêm nếu bảng bị ẩn
+            } else {
+                tableNew.style.display = "table"; // Hiển thị bảng nếu hộp kiểm "Có" được chọn
+                descriptionNew.style.display = "block"; // Hiển thị mô tả thêm nếu bảng được hiển thị
+            }
+        };
+        </script>
+
+</body>
+</html>
