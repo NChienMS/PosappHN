@@ -1,0 +1,170 @@
+<div style="font-family: Arial, sans-serif; font-size: 13px;">
+<table style="width: 100%; border-collapse: collapse;">
+<tbody>
+<tr style="page-break-inside: avoid; page-break-after: auto;">
+<td style="text-align: center;">
+<table style="width: 100%;">
+<tbody>
+<tr>
+<td style="font-size: 13px; text-align: center;">{{SHOP_LOGO}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: center;"><strong style="font-size: 13px;">{{SHOP_NAME}}</strong></td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: center;">{{SHOP_ADDRESS}}</td>
+</tr>
+<tr>
+<td style="font-size: 13px; text-align: center;">{{SHOP_PHONE}}</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="font-size: 22px; text-align: center; margin-bottom: 2px;">H&Oacute;A ĐƠN THANH TO&Aacute;N</p>
+<p style="font-size: 14px; text-align: center; margin-top: 2px;">Số phiếu <span style="font-weight: bold;">{{ORDER_CODE}}</span></p>
+<table style="width: 100%;">
+<tbody>
+<tr>
+<td style="font-size: 13px; text-align: left;">Ng&agrave;y tạo</td>
+<td style="font-size: 13px; text-align: right;">{{DATE_CREATED}}</td>
+</tr>
+</tbody>
+</table>
+<table style="width: 100%;">
+<tbody>
+<tr data-type="name-customer">
+<td style="font-size: 13px; text-align: left;">Kh&aacute;ch h&agrave;ng</td>
+<td style="font-size: 13px; text-align: right;">{{CUSTOMER_NAME}}</td>
+</tr>
+<tr data-type="phone-number">
+<td style="font-size: 13px; text-align: left;">Điện thoại</td>
+<td style="font-size: 13px; text-align: right;">{{CUSTOMER_PHONE}}</td>
+</tr>
+<tr data-type="address-customer">
+<td style="font-size: 13px; text-align: left;">Địa chỉ</td>
+<td style="font-size: 13px; text-align: right;">{{CUSTOMER_ADDRESS}}</td>
+</tr>
+</tbody>
+</table>
+<table style="width: 100%; margin-bottom: 5px;">
+<tbody>
+<tr>
+<td style="font-size: 13px; text-align: left; width: 50%;">T.Ng&acirc;n: {{CASHIER_NAME}}</td>
+<td style="font-size: 13px; text-align: right; width: 50%;">{{PLACE_NAME}}</td>
+</tr>
+</tbody>
+</table>
+<table style="width: 100%; border-collapse: collapse; border: 1px solid black;" cellpadding="3">
+<thead>
+<tr>
+<th style="border: 1px solid black; text-align: left; width: 35.1562%;"><strong><span style="font-size: 13px;">T&ecirc;n</span></strong></th>
+<th style="border: 1px solid black; text-align: right; width: 16.6667%;"><strong><span style="font-size: 13px;">Sl</span></strong></th>
+<th style="border: 1px solid black; text-align: right; width: 24.4792%;"><strong><span style="font-size: 13px;">Gi&aacute;</span></strong></th>
+<th style="border: 1px solid black; text-align: right; width: 23.6979%;"><strong><span style="font-size: 13px;">Tổng</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="item-name">
+<td style="border: 1px solid black; padding-top: 3px; width: 35.1562%;"><span style="font-size: 13px; font-weight: 500;">{{ITEM_NAME}} ({{UNIT_NAME}})</span></td>
+<td style="border: 1px solid black; text-align: right; width: 16.6667%;"><span style="font-size: 13px;">{{ITEM_QUANTITY}}</span></td>
+<td style="border: 1px solid black; text-align: right; width: 24.4792%;"><span style="font-size: 13px;">{{ITEM_PRICE}}</span></td>
+<td style="border: 1px solid black; text-align: right; width: 23.6979%;"><span style="font-size: 13px;">{{ITEM_TOTAL_PRICE}}</span></td>
+</tr>
+<tr>
+<td style="border: 1px solid black; width: 76.3021%;" colspan="3"><span style="font-size: 13px;">{{ITEM_NOTE}}</span></td>
+<td style="border: 1px solid black; width: 23.6979%;">&nbsp;</td>
+</tr>
+<tr data-type="topping">
+<td style="border: 1px solid black; width: 51.8229%;" colspan="2"><span style="font-size: 13px;">+ {{TOPPING_NAME}} {{TOPPING_QUANTITY}}</span></td>
+<td style="border: 1px solid black; text-align: right; width: 24.4792%;"><span style="font-size: 13px;">{{TOPPING_TOTAL_PRICE}}</span></td>
+<td style="border: 1px solid black; width: 23.6979%;">&nbsp;</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; width: 51.8229%;" colspan="2"><span style="font-size: 13px;">+ Giảm gi&aacute; ({{ITEM_DISCOUNT_PERCENT}})</span></td>
+<td style="border: 1px solid black; text-align: right; width: 24.4792%;"><span style="font-size: 13px;">-{{ITEM_DISCOUNT_PRICE}}</span></td>
+<td style="border: 1px solid black; width: 23.6979%;">&nbsp;</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; width: 51.8229%;" colspan="2"><span style="font-size: 13px;">+ Phụ thu ({{ITEM_SURCHARGE_PERCENT}})</span></td>
+<td style="border: 1px solid black; text-align: right; width: 24.4792%;"><span style="font-size: 13px;">+{{ITEM_SURCHARGE_PRICE}}</span></td>
+<td style="border: 1px solid black; width: 23.6979%;">&nbsp;</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; width: 51.8229%;" colspan="2"><span style="font-size: 13px;">+ Thuế ({{ITEM_TAX_PERCENT}})</span></td>
+<td style="border: 1px solid black; text-align: right; width: 24.4792%;"><span style="font-size: 13px;">{{ITEM_TAX_PRICE}}</span></td>
+<td style="border: 1px solid black; width: 23.6979%;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<div style="width: 100%; margin-top: 20px;">
+<table style="width: 50%; float: left;">
+<tbody>
+<tr data-type="info_account_bank">
+<td style="font-size: 10px; text-align: center;">
+<div style="display: block;"><img class="qr-code img-thumbnail img-responsive" src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&amp;data={{QR_CODE_NGAN_HANG}}&amp;qzone=3" width="100px"></div>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="border-collapse: collapse; width: 50%;" border="0" cellspacing="0" cellpadding="3">
+<tfoot>
+<tr data-type="totalofitems">
+<td style="font-size: 10px; text-align: left; white-space: nowrap;">Tổng SL m&oacute;n</td>
+<td style="font-size: 10px; text-align: right; font-weight: bold;">{{TOTAL_OF_ITEMS}}</td>
+</tr>
+<tr data-type="totalprice">
+<td style="font-size: 10px; text-align: left; white-space: nowrap;">Th&agrave;nh tiền</td>
+<td style="font-size: 10px; text-align: right; font-weight: bold;">{{TOTAL_PRICE}}</td>
+</tr>
+<tr data-type="discount">
+<td style="font-size: 10px; text-align: left; white-space: nowrap;">Giảm gi&aacute; ({{DISCOUNT_PERCENT}})</td>
+<td style="font-size: 10px; text-align: right; font-weight: bold;">{{DISCOUNT_PRICE}}</td>
+</tr>
+<tr data-type="discountReason">
+<td style="font-size: 10px; text-align: left; white-space: nowrap;">L&yacute; do: {{DISCOUNT_REASON}}</td>
+</tr>
+<tr data-type="surcharge">
+<td style="font-size: 10px; text-align: left; white-space: nowrap;">Phụ thu ({{SURCHARGE_PERCENT}})</td>
+<td style="font-size: 10px; text-align: right; font-weight: bold;">{{SURCHARGE_PRICE}}</td>
+</tr>
+<tr data-type="surchargeReason">
+<td style="font-size: 10px; text-align: left; white-space: nowrap;">L&yacute; do phụ thu: {{SURCHARGE_REASON}}</td>
+</tr>
+<tr data-type="totaltaxitem">
+<td style="font-size: 10px; text-align: left; white-space: nowrap;">Tổng tiền thuế</td>
+<td style="font-size: 10px; text-align: right; font-weight: bold;">{{TOTAL_TAX_PRICE_BY_ITEM}}</td>
+</tr>
+<tr style="display: contents;" data-type="tax">
+<td style="font-size: 10px; text-align: left; white-space: nowrap;">+ Thuế {{TAX_PERCENT}}</td>
+<td style="font-size: 10px; text-align: right; font-weight: bold;">{{TAX_PRICE}}</td>
+</tr>
+<tr data-type="totalpay">
+<td style="font-size: 10px; text-align: left; white-space: nowrap;">Tổng thanh to&aacute;n</td>
+<td style="font-size: 10px; text-align: right; font-weight: bold;">{{TOTAL_PAY}}</td>
+</tr>
+<tr data-type="wallet">
+<td style="font-size: 10px; text-align: left; white-space: nowrap;">{{PAYMENT_NAME}}</td>
+<td style="font-size: 10px; text-align: right; font-weight: bold;">{{PAYMENT_AMOUNT}}</td>
+</tr>
+<tr data-type="changeMoney">
+<td style="font-size: 10px; text-align: left; white-space: nowrap;">Tiền thối</td>
+<td style="font-size: 10px; text-align: right; font-weight: bold;">{{CHANGE_MONEY}}</td>
+</tr>
+<tr data-type="notebill">
+<td style="font-size: 10px; text-align: left; white-space: nowrap;">Ghi ch&uacute;:</td>
+<td style="font-size: 10px; text-align: right; font-weight: bold;">{{ORDER_NOTE}}</td>
+</tr>
+</tfoot>
+</table>
+</div>
+<table style="margin-top: 5px; width: 100%;">
+<tfoot>
+<tr>
+<td class="mceNonEditable" style="font-size: 10px; font-style: italic; text-align: center; width: 100%;" colspan="2">PosApp {{APP_VERSION}}</td>
+</tr>
+</tfoot>
+</table>
+</div>
