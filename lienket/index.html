@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trang chuyển hướng</title>
+
+  <!-- CSS & JS chung của site -->
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script defer src="../js/script.js"></script>
+
+  <!-- CSS nhỏ, chỉ áp dụng trong trang này (không đổi theme của anh) -->
+  <style>
+    /* Scope trong #redirect để tránh ảnh hưởng chung */
+    #redirect {
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 24px;
+    }
+    #redirect .card {
+      width: min(680px, 92vw);
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 16px;
+      padding: 28px 22px;
+      margin: 0 auto;
+    }
+    @media (prefers-color-scheme: dark) {
+      #redirect .card { border-color: rgba(255,255,255,.12); }
+    }
+    #redirect h1#title {
+      margin: 0 0 8px;
+      line-height: 1.25;
+      font-size: clamp(22px, 5vw, 30px);
+      font-weight: 700;
+    }
+    #redirect p.lead {
+      margin: 0 0 16px;
+      opacity: .8;
+      font-size: clamp(14px, 3.6vw, 16px);
+    }
+    #redirect .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 14px;
+    }
+    #redirect .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.08);
+      text-decoration: none;
+      user-select: none;
+      transition: transform .12s ease, opacity .12s ease;
+    }
+    @media (prefers-color-scheme: dark) {
+      #redirect .btn { border-color: rgba(255,255,255,.12); }
+    }
+    #redirect .btn:hover { transform: translateY(-1px); }
+    #redirect .btn.primary { font-weight: 600; }
+    #redirect .btn.disabled {
+      pointer-events: none;
+      opacity: .45;
+      filter: grayscale(.2);
+    }
+    #redirect .note {
+      margin-top: 10px;
+      font-size: 13px;
+      opacity: .7;
+    }
+    #redirect .error {
+      color: #b91c1c;
+      margin-top: 8px;
+      font-size: 14px;
+      display: none;
+    }
+  </style>
+
+  <!-- Logic chuyển hướng cho trang này -->
+<script defer src="./redirect.js"></script>
+</head>
+<body>
+  <section id="redirect">
+    <div class="card">
+      <h1 id="title">Đang chuẩn bị chuyển hướng…</h1>
+      <p id="desc" class="lead">
+        <span id="countdownWrap" style="display:none;">Tự chuyển sau <b id="count">3</b>s…</span>
+      </p>
+
+      <div class="actions">
+        <a id="quickBtn" class="btn primary" href="#" rel="noopener">Truy cập nhanh</a>
+        <a id="homeBtn"  class="btn" href="/" rel="noopener">Truy cập trang chủ</a>
+      </div>
+
+      <p id="error" class="error">Chưa có liên kết chuyển hướng.</p>
+      <p class="note">Nếu trình duyệt chặn tự chuyển, bấm “Truy cập nhanh”.</p>
+    </div>
+  </section>
+</body>
+</html>
