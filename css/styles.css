@@ -118,3 +118,51 @@ footer{border-top:1px solid rgba(255,255,255,.08); margin-top:26px}
 
 /* small tweaks */
 @media (max-width:480px){ .links{display:none} }
+
+
+details {
+  position: relative;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  padding: 6px 10px 6px 10px;
+}
+
+details summary {
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.copy-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #777;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.copy-btn:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* Thông báo */
+.copy-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4caf50;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+.copy-toast.show {
+  opacity: 1;
+}
