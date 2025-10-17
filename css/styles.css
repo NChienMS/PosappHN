@@ -33,7 +33,41 @@ html[data-theme="light"] {
   --muted:#6b7280;
   --shadow: 0 10px 30px rgba(0,0,0,.08);
 }
+/* ======= Cải thiện hiển thị khi ở chế độ sáng ======= */
+html[data-theme="light"] {
+  --border-color: rgba(0, 0, 0, 0.08);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --input-bg: rgba(0, 0, 0, 0.03);
+  --details-bg: rgba(0, 0, 0, 0.02);
+}
 
+html[data-theme="light"] .card {
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+html[data-theme="light"] .btn {
+  border: 1px solid var(--border-color);
+  background: rgba(0,0,0,0.03);
+}
+
+html[data-theme="light"] .search input {
+  border: 1px solid rgba(0,0,0,0.12);
+  background: var(--input-bg);
+}
+
+html[data-theme="light"] details {
+  background: var(--details-bg);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+html[data-theme="light"] summary {
+  color: #111;
+}
+
+html[data-theme="light"] .muted {
+  color: #4b5563;
+}
 /* Tôn trọng system nếu chưa có localStorage */
 @media (prefers-color-scheme: dark) {
   html:not([data-theme]) {
@@ -166,3 +200,4 @@ details summary {
 .copy-toast.show {
   opacity: 1;
 }
+
