@@ -1,1184 +1,197 @@
 <!DOCTYPE html>
-<html lang="vi_VN">
-
-
-<!-- Mirrored from irsfoundation.com/tf/templates/wedding/lovely-wedding/lovely-wedding/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 May 2018 09:07:16 GMT -->
+<html lang="vi" data-theme="dark">
 <head>
- <!-- Thông tin chia sẻ-->
-<meta property="og:title" content="N Chiến ❤️ Thu Yến - Thiệp mời tham dự" />
-<meta property="og:description" content="Chỉ có hai nửa quả cam cắt từ một quả mới thật sự khớp với nhau. Cảm ơn vì đã là một phần của hành trình yêu thương này, và rất mong được đón bạn trong ngày trọng đại." />
-<meta property="og:image" content="https://ariesvn8.wordpress.com/wp-content/uploads/2025/10/chyen.jpg" />
-<meta property="og:url" content="https://chyen.love" />
-<meta property="og:type" content="website" />
-<link rel="preload" href="images/tt/hoagocphai.webp" as="image">
-    
-
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    <!--SLIDER ẢNH -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
-    <!-- Swiper CSS khi mở ảnh-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper.css">
-    <!-- Meta Tags -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- js nhập tên lúc load xong-->
-    <script src='js/sweetalert-dev.js'></script>
-    <!-- Page Title -->
-    <title>ChYến- Lovly Wedding</title>
-    <!-- biểu tượng trang -->
-    <link href="images/favicon/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <!-- ảnh chia sẻ (để ảnh dạng link http:// đê tích hợp trên zalo) -->
-    <meta property="og:image"content="images/favicon/favicon.png">
-
-    <script src="https://kit.fontawesome.com/7e83b73089.js" crossorigin="anonymous"></script>
-    <!-- Bootstrap core CSS: thanh logo-->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- chữ với slider trên -->
-    <link href="css/slick.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-    <!-- Fancybox JS trình xem ảnh-->
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <!-- Swiper JS slider ảnh-->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kỹ thuật • | YCSoft</title>
+  <meta name="description" content="Trang hỗ trợ kỹ thuật, tổng hợp liên kết và tài liệu" />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23005cff'/%3E%3Cpath d='M50 22 67 50 50 78 33 50z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
 </head>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Trang Kỹ thuật Nextool">
+        <span class="logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 12L12 4l8 8-8 8-8-8Z" fill="white"/>
+          </svg>
+        </span>
+        <span>Kỹ thuật • Trang chủ</span>
+      </a>
 
+      <nav class="links" aria-label="Liên kết nhanh" style="display: none;">
+        <a class="btn" href="#lien-ket">Liên kết</a>
+        <a class="btn" href="#tai-lieu">Tài liệu</a>
+        <a class="btn" href="#ho-tro">Hỗ trợ</a>
+        <a class="btn primary" href="#lien-he">Liên hệ</a>
+      </nav>
 
-
-<body id="home"  >
-
-
-
-    <!-- #Load khi nhấn gửi thông tin -->
-    <div class="overlay2" id="overlay2" style="display:none;"></div>
-    <div class="loader" id="loader" style="display:none;">
-            <div class="inner">
-                <span class="icon"><i class="fi flaticon-two"></i></span>
-            </div>
+      <!-- Theme toggle -->
+      <button id="themeToggle" class="btn" aria-pressed="false" aria-label="Đổi giao diện Sáng/Tối" title="Đổi giao diện (Sáng/Tối)">
+        <span class="theme-icon" aria-hidden="true">
+          <svg id="icon-moon" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="icon-sun" viewBox="0 0 24 24" width="18" height="18" style="display:none"><path fill="currentColor" d="M6.76 4.84 5.34 3.42 3.92 4.84l1.42 1.42L6.76 4.84zM1 13h3v-2H1v2zm10 10h2v-3h-2v3zM4.84 17.24 3.42 18.66l1.42 1.42 1.42-1.42-1.42-1.42zM20 11v2h3v-2h-3zm-1.76-6.16 1.42-1.42-1.42-1.42-1.42 1.42 1.42 1.42zM11 1h2V-2h-2V1zm6.76 16.24 1.42 1.42 1.42-1.42-1.42-1.42-1.42 1.42zM12 6a6 6 0 1 0 .001 12.001A6 6 0 0 0 12 6z"/></svg>
+        </span>
+        <span class="toggle-text">Sáng/Tối</span>
+      </button>
     </div>
+  </header>
 
-
-    <!-- Âm thanh -->
-    <audio id="background-music" loop>
-      <source src="music/BeautifulInWhite.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- #popup khi gửi thông tin -->
-    <div class="popup" id="popup" style="display: none;">
-      <div class="popup-inner">
-        <div class="popup-header">
-          ❤️ Lời chúc đã được cập nhật! ❤️
-        </div>
-        <p>
-          Cảm ơn <span id="namene">'Ai Đó'</span> đã gửi lời chúc!. <br>
-          Chúc <span id="namene2">'Ai Đó'</span> một ngày vui vẻ, hạnh phúc
-        </p>
-        <input type="button" name="Close" class="popup-send2" onclick="popupClose();" value="OK">
+  <main class="container">
+    <!-- Ô tìm kiếm (giữ nguyên) -->
+    <section class="section" id="search-block">
+      <div class="search" role="search">
+        <input id="search" type="search" placeholder="Tìm nhanh: Printer, cập nhật, đổi IP, QR, ... (phím /)" aria-label="Tìm kiếm nội dung" />
+        <span class="icon" aria-hidden="true">⌘K</span>
       </div>
-    </div>
-
-       <!-- ICON XOAY -->
-    <div class="preloader">
-        <div class="inner">
-            <span class="icon"><i class="fi flaticon-two"></i></span>
-        </div>
-    </div>
-     
-    
- <!-- ẢNH ĐẦU TRANG  -->
-    <section class="hero setcung">
-        <div class="hero-slider hero-slider-s1">
-            <div class="slide-item setcung">
-                <img src="images/blog/sl2.webp" alt class="slider-bg">
-            </div>
-
-            <div class="slide-item setcung">
-                <img src="images/blog/sl1.webp" alt class="slider-bg">
-            </div>
-        </div>
-
-
-        <div class="wedding-announcement">
-            <div class="couple-name-merried-text">
-                <h2 class="wow heartbeat" data-wow-duration="1s" style="font-weight: normal !important;">ChYến</h2>
-                <div class="married-text wow fadeIn" data-wow-delay="1s"style="font-weight: normal !important;">
-                        
-                    <h4 class="wave" style="font-weight: normal !important;">
-                      <span>W</span>
-                      <span>e</span>
-                      <span>'</span>
-                      <span>r</span>
-                      <span>e</span>
-                      <span>&nbsp;</span>
-                      <span>g</span>
-                      <span>e</span>
-                      <span>t</span>
-                      <span>t</span>
-                      <span>i</span>
-                      <span>n</span>
-                      <span>g</span>
-                      <span>&nbsp;</span>
-                      <span>m</span>
-                      <span>a</span>
-                      <span>r</span>
-                      <span>r</span>
-                      <span>i</span>
-                      <span>e</span>
-                      <span>d</span>
-                    </h4>
-
-                </div>
-            </div>
-
-            <div class="save-the-date">
-                <h4>Lễ Thành Hôn</h4>
-                    <span class="date" style="font-size:22px">10/11/2025</span> <br>
-                    <span class="date">21/09 Âm lịch</span>
-                </div>
-            </div>
-
     </section>
 
+    <!-- TÀI LIỆU & HƯỚNG DẪN (đã đưa lên ngay sau ô tìm kiếm) -->
+    <section id="tai-lieu" class="section">
+      <h2>Tài liệu & hướng dẫn</h2>
+      <div class="grid" id="cards">
 
-    <!-- Icon nhạc này chỉ xuất hiện khi màn hình lớn -->
-        <div type="button" id="music-player" class="loa1 music-playercss open-btn-left" >
-           <i id="music-icon" style="font-size: 20px; color:black;" class="fa-solid fa-volume-xmark"></i>         
-        </div>
-
-<!-- thanh menu đầu trang -->
-<header id="header" class="site-header header-style-1">
-    <nav class="navigation navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">  
-                <div type="button" id="music-player" class="loa2 music-playercss open-btn-left" >
-                    <i id="music-icon" style="font-size: 20px; color:black;" class="fa-solid fa-volume-xmark"></i>
-                </div>
-
-                <div class="couple-logo">
-                    <img src="images/logo/logo.png" alt="Logo Image">
-                </div>
-
-                <button type="button" class="open-btn">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-
-            <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
-                <button class="close-navbar"><i class="fa fa-close"></i></button>
-                <ul class="nav navbar-nav">
-                    <li><a href="#home">Trang Chủ</a></li>
-                    <li><a href="#couple">Cặp đôi</a></li>
-                    <li><a href="#events">Sự kiện</a></li>
-                    <li><a href="#gallery">Ảnh cưới</a></li>
-                    <li><a href="#story">Lưu bút</a></li>
-                    <li><a href="#rsvp">Lời cảm ơn</a></li>
-                </ul>
-            </div>
-        </div><!-- end of container -->
-    </nav>
-</header>
+        <article class="card" data-tags="printer ip dhcp testpage">
+          <h3>Tài liệu hướng dẫn PosApp</h3>
+          <p>Web, app Fnb, Bán lẻ, ONE, Admin,...</p>
+          <div class="cta">
+            <a class="btn" href="https://hdposapp.gitbook.io/posapp/" target="_blank" rel="noopener">Truy cập</a>
+          </div>
+        </article>
         
-<!-- Thư mời-->
-
-
-
-<section class="thumoi " id="">
-    <div class="container">
-        <div class="row">
-            <div class="col col-xs-12">
-                <div class="wedding-card">
-                    <div class="top-invite scroll-fade-up">TRÂN TRỌNG KÍNH MỜI</div>
-
-                    <div class="card-text scroll-fade-up textmc" style="color: #454545 !important;">
-                      <span class="textmc" id="namene3">Bạn thân mến</span> cùng những người thương
-                    </div>
-
-                    <div class="lead scroll-fade-up">
-                      TỚI DỰ LỄ THÀNH HÔN CỦA
-                    </div>
-
-                    <section class="cardnames" aria-label="Tên cô dâu chú rể">
-                        <div class="cardname-line">
-                            <span class="cardname scroll-fade-up" style="margin-left: -30px;">Nguyễn Chiến</span> 
-                        </div>
-                    </section>
-
-                        <p class="cardheart scroll-fade-up" aria-hidden="true">
-                            <img src="images/tt/tim.png" width="50px" height="50px">
-                        </p>
-
-                    <section class="cardnames" aria-label="Tên cô dâu chú rể">
-                        <div class="cardname-line">
-                            <span class="cardname scroll-fade-up"style="margin-left: 40px;">Thu Yến</span> 
-                        </div>
-                    </section>
-
-                    <h3 class="cardsection-title scroll-fade-up">ĐƯỢC TỔ CHỨC VÀO HỒI</h3>
-                    <div class="cardtime scroll-fade-up">10 Giờ 00 Phút</div>
-                    <div class="carddate-row" aria-label="Ngày tháng năm">
-                      <div class="cardpill scroll-fade-up"><b>Thứ Hai</b></div>
-                      <div class="cardbigday scroll-fade-up">10</div>
-                      <div class="cardmonth-year scroll-fade-up"><b>11 - 2025</b></div>
-                    </div>
-                    <div class="cardlunar scroll-fade-up">(Tức ngày 21 tháng 09 năm Ất Tỵ.)</div>
-                    <div class="cardplace-title scroll-fade-up">TẠI GIA ĐÌNH NHÀ TRAI</div>
-                    <div class="cardaddr scroll-fade-up">Tổ dân phố 6 - Phường Yên Thắng - Tỉnh Ninh Bình</div>
-                    <div class="cardfooter scroll-fade-up">Rất hân hạnh được đón tiếp!</div>
-
-                </div>
-            </div>
-        </div> <!-- end section-title -->
-    </div>
-    <div class="svg-divider svgcong10">
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path fill="#ffffff" fill-opacity="1" d="M0,160L60,170C120,180,240,200,360,192C480,184,600,144,720,133.3C840,123,960,149,1080,160C1200,171,1320,149,1380,138.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-        </svg>
-    </div>
-</section>
-
-
-
-
-
-<!-- cặp đôi -->
-<section class="wedding-couple-section " id="couple">
-    <div class="herocapdoi">
-
-        <div class="svg-divider latsvg svgtru10" >
-            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-                <path fill="#ffffff" fill-opacity="1" d="M0,160L60,170C120,180,240,200,360,192C480,184,600,144,720,133.3C840,123,960,149,1080,160C1200,171,1320,149,1380,138.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-            </svg>
-        </div>
-
-        <!-- Backgrounds -->
-        <div id="bg1" class="bg-layer active" style="background-image: url('images/couple/cr.webp');"></div>
-        <div id="bg2" class="bg-layer" style="background-image: url('images/couple/cd.webp');"></div>
-        <!-- Character Info -->
-        <div class="contenthero " id="contenthero">
-
-            <!-- Chú rể -->
-            <div class="character-info active" id="info-chure">
-                <div class="character-name-tt  scroll-fade-up">Chú Rể</div>
-                <div class="character-name  scroll-fade-up">Nguyễn Chiến</div>
-                <div class="character-desc  scroll-fade-up"><b>Phiên bản “limited” của người đàn ông biết tất cả, trừ việc im lặng đúng lúc.</b><br>
-Từng mơ làm nhà thơ, nhưng sau khi gặp Cô Dâu, anh chuyển sang nghề… đối đáp.<br>
-Sở trường: chọc người khác cười, đôi khi cười xong lại thấy khó hiểu.<br>
-Slogan sống: “Không có nhược điểm, chỉ là ưu điểm chưa được công nhận.” 😎</div>
-                <div class="character-contact scroll-fade-up">
-                    <a  style="font-size:14px" href="tel:0337260123"> <i class=" hoverne fa-solid fa-phone" aria-hidden="true"></i></a>
-                    <a style="font-size:14px" href="https://www.facebook.com/nchienms"> <i class="hoverne fa-brands fa-facebook-f" style="color: #ffffff;" aria-hidden="true"></i></a>
-                </div>
-            </div>
-
-            <!-- cô dâu -->
-            <div class="character-info" id="info-codau">
-                <div class="character-name-tt scroll-fade-up">Cô dâu</div>
-                <div class="character-name scroll-fade-up">Thu Yến</div>
-                                <div class="character-desc  scroll-fade-up"><b>Tư duy logic như Sherlock, hành động cảm tính như Doraemon.</b><br>
-Có khả năng “suy luận ra mọi thứ, trừ việc vì sao mình sai.”<br>
-Thích ăn vặt, ghét im lặng, và đặc biệt có siêu năng lực khiến Chú Rể “tự giác nhận sai” mà không cần lý do.<br>
-Châm ngôn: “Không cần đúng, chỉ cần dễ thương là được!” 💅</div>
-                <div class="character-contact scroll-fade-up">
-                    <a style="font-size:14px" href="tel:0777667735"> <i class="fa-solid fa-phone" style="color: #ffffff;" aria-hidden="true"></i></a>
-                    <a style="font-size:14px" href="https://www.facebook.com/maiyen2905"> <i class="fa-brands fa-facebook-f" style="color: #ffffff;" aria-hidden="true"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Thumbnails -->
-        <div class="thumbnails ">
-            <div id="thumb-chure" class="thumb active scroll-fade-up" style="background-image: url('images/couple/cr.webp')" onclick="changeCharacter('chure')">
-            Chú Rể
-            </div>
-            <div id="thumb-codau" class="thumb scroll-fade-up" style="background-image: url('images/couple/cd.webp')" onclick="changeCharacter('codau')">
-            Cô Dâu
-            </div>
-        </div>
-    </div>
-
-</section>
-
-
-
-<!-- start count-down-section section-padding-->
-<section class="count-down-section  parallax"  data-speed="7">
-        <div class="svg-divider latsvg svgtru10" >
-            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-                <path fill="#ffffff" fill-opacity="1" d="M0,160L60,170C120,180,240,200,360,192C480,184,600,144,720,133.3C840,123,960,149,1080,160C1200,171,1320,149,1380,138.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-            </svg>
-        </div>
-    <div class="container" style="">
-        <div class="row">
-            <div class="section-title" >
-                <div class="section-title" >
-                    <div class="names savethedatebg scroll-fade-down">
-                          <div class="texttt" style="margin-top: -30px; color: white ; text-align: center;   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); ">Lễ<br>Thành Hôn</div>
-                    </div>
-                </div>
-                        
-            </div>
-
-            <div class="calendar_full">
-                <div class="calendar">
-                    <span style="font-size: 25px; font-weight: bold; margin-bottom: 50px;"> Tháng 11 / 2025 </span>
-                    <p></p>
-                    <table style="padding-top: 10px; text-align: center;">
-                        <tr class="scroll-fade-down">
-                            <th>CN</th><th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th><th>T7</th>
-                        </tr>
-                        <tr class="scroll-fade-down">
-                            <td></td><td></td><td></td><td></td><td></td><td></td><td><div>1<br><span class="lunar">12/09</span></div></td>
-                        </tr>
-                        <tr class="scroll-fade-down">
-                            <td><div>2<br><span class="lunar">13</span></div></td>
-                            <td><div>3<br><span class="lunar">14</span></div></td>
-                            <td><div>4<br><span class="lunar">15</span></div></td>
-                            <td><div>5<br><span class="lunar">16</span></div></td>
-                            <td><div>6<br><span class="lunar">17</span></div></td>
-                            <td><div>7<br><span class="lunar">18</span></div></td>
-                            <td><div>8<br><span class="lunar">19</span></div></td>
-                        </tr>
-                        <tr class="scroll-fade-down">
-                            <td><div>9<br><span class="lunar">20</span></div></td>
-                            <td class="active"><div>10<br><span class="lunar">21/09</span></div></td>
-                            <td><div>11<br><span class="lunar">22</span></div></td>
-                            <td><div>12<br><span class="lunar">23</span></div></td>
-                            <td><div>13<br><span class="lunar">24</span></div></td>
-                            <td><div>14<br><span class="lunar">25</span></div></td>
-                            <td><div>15<br><span class="lunar">26</span></div></td>
-                        </tr>
-                        <tr class="scroll-fade-down">
-                            <td><div>16<br><span class="lunar">27</span></div></td>
-                            <td><div>17<br><span class="lunar">28</span></div></td>
-                            <td><div>18<br><span class="lunar">29</span></div></td>
-                            <td><div>19<br><span class="lunar">30</span></div></td>
-                            <td><div>20<br><span class="lunar">01/10</span></div></td>
-                            <td><div>21<br><span class="lunar">02</span></div></td>
-                            <td><div>22<br><span class="lunar">03</span></div></td>
-                        </tr>
-                        <tr class="scroll-fade-down">
-                            <td><div>23<br><span class="lunar">04</span></div></td>
-                            <td><div>24<br><span class="lunar">05</span></div></td>
-                            <td><div>25<br><span class="lunar">06</span></div></td>
-                            <td><div>26<br><span class="lunar">07</span></div></td>
-                            <td><div>27<br><span class="lunar">08</span></div></td>
-                            <td><div>28<br><span class="lunar">09</span></div></td>
-                            <td><div>29<br><span class="lunar">10</span></div></td>
-                        </tr>
-                        <tr class="scroll-fade-down">
-                            <td><div>30<br><span class="lunar">11/11</span></div></td>
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
-                        </tr>
-                        <tr class="scroll-fade-down">
-                            <td colspan="7"><div id="clock"></div></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="svg-divider svgcong10">
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path fill="#ffffff" fill-opacity="1" d="M0,160L60,170C120,180,240,200,360,192C480,184,600,144,720,133.3C840,123,960,149,1080,160C1200,171,1320,149,1380,138.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-        </svg>
-    </div>
-
-</section>
-<!-- end count-down-section -->
-
-
-<section class="wedding-timeline" id="events">
-    <div class="svg-divider latsvg svgtru10" >
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path fill="#ffffff" fill-opacity="1" d="M0,160L60,170C120,180,240,200,360,192C480,184,600,144,720,133.3C840,123,960,149,1080,160C1200,171,1320,149,1380,138.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-        </svg>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col col-xs-12">
-                <div class="section-title" >
-                    <div class="names sukienbg scroll-fade-down">
-                          <div class="texttt" style="margin-top: -30px; color: white;    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); ">Sự Kiện</div>
-                    </div>                
-                </div>
-            </div>
-        </div> <!-- end section-title -->
-  
-        <div class="timeline ">
-            <div class="timeline-item left ">
-                <div class="timeline-content scroll-fade-down">
-                    <span class="date scroll-fade-down">08/11/2025</span>
-                    <h3 class="scroll-fade-down">LỄ ĂN HỎI</h3>
-                    <span class="scroll-fade-down">
-                        <i class="fa-story fa fa-map-marker "></i class="">Nhà gái – Tổ dân phố Trà Tu 1, Phường Yên Thắng, Tỉnh Ninh Bình <br>
-                        <i class="fa-story fa fa-clock-o "></i class="">8:50
-                    </span> <br>
-                    <img class="scroll-fade-down" style="max-width: 100%; margin: 10px 0; border-radius: 10px;" src="images/events/img-1.webp" alt="Lễ ăn hỏi"><br>
-                        <a class="see-location-btn scroll-fade-down " href="https://www.google.com/maps?q=20.186291,105.957747" target="_blank" rel="noopener noreferrer">
-                            Chỉ đường 
-                            <i class="fa fa-angle-right scroll-fade-down"></i>
-                        </a>
-                </div>
-            </div>
-
-            <div class="timeline-item right ">
-                <div class="timeline-content scroll-fade-down">
-                    <span class="date scroll-fade-down">10/11/2025</span>
-                    <h3 class="scroll-fade-down">LỄ THÀNH HÔN</h3>
-                    <span class="scroll-fade-down">
-                        <i class="fa-story fa fa-map-marker"></i>Nhà Trai – Tổ dân phố 6, Phường Yên Thắng, Tỉnh Ninh Bình  <br>
-                        <i class="fa-story fa fa-clock-o"></i>10:00
-                    </span> <br>
-                    <img class="scroll-fade-down" style="max-width: 100%; margin: 10px 0; border-radius: 10px;"  src="images/events/img-1.webp" alt="Lễ thành hôn"><br>
-                        <a class="see-location-btn scroll-fade-down" href="https://www.google.com/maps?q=20.186291,105.957747" target="_blank" rel="noopener noreferrer">
-                            Chỉ đường 
-                            <i class="fa fa-angle-right scroll-fade-down"></i>
-                        </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="svg-divider svgcong10">
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path fill="#ffffff" fill-opacity="1" d="M0,160L60,170C120,180,240,200,360,192C480,184,600,144,720,133.3C840,123,960,149,1080,160C1200,171,1320,149,1380,138.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-        </svg>
-    </div>
-
-
-</section>
-
-
-
-                <!-- start gallery-section -->
-<section class="gallery-section section-padding2"id="gallery" >
-    <div class="container">
-        <div class="row">
-            <div class="col col-xs-12">
-                <div class="section-title" >
-                    <div class="names albumanhbg scroll-fade-down">
-                          <div class="texttt" style=" color: #666666;    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);">Ảnh Cưới</div>
-                    </div>
-                    <div class="scroll-fade-down" style="width: 100%; text-align:center ;">
-                        <div style="text-align:center; font-size: 24px;">
-                            <p> Điều tuyệt vời nhất của một tấm ảnh là nó sẽ không bao giờ thay đổi!</p>
-                        </div>
-                    </div>
-
-                    <div class="swiper " style="width: 100%;">
-                        <div class="swiper-wrapper">
-                            <div class="hihi">
-                              <div class="">
-    <a href="images/blog/img-1.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/img-1.webp" data-src="images/blog/img-1.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/sl2.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/sl2.webp" data-src="images/blog/sl2.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN08947.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN08947.webp" data-src="images/blog/JBN08947.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN08977.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN08977.webp" data-src="images/blog/JBN08977.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN08938.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN08938.webp" data-src="images/blog/JBN08938.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09031.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09031.webp" data-src="images/blog/JBN09031.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09067.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09067.webp" data-src="images/blog/JBN09067.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09058.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09058.webp" data-src="images/blog/JBN09058.webp" alt="Image 1">
-    </a>
-</div>
-
-
-
-<div class="">
-    <a href="images/blog/JBN09036.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09036.webp" data-src="images/blog/JBN09036.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09285.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09285.webp" data-src="images/blog/JBN09285.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09262.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09262.webp" data-src="images/blog/JBN09262.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN08885.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN08885.webp" data-src="images/blog/JBN08885.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN08925.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN08925.webp" data-src="images/blog/JBN08925.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN08916.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN08916.webp" data-src="images/blog/JBN08916.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN08928.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN08928.webp" data-src="images/blog/JBN08928.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN08903.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN08903.webp" data-src="images/blog/JBN08903.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN08892.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN08892.webp" data-src="images/blog/JBN08892.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/sl1.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/sl1.webp" data-src="images/blog/sl1.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09164.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09164.webp" data-src="images/blog/JBN09164.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09064.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09064.webp" data-src="images/blog/JBN09064.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09267.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09267.webp" data-src="images/blog/JBN09267.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09244.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09244.webp" data-src="images/blog/JBN09244.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09306.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09306.webp" data-src="images/blog/JBN09306.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/sl1.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/sl1.webp" data-src="images/blog/sl1.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN08981.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN08981.webp" data-src="images/blog/JBN08981.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN08884.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN08884.webp" data-src="images/blog/JBN08884.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN08900.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN08900.webp" data-src="images/blog/JBN08900.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN08890.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN08890.webp" data-src="images/blog/JBN08890.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09032.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09032.webp" data-src="images/blog/JBN09032.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09089.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09089.webp" data-src="images/blog/JBN09089.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09221.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09221.webp" data-src="images/blog/JBN09221.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09297.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09297.webp" data-src="images/blog/JBN09297.webp" alt="Image 1">
-    </a>
-</div>
-
-<div class="">
-    <a href="images/blog/JBN09242.webp" data-fancybox="gallery">
-        <img class="scroll-fade-up" src="images/blog/JBN09242.webp" data-src="images/blog/JBN09242.webp" alt="Image 1">
-    </a>
-</div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div> 
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-        <!-- start cta -->
-<section class="cta  parallax"  data-speed="7" id="story">
-    <div class="svg-divider latsvg svgtru10" >
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path fill="#ffffff" fill-opacity="1" d="M0,160L60,170C120,180,240,200,360,192C480,184,600,144,720,133.3C840,123,960,149,1080,160C1200,171,1320,149,1380,138.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-        </svg>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col col-xs-12">
-                <div class="section-title" >
-                    <div class="names luubutbg scroll-fade-down">
-                          <div class="texttt" style=" color: white;     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);">Lưu Bút</div>
-                    </div>
-                </div>
- 
-                <div class="text-luubut">
-                    <div style="font-size: 20px;display: none; color: black">
-                         gửi lời chúc tới cặp đôi
-                    </div>
-                    <img src="images/blog/img-1.webp"  loading="lazy" style="width: 100%">
-
-                    <div style="width: 100%;  text-align:left;background-color: #ffffff4d;">
-                        <i class="fa-solid fa-heart scroll-fade-down" style="color: #df4758;margin-left: 10px;">&ensp;
-                            <strong style="font-size:12px; color: black;"> 163 k</strong>
-                        </i>
-
-                        <i class="fa-regular fa-comment scroll-fade-down" style=" margin-left: 16px;">&ensp;
-                            <span id="messageCounter" style="font-size:12px;color: black;"></span>
-                        </i>
-                    </div>
-
-                    <div id="messages" class="messages scroll-fade-down">Đang tải...</div>
-                    <script type="text/javascript">var submitted=false;</script>
-
-                    <div class="scroll-fade-down" style="text-align: center; color: #fff;height: 60px; font-weight: bold; width: 100%; padding-top: 15px;">
-                            --------------- LƯU BÚT TẠI ĐÂY ---------------
-                    </div>
-                        
-                    <form onsubmit="submitted=true;" id="chucForm" target="hidden_iframe" class="form validate-rsvp-form row">
-                        <div class="form-detail">
-                                <div class="col col-sm-12  scroll-fade-left" > 
-                                    <input class="control-custom form-control" type="text" id="name" placeholder="Họ và tên*" required><br>
-                                </div>
-
-                                <div class="col col-sm-6  scroll-fade-left" style="display:none;" >
-                                    <input class="control-custom form-control" type="text" id="phone" placeholder="Số điện thoại (có thể bỏ trống)" ><br>
-                                </div>
-
-                                <div class="col col-sm-12 scroll-fade-left">
-                                    <textarea class="form-control control-custom" id="message" placeholder="Lời chúc*" required></textarea><br>
-                                </div>
-                        </div>
-
-                        <div class="submit-btn">
-                            <button type="submit"  class="snip1582"  onclick="popupOpen();"   value="Click to Show Popup">
-                                <span >Gửi tâm tư</span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div> <!-- end row -->
-    </div> <!-- end container -->
-
-    <div class="svg-divider svgcong10">
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path fill="#ffffff" fill-opacity="1" d="M0,160L60,170C120,180,240,200,360,192C480,184,600,144,720,133.3C840,123,960,149,1080,160C1200,171,1320,149,1380,138.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-        </svg>
-    </div>
-
-</section>
-
-                <div class="section-title"id="rsvp" >
-                    <div class="names thankbg scroll-fade-down">
-                          <div class="texttt" style="margin: -30px 0 0 10px;color: black;    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); ">Cảm Ơn</div>
-                    </div>
-                </div>
-
-<section class="cardfull" style="padding:0 16px;">
-<div class="thank-you-card" >
-    <div class="card-content">
-        <h2 class="scroll-fade-down" style="font-weight: normal !important;">Chân thành cảm ơn</h2>
-        <p class="scroll-fade-down" style="color:white !important;">Từ tận đáy lòng, chúng Con/Cháu/Em xin gửi lời cảm ơn chân thành đến 
-            <span id="namene5">'Ai Đó'</span>  vì đã ghé thăm và dành thời gian cho thiệp cưới này.
-        </p>
-        <p class="scroll-fade-down" style="color:white !important;">Kính chúc 
-            <span id="namene4">'Ai Đó'</span> một ngày vui vẻ, hạnh phúc. Đồng thời rất mong có được sự tham dự của 
-            <span id="namene6">'Ai Đó'</span> trong ngày tổ chức. 
-        </p>
-                           
-        <span class="signature scroll-fade-down">- ChYến -</span>
-    </div>
-</div>
-</section> 
-
-        <!-- start rsvp-section data-bg-image="images/rsvp-bg.webp"-->
-<section class="parallax"  data-speed="7" >
-    <div class="container">
-        <div class="row content" style="color:black !important;">
-            
-        </div> <!-- end row -->
-    </div> <!-- end container -->
-    <div class="svg-divider latsvg svgcong70">
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path fill="#ffffff" fill-opacity="1" d="M0,160L60,170C120,180,240,200,360,192C480,184,600,144,720,133.3C840,123,960,149,1080,160C1200,171,1320,149,1380,138.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-        </svg>
-    </div>
-</section>
+        <article class="card" data-tags="printer ip dhcp testpage">
+          <h3>Printer NT • Cấu hình máy in</h3>
+          <p>Cấu hình địa chỉ IP cho máy in, có trên CHplay</p>
+          <div class="cta">
+            <a class="btn" href="https://github.com/NChienMS/nextool-config/releases/download/PRINTERNT/Printer.NT.apk" target="_blank" rel="noopener">Tải APK</a>
+            <a class="btn" href="LINK_FAQ_PRINTERNT" target="_blank" rel="noopener">Tải trên CHplay</a>
+            <a class="btn" href="LINK_FAQ_PRINTERNT" target="_blank" rel="noopener">HDSD</a>
+          </div>
+        </article>
+        <article class="card" data-tags="hoa don dien tu nghi dinh 70 thong tu 88">
+          <h3>Mẫu in</h3>
+          <p>Tổng hợp các mẫu in hóa đơn A4, A5, K80, K57,..</p>
+          <div class="cta">
+            <a class="btn" href="https://kythuat.xyz/mauin/" target="_blank" rel="noopener">Truy cập</a>
+          </div>
+        </article>
+        <article class="card" data-tags="qr code website chyen love moi cuoi">
+          <h3>In QR tingbox S</h3>
+          <p>Cắt QR, in QR Tingbox S theo khổ</p>
+          <div class="cta">
+            <a class="btn" href="http://kythuat.xyz/tingboxs.html" target="_blank" rel="noopener">Truy cập</a>
+          </div>
+        </article>
+
+        <article class="card" data-tags="printer ip dhcp testpage">
+          <h3>Giờ kinh doanh</h3>
+          <p>Tìm hiểu cách thiết lập giờ kinh doanh và cách tính báo cáo theo giờ kinh doanh</p>
+          <div class="cta">
+            <a class="btn" href="http://kythuat.xyz/giokinhdoanh.html" target="_blank" rel="noopener">Truy cập</a>
+          </div>
+        </article>
+
+        <article class="card" data-tags="printer ip dhcp testpage">
+          <h3>Driver máy in</h3>
+          <p>Một số driver máy in</p>
+          <div class="cta">
+            <a class="btn" href="http://kythuat.xyz/driver.html" target="_blank" rel="noopener">Truy cập</a>
+          </div>
+        </article>
+
+        <article class="card" data-tags="printer ip dhcp testpage">
+          <h3>Chuyển hướng liên kết</h3>
+          <p>liên kết được rút gọn</p>
+          <div class="cta">
+            <a class="btn" href="https://kythuat.xyz/lienket" target="_blank" rel="noopener">Truy cập</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- LIÊN KẾT NHANH (giữ nguyên, đặt sau phần tài liệu) -->
+    <section id="lien-ket" class="section">
+      <h2>Chuyển hướng liên kết</h2>
+      <div class="links-list" id="links">
+        <a class="link-btn" href="https://kythuat.xyz/lienket/" target="_blank" rel="noopener">
+          <i class="fa-solid fa-link"></i>
+          <span></span>
+        </a>
        
+      </div>
+    </section>
 
-<!-- start footer -->
-<footer class="site-footer">
-    <div class="back-to-top">
-        <a href="#" class="back-to-top-btn"><span><i class="fi flaticon-cupid"></i></span></a>
+    <!-- HỖ TRỢ & CÂU HỎI THƯỜNG GẶP -->
+<section id="ho-tro" class="section">
+  <h2>Khác</h2>
+
+  <details>
+    <summary>Địa chỉ bảo hành máy PosApp tại HCM</summary>
+    <i class="fa-solid fa-copy copy-btn" title="Sao chép"></i>
+    <div class="muted">
+      <b>TPHCM: số 42 Tự Cường, P.Tân Sơn Nhất, TP.HCM (42 Tự Cường, P.4, Q. Tân Bình, TP.HCM cũ)</b>
+      <br>- SĐT: A Thọ (0348080501)
+      <br>- Nếu book ship nội thành: từ 8h30 - 17h30 (từ T2-T6), từ 8h30 - 12h với T7 (không bao gồm lễ, tết)
+      <br>- Khi gửi máy khách hàng ghi chú sđt, địa chỉ kèm tình trạng máy lên kiện hàng giúp em ạ
+      <br>- Phí vận chuyển 2 chiều khách hàng vui lòng thanh toán ạ
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col col-xs-12">
-                <h2 class="scroll-fade-down" style="font-weight: normal !important;">Mãi Mãi và Yêu thương</h2>
-                <span class="scroll-fade-down">- N. Chiến (The groom)</span>
-            </div>
-        </div> <!-- end row -->
-    </div> <!-- end container -->
-</footer>
-        
+  </details>
 
-   
-    
-
-<!-- All JavaScript files=============================== -->
-
-<script>
-// Gửi trường thông tin trong mục gửi lời chúc  
-        const sheetURL = "https://script.google.com/macros/s/AKfycbziQaPIX6CiRVei4Sp_knFdREUd1R1jN4gzd1Cf9JROYyJNuGjoOyamE8Z7d_C4Gfx4/exec";
-        
-        document.getElementById("chucForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            
-            let formData = {
-                name: document.getElementById("name").value,
-
-                phone: document.getElementById("phone").value,
-                message: document.getElementById("message").value
-            };
-            
-            fetch(sheetURL, {
-                method: "POST",
-                mode: 'no-cors',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData)
-            }).then(() => {
-                document.getElementById("chucForm").reset();
-                loadMessages();
-            });
-        });
-
-// Lấy thông tin lời chúc hiển thị lên web
-        function loadMessages() {
-            fetch(sheetURL + "?action=get")
-                .then(response => response.json())
-                .then(data => {
-                    let messagesDiv = document.getElementById("messages");
-                    messagesDiv.innerHTML = "";
-                    
-                       // Đếm số lượng tin nhắn
-            let messageCount = data.length;
-            // Hiển thị số lượng tin nhắn
-            let counterDiv = document.getElementById("messageCounter");
-
-            if (!counterDiv) {
-                counterDiv = document.createElement("div");
-                counterDiv.id = "messageCounter";
-                messagesDiv.parentNode.insertBefore(counterDiv, messagesDiv);
-            }
-
-            counterDiv.innerHTML = `<strong>${messageCount}</strong>`;
-
-                    data.forEach(item => {
-                        let div = document.createElement("div");
-                        div.className = "message";
-                        div.innerHTML = `<strong style="font-size:20px;">${item.name}</strong> </br> ${item.message}`;
-                        messagesDiv.appendChild(div);
-                    });
-                });
-        }
-        
-        loadMessages();
-
-// Quản lý tên khách mời
-  var div = document.getElementById('namene');
-  var div2 = document.getElementById('namene2');
-  var div3 = document.getElementById('namene3');
-  var div4 = document.getElementById('namene4');
-  var div5 = document.getElementById('namene5');
-  var div6 = document.getElementById('namene6');
-
-// Hàm lấy tham số từ URL (lấy tên khách trên địa chỉ nếu địa chỉ chứa ?to=...)
-  function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-  }
-
-// Xử lý khi có hoặc không có tham số
-// Đảm bảo chỉ mở hộp nhập tên 1 lần
-let nhappassShown = false;
-function nhappassOnce() {
-  if (nhappassShown) return;
-  nhappassShown = true;
-  nhappass();
-}
-
-// Hiện sớm ngay khi DOM sẵn sàng (không chờ ảnh/font)
-document.addEventListener('DOMContentLoaded', function () {
-  const guestName = getQueryParam('to');
-
-  if (guestName) {
-    const decodedName = decodeURIComponent(guestName.replace(/\+/g, ' '));
-    div.innerHTML = decodedName;
-    div2.innerHTML = decodedName;
-    div3.innerHTML = decodedName;
-    div4.innerHTML = decodedName;
-    div5.innerHTML = decodedName;
-    div6.innerHTML = decodedName;
-
-    // Popup chào nho nhỏ (delay nhẹ cho mượt)
-    setTimeout(function () {
-      swal(
-        "Xin chào " + decodedName,
-        "Cảm ơn vì sự ưu ái và quan tâm của " + decodedName + " ạ. Hy vọng được chào đón " + decodedName + " trong ngày vui này \n Chúc " + decodedName + " có những phút giây vui vẻ tại đây!"
-      );
-    }, 300);
-  } else {
-    // Không có tên → mở hộp nhập tên ngay khi DOM ready
-    nhappassOnce();
-  }
-});
-
-
-// Nếu không có tên, chạy như cũ . chạy cho người dùng tự nhập tên
-  function nhappass() {
-    swal({
-        title: "Have a nice day ^^",
-        text: "Thật vui khi dành được sự quan tâm của ...",
-        type: "input",
-        showCancelButton: false,
-        closeOnConfirm: false,
-        showLoaderOnConfirm: true,
-        animation: "slide-from-top",
-        inputPlaceholder: "Tên tôi là..."
-      },
-      function (inputValue) {
-        var aido, ttname, ttname2;
-        if (inputValue == "") {
-          aido = "AI ĐÓ";
-          ttname = "Xin chào 'Ai đó'";
-          ttname2 = "Cảm ơn vì sự ưu ái và quan tâm của 'Ai đó' \n Hy vọng được chào đón 'Ai đó' trong ngày vui này ạ \n Chúc 'Ai đó' có một ngày vui vẻ!";
-
-        div3.innerHTML = "Bạn thân mến";
-        } else {
-          aido = inputValue;
-          ttname = "Xin chào " + inputValue;
-          ttname2 = "Cảm ơn vì sự ưu ái và quan tâm của " + inputValue + " ạ \nHy vọng được chào đón " + inputValue + " trong ngày vui này ạ \n Chúc " + inputValue + " có những phút giây vui vẻ tại đây!";
-          div3.innerHTML = aido;
-        }
-
-        div.innerHTML = aido;
-        div2.innerHTML = aido;
-        //div3.innerHTML = aido;
-        div4.innerHTML = aido;
-        document.getElementById("name").value = aido;
-
-        setTimeout(function () {
-          swal(ttname, ttname2, "success");
-        }, 500);
-      }
-    );
-  }
-
-
-// Khởi tạo Fancybox trình xem ảnh toàn màn hình
-        Fancybox.bind("[data-fancybox]", {
-            Thumbs: {
-                type: "modern" // Modern thumbnails
-            },
-            transition: "classic" // Classic transition
-        });
-// js đếm còn bao nhiêu ngày tới sự kiện
-
-  function updateCountdown() {
-    const dateElements = document.querySelectorAll('.timeline .date');
-    const today = new Date();
-
-    dateElements.forEach(el => {
-      const eventDate = new Date(el.textContent.trim().split('/').reverse().join('-')); 
-      const diffTime = eventDate - today;
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-      let countdownText = '';
-      if (diffDays > 0) {
-        countdownText = `${diffDays} ngày nữa`;
-      } else if (diffDays === 0) {
-        countdownText = 'Hôm nay';
-      } else {
-        countdownText = `Đã qua ${Math.abs(diffDays)} ngày`;
-      }
-
-      // Tạo span hiển thị dưới ngày
-      const countdownSpan = document.createElement('span');
-      countdownSpan.className = 'countdown';
-      countdownSpan.textContent = countdownText;
-      el.insertAdjacentElement('afterend', countdownSpan);
-    });
-  }
-
-  updateCountdown();
-
-
-
-// trang tự cuojn lên đàu khi tải xong
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-
-  // Khi tải xong thì cuộn lên đầu
-  window.addEventListener('load', function () {
-    window.scrollTo(0, 0);
-  });
-
-  // cô dâu chú rể
-    let current = "chure";
-
-    function changeCharacter(character) {
-      if (character === current) return;
-
-      // Hide previous info & background
-      document.getElementById(`info-${current}`).classList.remove('active');
-      document.getElementById(`bg${current === 'chure' ? 1 : 2}`).classList.remove('active');
-      document.getElementById(`thumb-${current}`).classList.remove('active');
-
-      // Show new info & background
-      document.getElementById(`info-${character}`).classList.add('active');
-      document.getElementById(`bg${character === 'chure' ? 1 : 2}`).classList.add('active');
-      document.getElementById(`thumb-${character}`).classList.add('active');
-
-      current = character;
-    }
-
-
-(function(){
-    function setFixedHeight(selector){
-        var els = document.querySelectorAll(selector);
-        var height = window.innerHeight;
-        els.forEach(function(el){
-            el.style.height = height + "px";
-        });
-    }
-
-    document.addEventListener("DOMContentLoaded", function(){
-        setFixedHeight('.herocapdoi');
-        setFixedHeight('.setcung');
-    });
-
-    window.addEventListener("orientationchange", function(){
-        setTimeout(function(){
-            setFixedHeight('.herocapdoi');
-            setFixedHeight('.setcung');
-        }, 300);
-    });
-})();
-
-
-
-
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WeddingEvent",
-  "name": "N Chiến ❤️ Thu Yến - Thiệp mời tham dự",
-  "description": "Chỉ có hai nửa quả cam cắt từ một quả mới thật sự khớp với nhau. Cảm ơn vì đã là một phần của hành trình yêu thương này, và rất mong được đón bạn trong ngày trọng đại.",
-  "startDate": "2025-11-10T09:00:00+07:00",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "image": [
-    "https://ariesvn8.wordpress.com/wp-content/uploads/2025/10/chyen.webp"
-  ],
-  "url": "https://chyen.love",
-  "organizer": {
-    "@type": "Person",
-    "name": "N Chiến & Thu Yến"
-  },
-  "location": {
-    "@type": "Place",
-    "name": "Địa điểm tổ chức",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Ninh Bình",
-      "addressCountry": "VN"
-    }
-  }
-}
-</script>
-
-<!--
-<div class="snowflakes" aria-hidden="true">
-  <div class="snowflakes" aria-hidden="true">
-        <div class="snowflake" style="font-size: 10px;">❤️️</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake" style="font-size: 13px;">❤️ </div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake" style="font-size: 15px;">❤️️</div>
-        <div class="snowflake" style="font-size: 12px;">❤️</div>
-        <div class="snowflake" style="font-size: 18px;">❤️️</div>
-        <div class="snowflake" style="font-size: 20px;">❤️</div>
-        <div class="snowflake" style="font-size: 16px;">❤️️</div>
-        <div class="snowflake" style="font-size: 18px;">❤️</div>
+  <details>
+    <summary>Địa chỉ bảo hành máy PosApp tại Hà Nội</summary>
+    <i class="fa-solid fa-copy copy-btn" title="Sao chép"></i>
+    <div class="muted">
+      <b>Hà Nội: Tòa VTC Online, số 18 Tam Trinh, P. Tương Mai, Hà Nội</b>
+      <br>- SĐT: A Thọ (0348080501)
+      <br>- Nếu book ship nội thành: từ 8h30 - 17h30 (từ T2-T6), từ 8h00 - 12h với T7 (không bao gồm lễ, tết)
+      <br>- Khi gửi máy khách hàng ghi chú sđt, địa chỉ kèm tình trạng máy lên kiện hàng giúp em ạ
+      <br>- Phí vận chuyển 2 chiều khách hàng vui lòng thanh toán ạ
     </div>
+  </details>
+</section>
 
-    <style>
-      /* --- KEYFRAMES --- */
-      /* Sử dụng Webkit và chuẩn cho độ tương thích cao */
-      @-webkit-keyframes snowflakes-fall {
-        0% { top: -10% }
-        100% { top: 100% }
-      }
-      @keyframes snowflakes-fall {
-        0% { top: -10% }
-        100% { top: 100% }
-      }
+    <!-- LIÊN HỆ -->
+    <section id="lien-he" class="section" style="display:none;">
+      <h2>Liên hệ</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Kênh hỗ trợ</h3>
+          <p>Ưu tiên nhắn trên Telegram/Zalo để được phản hồi nhanh.</p>
+          <div class="cta">
+            <a class="btn" href="LINK_TELEGRAM_GROUP" target="_blank" rel="noopener">Mở Telegram</a>
+            <a class="btn" href="LINK_ZALO_OA_HO_TRO" target="_blank" rel="noopener">Mở Zalo</a>
+            <a class="btn" href="mailto:SUPPORT_EMAIL_HERE">Gửi email</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Thông tin công ty</h3>
+          <p>YCSoft / Nextool VN — giải pháp cho hộ kinh doanh, SME: máy in, phần mềm bán hàng, quy định thuế, QR và hơn nữa.</p>
+          <div class="cta">
+            <a class="btn" href="LINK_WEBSITE_CONG_TY" target="_blank" rel="noopener">Website công ty</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
 
-      /* Giữ hiệu ứng lắc lư */
-      @-webkit-keyframes snowflakes-shake {
-        0%, 100% { -webkit-transform: translateX(0); transform: translateX(0) }
-        50% { -webkit-transform: translateX(100px); transform: translateX(100px) } /* Tăng biên độ lắc nhẹ */
-      }
-      @keyframes snowflakes-shake {
-        0%, 100% { transform: translateX(0) }
-        50% { transform: translateX(100px) }
-      }
+  <footer style="display:none;">
+    <div class="container foot">
+      <span>© <span id="y"></span> YCSoft / Nextool • All rights reserved</span>
+      <span>Build: <span class="kbd">HTML/CSS thuần</span> • Responsive • A11y</span>
+    </div>
+  </footer>
 
-      /* --- CẤU HÌNH CHUNG --- */
-      .snowflakes {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none; /* Rất quan trọng: Cho phép click xuyên qua lớp tuyết */
-        overflow: hidden; /* Ngăn cuộn do tuyết */
-        z-index: 9999;
-      }
+  <div style="width: 100%; height: 350px;"></div>
 
-      .snowflake {
-        color: #fff;
-        font-family: Arial, sans-serif;
-        position: absolute; /* Thay vì fixed, dùng absolute trong container fixed */
-        top: -10%;
-        user-select: none;
-        text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-        filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.7)); /* Thêm hiệu ứng phát sáng nhẹ */
-
-        /* Áp dụng Animation (Thời gian sẽ được ghi đè bằng JS) */
-        animation-name: snowflakes-fall, snowflakes-shake;
-        animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1), ease-in-out; /* Hàm thời gian tùy chỉnh để mượt hơn */
-        animation-iteration-count: infinite, infinite;
-      }
-    </style>
-</div>
--->
-
-
+  <script src="js/script.js"></script>
 </body>
-<script src="js/jquery.min.js"></script>
-
-<!-- Plugins for this template -->
-<script src="js/jquery-plugin-collection.js"></script>
-
-<!-- Custom script for this template -->
-<script src="js/script.js"></script>
-
 </html>
-
-
-
-
-
-
-
-
-
 
