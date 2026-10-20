@@ -23,9 +23,7 @@
 * [Nhóm tùy chọn dịch vụ](san-pham-dich-vu-nvl/nhom-tuy-chon-dich-vu/README.md)
   * [Tạo tùy chọn/topping và liên kết món](san-pham-dich-vu-nvl/nhom-tuy-chon-dich-vu/tao-tuy-chon-topping-va-lien-ket-mon.md)
 
-## 🍩 Tùy chọn - Topping - Combo
-
-* [Tạo combo](tuy-chon-topping-combo/tao-combo.md)
+* [Tạo combo](san-pham-dich-vu-nvl/tao-combo.md)
 
 ## 🧾 PAYMENT
 
