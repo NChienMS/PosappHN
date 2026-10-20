@@ -23,7 +23,7 @@ Truy cập [admin.posapp.vn](https://admin.posapp.vn/) và đăng nhập tài kh
 2. Chọn tiếp **Sản phẩm - Dịch vụ** trong menu vừa mở.
 3. Nhấn **Thêm Mới** ở góc trên bên phải, chọn **Sản phẩm**.
 
-<figure><img src="../../.gitbook/assets/them-sp-web-01-mo-them-san-pham.jpg" alt="Mở danh sách sản phẩm rồi chọn Thêm Mới và Sản phẩm"><figcaption><p>Mở biểu mẫu tạo sản phẩm</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/san-pham-dich-vu-20261020/web-01-mo-them-san-pham.jpg" alt="Mở danh sách sản phẩm rồi chọn Thêm Mới và Sản phẩm"><figcaption><p>Mở biểu mẫu tạo sản phẩm</p></figcaption></figure>
 
 4. Trong **Thông tin chung**, nhập **Tên hàng hóa**, **Mã sản phẩm** và chọn **Nhóm sản phẩm**. Có thể để trống mã để hệ thống tự tạo. Mã tự nhập phải khác mã đã có.
 5. Nếu chưa có nhóm phù hợp, nhấn dấu **+** cạnh ô **Nhóm sản phẩm**, tạo nhóm rồi chọn lại.
@@ -103,11 +103,11 @@ Nguyên vật liệu cũng được tạo tại **Thêm Mới → Sản phẩm**
 
 | Tên hàng hóa | Mã mẫu | Đơn vị | Giá vốn cho một đơn vị |
 | --- | --- | --- | --- |
-| Cà phê bột hướng dẫn | HD-NVL-CAFE | gr | 200 đ/gr |
-| Sữa đặc hướng dẫn | HD-NVL-SUADAC | ml | 60 đ/ml |
-| Sữa tươi hướng dẫn | HD-NVL-SUATUOI | ml | 30 đ/ml |
-| Đường cát hướng dẫn | HD-NVL-DUONG | gr | 20 đ/gr |
-| Trứng gà hướng dẫn | HD-NVL-TRUNG | quả | 3.000 đ/quả |
+| Cà phê bột | HD-NVL-CAFE | gr | 200 đ/gr |
+| Sữa đặc | HD-NVL-SUADAC | ml | 60 đ/ml |
+| Sữa tươi | HD-NVL-SUATUOI | ml | 30 đ/ml |
+| Đường cát | HD-NVL-DUONG | gr | 20 đ/gr |
+| Trứng gà | HD-NVL-TRUNG | quả | 3.000 đ/quả |
 
 Thực hiện với từng nguyên liệu:
 
@@ -117,9 +117,9 @@ Thực hiện với từng nguyên liệu:
 4. Chọn đơn vị trong bảng và nhập giá vốn theo đúng đơn vị đó. Nguyên liệu không bán trực tiếp có thể để giá bán bằng 0.
 5. Nhấn **Lưu**, sau đó tạo nguyên liệu tiếp theo.
 
-<figure><img src="../../.gitbook/assets/them-sp-web-06-nguyen-vat-lieu-thong-tin.jpg" alt="Nguyên liệu cà phê bột thuộc nhóm Nguyên vật liệu và tắt các kênh bán"><figcaption><p>Tạo nguyên liệu và ẩn khỏi menu bán hàng</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/san-pham-dich-vu-20261020/web-06-nguyen-vat-lieu-thong-tin.jpg" alt="Nguyên liệu cà phê bột thuộc nhóm Nguyên vật liệu và tắt các kênh bán"><figcaption><p>Tạo nguyên liệu và ẩn khỏi menu bán hàng</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/them-sp-web-07-nguyen-vat-lieu-don-vi.jpg" alt="Cà phê bột dùng đơn vị gr và giá vốn 200 đồng mỗi gr"><figcaption><p>Giá vốn nguyên liệu tính theo đơn vị đã chọn</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/san-pham-dich-vu-20261020/web-07-nguyen-vat-lieu-don-vi.jpg" alt="Cà phê bột dùng đơn vị gr và giá vốn 200 đồng mỗi gr"><figcaption><p>Giá vốn nguyên liệu tính theo đơn vị đã chọn</p></figcaption></figure>
 
 Nếu nhập cà phê theo kg nhưng định lượng theo gr, tạo **gr** trước với tỷ lệ **1**, thêm **kg** với tỷ lệ **1.000**. Không nhập giá vốn của 1 kg vào dòng gr.
 
@@ -129,7 +129,7 @@ Tạo cà phê sữa pha khi khách gọi. Công thức mẫu cho **1 ly** gồm
 
 ### Bước 1 Tạo món và đơn vị bán
 
-1. Tạo sản phẩm tên **Cà phê sữa hướng dẫn**, mã **HD-CAFE-SUA**, nhóm **Đồ uống**.
+1. Tạo sản phẩm tên **Cà phê sữa**, mã **HD-CAFE-SUA**, nhóm **Đồ uống**.
 2. Bật **Cho phép bán tại cửa hàng**; bật bán online nếu sử dụng kênh đó.
 3. **Không bật Quản lý tồn kho** và **không bật Sản xuất trừ nguyên vật liệu**. Món này theo dõi tồn nguyên liệu, không theo dõi số ly thành phẩm làm sẵn.
 4. Chọn đơn vị **ly**, tỷ lệ **1**, giá bán **25.000 đ**.
@@ -139,21 +139,21 @@ Tạo cà phê sữa pha khi khách gọi. Công thức mẫu cho **1 ly** gồm
 1. Kéo xuống **Bán hàng trừ nguyên vật liệu** và chọn tab **ly**.
 2. Nhấn **Tìm kiếm nguyên vật liệu**.
 3. Trong cửa sổ **Tìm kiếm từ kho hàng hóa**, nhập tên hoặc mã nguyên liệu rồi nhấn biểu tượng **kính lúp**.
-4. Nhấn dòng **Cà phê bột hướng dẫn** và **Sữa đặc hướng dẫn** để chọn. Tab **Đã chọn** hiển thị số nguyên liệu đã chọn.
+4. Nhấn dòng **Cà phê bột** và **Sữa đặc** để chọn. Tab **Đã chọn** hiển thị số nguyên liệu đã chọn.
 5. Nhấn **Xác nhận** để đưa nguyên liệu vào công thức.
 
-<figure><img src="../../.gitbook/assets/them-sp-web-08-chon-nguyen-lieu.jpg" alt="Tìm và chọn cà phê bột cùng sữa đặc trong cửa sổ nguyên vật liệu"><figcaption><p>Chọn hai nguyên liệu rồi nhấn Xác nhận</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/san-pham-dich-vu-20261020/web-08-chon-nguyen-lieu.jpg" alt="Tìm và chọn cà phê bột cùng sữa đặc trong cửa sổ nguyên vật liệu"><figcaption><p>Chọn hai nguyên liệu rồi nhấn Xác nhận</p></figcaption></figure>
 
 ### Bước 3 Nhập định lượng và lưu
 
 | Nguyên liệu | Số lượng cho 1 ly | Đơn vị |
 | --- | --- | --- |
-| Cà phê bột hướng dẫn | 20 | gr |
-| Sữa đặc hướng dẫn | 25 | ml |
+| Cà phê bột | 20 | gr |
+| Sữa đặc | 25 | ml |
 
 Nhập số lượng tại từng dòng và kiểm tra đơn vị. Nhấn ra ngoài ô để kết thúc nhập, kiểm tra lại số lượng rồi nhấn **Lưu**.
 
-<figure><img src="../../.gitbook/assets/them-sp-web-09-cong-thuc-ca-phe.jpg" alt="Công thức một ly cà phê sữa gồm 20 gr cà phê bột và 25 ml sữa đặc"><figcaption><p>Khai báo lượng dùng cho một ly</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/san-pham-dich-vu-20261020/web-09-cong-thuc-ca-phe.jpg" alt="Công thức một ly cà phê sữa gồm 20 gr cà phê bột và 25 ml sữa đặc"><figcaption><p>Khai báo lượng dùng cho một ly</p></figcaption></figure>
 
 **Kết quả:** bán 1 ly sẽ trừ 20 gr cà phê bột và 25 ml sữa đặc; bán 3 ly sẽ trừ 60 gr cà phê bột và 75 ml sữa đặc. Giá vốn nguyên liệu mẫu của 1 ly là **5.500 đ**.
 
@@ -165,7 +165,7 @@ Tạo bánh flan làm sẵn để bán. Công thức mẫu cho **1 cái**: **0,5
 
 ### Bước 1 Tạo thành phẩm và bật sản xuất
 
-1. Tạo sản phẩm tên **Bánh flan hướng dẫn**, mã **HD-FLAN**, nhóm **ĐỒ ĂN**.
+1. Tạo sản phẩm tên **Bánh flan**, mã **HD-FLAN**, nhóm **ĐỒ ĂN**.
 2. Bật **Cho phép bán tại cửa hàng**; chọn bán online theo nhu cầu.
 3. Trong **Quản lý kho**, bật **Quản lý tồn kho**, sau đó bật **Sản xuất trừ nguyên vật liệu**.
 4. Tắt **Cho phép bán khi hết tồn kho** nếu chỉ cho bán số bánh đã sản xuất.
@@ -177,20 +177,20 @@ Tạo bánh flan làm sẵn để bán. Công thức mẫu cho **1 cái**: **0,5
 ### Bước 2 Khai báo nguyên liệu cho một thành phẩm
 
 1. Kéo xuống **Nguyên vật liệu tiêu hao khi sản xuất hàng hóa**, chọn tab **cái**.
-2. Nhấn **Tìm kiếm nguyên vật liệu**; tìm và chọn **Trứng gà hướng dẫn**, **Sữa tươi hướng dẫn**, **Đường cát hướng dẫn** rồi nhấn **Xác nhận**.
+2. Nhấn **Tìm kiếm nguyên vật liệu**; tìm và chọn **Trứng gà**, **Sữa tươi**, **Đường cát** rồi nhấn **Xác nhận**.
 3. Nhập định lượng:
 
 | Nguyên liệu | Số lượng cho 1 cái | Đơn vị |
 | --- | --- | --- |
-| Trứng gà hướng dẫn | 0,5 | quả |
-| Sữa tươi hướng dẫn | 50 | ml |
-| Đường cát hướng dẫn | 10 | gr |
+| Trứng gà | 0,5 | quả |
+| Sữa tươi | 50 | ml |
+| Đường cát | 10 | gr |
 
 Với ô số dùng dấu chấm thập phân như ảnh, nhập **0.5** để thể hiện nửa quả trứng.
 
 4. Kiểm tra lại từng số lượng và đơn vị, nhấn **Lưu**. Công thức này dành cho **1 cái**, không nhập toàn bộ lượng dùng cho một mẻ.
 
-<figure><img src="../../.gitbook/assets/them-sp-web-13-dinh-luong-flan.jpg" alt="Định lượng một bánh flan gồm nửa quả trứng 50 ml sữa tươi và 10 gr đường"><figcaption><p>Định lượng được nhân theo số bánh cần sản xuất</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/san-pham-dich-vu-20261020/web-13-dinh-luong-flan.jpg" alt="Định lượng một bánh flan gồm nửa quả trứng 50 ml sữa tươi và 10 gr đường"><figcaption><p>Định lượng được nhân theo số bánh cần sản xuất</p></figcaption></figure>
 
 ### Bước 3 Tạo tồn thành phẩm trước khi bán
 
@@ -198,7 +198,7 @@ Lưu sản phẩm mới chỉ lưu cấu hình và công thức, chưa làm tăn
 
 1. [Nhập kho nguyên liệu](../../quan-ly-kho/nhap-xuat-hang-web/nhap-hang.md) theo số lượng thực tế.
 2. Mở **Sản phẩm - Dịch vụ → Sản xuất**, tạo phiếu sản xuất.
-3. Chọn kho, chọn **Bánh flan hướng dẫn**, nhập số lượng cần sản xuất và kiểm tra nguyên liệu tiêu hao trước khi lưu phiếu. Nếu chưa có mục **Sản xuất**, xem cách bật tại [Tính năng sản xuất](../tinh-nang-san-xuat.md).
+3. Chọn kho, chọn **Bánh flan**, nhập số lượng cần sản xuất và kiểm tra nguyên liệu tiêu hao trước khi lưu phiếu. Nếu chưa có mục **Sản xuất**, xem cách bật tại [Tính năng sản xuất](../tinh-nang-san-xuat.md).
 
 Ví dụ, phiếu sản xuất **20 cái** sẽ dùng **10 quả trứng, 1.000 ml sữa tươi, 200 gr đường** theo công thức trên và tăng tồn bánh thêm **20 cái**. Sau đó bán **3 cái** thì tồn bánh còn **17 cái** nếu trước đó chưa có bánh tồn; nguyên liệu đã được trừ ở bước sản xuất.
 
@@ -222,7 +222,7 @@ Với món cần gửi bếp/bar, mở **Thiết lập in → In và hiển th�
 3. Với món bán tại cửa hàng, đồng bộ dữ liệu trên thiết bị thu ngân rồi kiểm tra sản phẩm trên menu.
 4. Với sản phẩm quản lý tồn, kiểm tra đã có tồn kho trước khi bán nếu không cho phép tồn âm.
 
-<figure><img src="../../.gitbook/assets/them-sp-web-14-cac-san-pham-da-luu.jpg" alt="Danh sách sản phẩm và nguyên liệu mẫu đã lưu trên PosApp"><figcaption><p>Kiểm tra sản phẩm đã lưu trong danh sách</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/san-pham-dich-vu-20261020/web-14-cac-san-pham-da-luu.jpg" alt="Danh sách sản phẩm và nguyên liệu mẫu đã lưu trên PosApp"><figcaption><p>Kiểm tra sản phẩm đã lưu trong danh sách</p></figcaption></figure>
 
 | Vướng mắc | Cách xử lý |
 | --- | --- |

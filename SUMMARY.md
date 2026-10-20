@@ -13,30 +13,19 @@
 * [Tùy chỉnh menu nhanh tại trang chủ](thiet-lap-ban-dau/tuy-chinh-menu-nhanh-tai-trang-chu.md)
 * [Thiết lập màn hình phụ](thiet-lap-ban-dau/thiet-lap-man-hinh-phu.md)
 
-## 🥪 Sản phẩm - Dịch vụ - NVL
+## 🥪 SẢN PHẨM - DỊCH VỤ - NVL
 
 * [Quản lý nhóm sản phẩm](san-pham-dich-vu-nvl/quan-ly-nhom-san-pham.md)
-* [Hướng dẫn thêm sản phẩm thủ công](san-pham-dich-vu-nvl/huong-dan-them-san-pham-thu-cong/README.md)
-  * [Thêm sp Web](san-pham-dich-vu-nvl/huong-dan-them-san-pham-thu-cong/them-sp-web.md)
-  * [Thêm sản phẩm trên ứng dụng PosApp FnB](san-pham-dich-vu-nvl/huong-dan-them-san-pham-thu-cong/them-sp-fnb.md)
-* [Thêm sản phẩm bằng excel](san-pham-dich-vu-nvl/them-san-pham-bang-excel.md)
-* [Sửa/xóa sản phẩm](san-pham-dich-vu-nvl/sua-xoa-san-pham.md)
-* [Tính năng sản xuất](san-pham-dich-vu-nvl/tinh-nang-san-xuat.md)
-* [Ngôn ngữ khác của sản phẩm](san-pham-dich-vu-nvl/ngon-ngu-khac-cua-san-pham.md)
-* [Sản phẩm có nhiều thuộc tính tùy chọn](san-pham-dich-vu-nvl/san-pham-co-nhieu-thuoc-tinh-tuy-chon.md)
-* [NVL (nguyên vật liệu)](san-pham-dich-vu-nvl/nvl-nguyen-vat-lieu/README.md)
-  * [Quản lý NVL (web)](san-pham-dich-vu-nvl/nvl-nguyen-vat-lieu/quan-ly-nvl-web.md)
-  * [Định lượng NVL cho Sản phẩm](san-pham-dich-vu-nvl/nvl-nguyen-vat-lieu/dinh-luong-nvl-cho-san-pham.md)
-* [Khác](san-pham-dich-vu-nvl/khac/README.md)
-  * [Tính năng cân điện tử](san-pham-dich-vu-nvl/khac/tinh-nang-can-dien-tu.md)
-  * [Kích thước hình ảnh](san-pham-dich-vu-nvl/khac/kich-thuoc-hinh-anh.md)
-  * [Bật tắt món tại cửa hàng (web/app)](san-pham-dich-vu-nvl/khac/bat-tat-mon-tai-cua-hang-web-app.md)
-  * [Thêm đơn vị tính](san-pham-dich-vu-nvl/khac/them-don-vi-tinh.md)
+* [Quản lý sản phẩm](san-pham-dich-vu-nvl/huong-dan-them-san-pham-thu-cong/README.md)
+  * [Thêm sản phẩm trên web](san-pham-dich-vu-nvl/huong-dan-them-san-pham-thu-cong/them-sp-web.md)
+  * [Thêm sản phẩm trên app](san-pham-dich-vu-nvl/huong-dan-them-san-pham-thu-cong/them-sp-fnb.md)
+* [Bật tắt sản phẩm](san-pham-dich-vu-nvl/khac/bat-tat-mon-tai-cua-hang-web-app.md)
+* [Nhóm tùy chọn dịch vụ](san-pham-dich-vu-nvl/nhom-tuy-chon-dich-vu/README.md)
+  * [Tạo tùy chọn/topping và liên kết món](san-pham-dich-vu-nvl/nhom-tuy-chon-dich-vu/tao-tuy-chon-topping-va-lien-ket-mon.md)
 
 ## 🍩 Tùy chọn - Topping - Combo
 
 * [Tạo combo](tuy-chon-topping-combo/tao-combo.md)
-* [Topping Ghi chú cho món](tuy-chon-topping-combo/topping-ghi-chu-cho-mon.md)
 
 ## 🧾 PAYMENT
 
