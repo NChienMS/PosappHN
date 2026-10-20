@@ -18,7 +18,7 @@
 * [Quản lý nhóm sản phẩm](san-pham-dich-vu-nvl/quan-ly-nhom-san-pham.md)
 * [Hướng dẫn thêm sản phẩm thủ công](san-pham-dich-vu-nvl/huong-dan-them-san-pham-thu-cong/README.md)
   * [Thêm sp Web](san-pham-dich-vu-nvl/huong-dan-them-san-pham-thu-cong/them-sp-web.md)
-  * [Thêm sp FnB](san-pham-dich-vu-nvl/huong-dan-them-san-pham-thu-cong/them-sp-fnb.md)
+  * [Thêm sản phẩm, dịch vụ trên ứng dụng PosApp](san-pham-dich-vu-nvl/huong-dan-them-san-pham-thu-cong/them-sp-fnb.md)
 * [Thêm sản phẩm bằng excel](san-pham-dich-vu-nvl/them-san-pham-bang-excel.md)
 * [Sửa/xóa sản phẩm](san-pham-dich-vu-nvl/sua-xoa-san-pham.md)
 * [Tính năng sản xuất](san-pham-dich-vu-nvl/tinh-nang-san-xuat.md)
