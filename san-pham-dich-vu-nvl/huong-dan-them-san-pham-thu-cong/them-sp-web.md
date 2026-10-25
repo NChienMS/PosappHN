@@ -1,5 +1,7 @@
 ---
-description: Tạo sản phẩm một đơn vị tính, nhiều đơn vị tính, có định lượng nguyên liệu và có sản xuất trên trang quản trị PosApp.
+description: >-
+  Tạo sản phẩm một đơn vị tính, nhiều đơn vị tính, có định lượng nguyên liệu và
+  có sản xuất trên trang quản trị PosApp.
 ---
 
 # Thêm sản phẩm trên web
@@ -8,12 +10,12 @@ Truy cập [admin.posapp.vn](https://admin.posapp.vn/) và đăng nhập tài kh
 
 ## 1. Chọn cách quản lý sản phẩm
 
-| Bạn muốn tạo | Quản lý tồn kho | Sản xuất trừ nguyên vật liệu | Khai báo nguyên liệu |
-| --- | --- | --- | --- |
-| Hàng bán theo một hoặc nhiều đơn vị, như nước suối, nước ngọt | Bật nếu cần theo dõi số lượng hàng | Tắt | Không |
-| Nguyên vật liệu, như cà phê bột, sữa, đường | Bật | Tắt | Không |
-| Món pha chế khi khách gọi, như cà phê sữa | Tắt | Tắt | Theo lượng dùng cho một đơn vị bán |
-| Thành phẩm làm sẵn rồi mới bán, như bánh flan | Bật | Bật | Theo lượng dùng để sản xuất một thành phẩm |
+| Bạn muốn tạo                                                  | Quản lý tồn kho                    | Sản xuất trừ nguyên vật liệu | Khai báo nguyên liệu                       |
+| ------------------------------------------------------------- | ---------------------------------- | ---------------------------- | ------------------------------------------ |
+| Hàng bán theo một hoặc nhiều đơn vị, như nước suối, nước ngọt | Bật nếu cần theo dõi số lượng hàng | Tắt                          | Không                                      |
+| Nguyên vật liệu, như cà phê bột, sữa, đường                   | Bật                                | Tắt                          | Không                                      |
+| Món pha chế khi khách gọi, như cà phê sữa                     | Tắt                                | Tắt                          | Theo lượng dùng cho một đơn vị bán         |
+| Thành phẩm làm sẵn rồi mới bán, như bánh flan                 | Bật                                | Bật                          | Theo lượng dùng để sản xuất một thành phẩm |
 
 **Phân biệt thời điểm trừ kho:** bán cà phê sữa sẽ trừ nguyên liệu; sản xuất bánh flan sẽ trừ nguyên liệu và tăng tồn bánh; bán bánh flan sẽ trừ tồn bánh.
 
@@ -35,13 +37,13 @@ Tạo nước suối chỉ bán theo chai.
 
 ### Bước 1 Nhập thông tin và nơi bán
 
-| Trường | Giá trị mẫu |
-| --- | --- |
-| Tên hàng hóa | Nước suối 500 ml |
-| Mã sản phẩm | HD-NUOC500 |
-| Nhóm sản phẩm | Đồ uống |
-| Cho phép bán tại cửa hàng | Bật |
-| Cho phép bán hàng online | Tắt nếu chỉ bán tại cửa hàng |
+| Trường                    | Giá trị mẫu                  |
+| ------------------------- | ---------------------------- |
+| Tên hàng hóa              | Nước suối 500 ml             |
+| Mã sản phẩm               | HD-NUOC500                   |
+| Nhóm sản phẩm             | Đồ uống                      |
+| Cho phép bán tại cửa hàng | Bật                          |
+| Cho phép bán hàng online  | Tắt nếu chỉ bán tại cửa hàng |
 
 <figure><img src="../../.gitbook/assets/them-sp-web-02-nuoc-suoi-thong-tin.jpg" alt="Thông tin nước suối 500 ml và thiết lập bán tại cửa hàng"><figcaption><p>Nhập tên mã và nhóm sản phẩm</p></figcaption></figure>
 
@@ -57,9 +59,9 @@ Tạo nước suối chỉ bán theo chai.
 
 Tại **Đơn vị tính**, nhấn ô trống ở dòng đầu và chọn **Chai**. Nhập:
 
-| Đơn vị tính | Giá trị quy đổi | Giá bán | Giá vốn |
-| --- | --- | --- | --- |
-| Chai | 1 | 10.000 đ | 6.000 đ |
+| Đơn vị tính | Giá trị quy đổi | Giá bán  | Giá vốn |
+| ----------- | --------------- | -------- | ------- |
+| Chai        | 1               | 10.000 đ | 6.000 đ |
 
 Chọn **Chai** làm **Mặc định bán hàng** và **Mặc định tồn kho**. Với một đơn vị, hệ thống chọn mặc định sau khi chọn đơn vị.
 
@@ -84,10 +86,10 @@ Tạo nước ngọt vừa bán theo lon, vừa bán theo lốc; **1 lốc = 6 l
 5. Nhấn **Thêm đơn vị tính** bên dưới bảng, chọn **Lốc** ở dòng mới và nhập giá trị quy đổi **6**.
 6. Điền giá riêng cho từng dòng:
 
-| Đơn vị tính | Giá trị quy đổi | Giá bán | Giá vốn |
-| --- | --- | --- | --- |
-| lon | 1 | 15.000 đ | 9.000 đ |
-| Lốc | 6 | 85.000 đ | 54.000 đ |
+| Đơn vị tính | Giá trị quy đổi | Giá bán  | Giá vốn  |
+| ----------- | --------------- | -------- | -------- |
+| lon         | 1               | 15.000 đ | 9.000 đ  |
+| Lốc         | 6               | 85.000 đ | 54.000 đ |
 
 7. Chọn **lon** làm **Mặc định bán hàng** và **Mặc định tồn kho**. Nhấn **Lưu**.
 
@@ -101,13 +103,13 @@ Với các lựa chọn không có tỷ lệ quy đổi cố định, như trà 
 
 Nguyên vật liệu cũng được tạo tại **Thêm Mới → Sản phẩm**. Tạo và lưu từng nguyên liệu trước khi gán vào món.
 
-| Tên hàng hóa | Mã mẫu | Đơn vị | Giá vốn cho một đơn vị |
-| --- | --- | --- | --- |
-| Cà phê bột | HD-NVL-CAFE | gr | 200 đ/gr |
-| Sữa đặc | HD-NVL-SUADAC | ml | 60 đ/ml |
-| Sữa tươi | HD-NVL-SUATUOI | ml | 30 đ/ml |
-| Đường cát | HD-NVL-DUONG | gr | 20 đ/gr |
-| Trứng gà | HD-NVL-TRUNG | quả | 3.000 đ/quả |
+| Tên hàng hóa | Mã mẫu         | Đơn vị | Giá vốn cho một đơn vị |
+| ------------ | -------------- | ------ | ---------------------- |
+| Cà phê bột   | HD-NVL-CAFE    | gr     | 200 đ/gr               |
+| Sữa đặc      | HD-NVL-SUADAC  | ml     | 60 đ/ml                |
+| Sữa tươi     | HD-NVL-SUATUOI | ml     | 30 đ/ml                |
+| Đường cát    | HD-NVL-DUONG   | gr     | 20 đ/gr                |
+| Trứng gà     | HD-NVL-TRUNG   | quả    | 3.000 đ/quả            |
 
 Thực hiện với từng nguyên liệu:
 
@@ -147,9 +149,9 @@ Tạo cà phê sữa pha khi khách gọi. Công thức mẫu cho **1 ly** gồm
 ### Bước 3 Nhập định lượng và lưu
 
 | Nguyên liệu | Số lượng cho 1 ly | Đơn vị |
-| --- | --- | --- |
-| Cà phê bột | 20 | gr |
-| Sữa đặc | 25 | ml |
+| ----------- | ----------------- | ------ |
+| Cà phê bột  | 20                | gr     |
+| Sữa đặc     | 25                | ml     |
 
 Nhập số lượng tại từng dòng và kiểm tra đơn vị. Nhấn ra ngoài ô để kết thúc nhập, kiểm tra lại số lượng rồi nhấn **Lưu**.
 
@@ -181,10 +183,10 @@ Tạo bánh flan làm sẵn để bán. Công thức mẫu cho **1 cái**: **0,5
 3. Nhập định lượng:
 
 | Nguyên liệu | Số lượng cho 1 cái | Đơn vị |
-| --- | --- | --- |
-| Trứng gà | 0,5 | quả |
-| Sữa tươi | 50 | ml |
-| Đường cát | 10 | gr |
+| ----------- | ------------------ | ------ |
+| Trứng gà    | 0,5                | quả    |
+| Sữa tươi    | 50                 | ml     |
+| Đường cát   | 10                 | gr     |
 
 Với ô số dùng dấu chấm thập phân như ảnh, nhập **0.5** để thể hiện nửa quả trứng.
 
@@ -196,7 +198,7 @@ Với ô số dùng dấu chấm thập phân như ảnh, nhập **0.5** để t
 
 Lưu sản phẩm mới chỉ lưu cấu hình và công thức, chưa làm tăng tồn bánh.
 
-1. [Nhập kho nguyên liệu](../../quan-ly-kho/nhap-xuat-hang-web/nhap-hang.md) theo số lượng thực tế.
+1. [Nhập kho nguyên liệu](/broken/pages/PxlHJ7odzWkvGxLwP25P) theo số lượng thực tế.
 2. Mở **Sản phẩm - Dịch vụ → Sản xuất**, tạo phiếu sản xuất.
 3. Chọn kho, chọn **Bánh flan**, nhập số lượng cần sản xuất và kiểm tra nguyên liệu tiêu hao trước khi lưu phiếu. Nếu chưa có mục **Sản xuất**, xem cách bật tại [Tính năng sản xuất](../tinh-nang-san-xuat.md).
 
@@ -204,12 +206,12 @@ Ví dụ, phiếu sản xuất **20 cái** sẽ dùng **10 quả trứng, 1.000 
 
 ## 8. Thiết lập hiển thị và in bếp
 
-| Tùy chọn | Chọn khi nào |
-| --- | --- |
-| Cho phép bán tại cửa hàng | Bật để nhân viên chọn sản phẩm trên menu bán hàng tại cửa hàng |
-| Cho phép bán hàng online | Bật khi cần bán trên kênh online đã kết nối; tùy chọn này độc lập với bán tại cửa hàng |
-| Chỉ hiện trong tùy chọn | Dùng cho topping hoặc sản phẩm chỉ chọn kèm món khác |
-| Cho phép bán khi hết tồn kho | Chỉ dùng với sản phẩm quản lý tồn; bật sẽ cho phép bán làm tồn âm |
+| Tùy chọn                     | Chọn khi nào                                                                           |
+| ---------------------------- | -------------------------------------------------------------------------------------- |
+| Cho phép bán tại cửa hàng    | Bật để nhân viên chọn sản phẩm trên menu bán hàng tại cửa hàng                         |
+| Cho phép bán hàng online     | Bật khi cần bán trên kênh online đã kết nối; tùy chọn này độc lập với bán tại cửa hàng |
+| Chỉ hiện trong tùy chọn      | Dùng cho topping hoặc sản phẩm chỉ chọn kèm món khác                                   |
+| Cho phép bán khi hết tồn kho | Chỉ dùng với sản phẩm quản lý tồn; bật sẽ cho phép bán làm tồn âm                      |
 
 Ví dụ tồn 0 chai mà vẫn cho bán thêm 5 chai thì tồn là **-5 chai**; nhập thêm 20 chai thì còn **15 chai**.
 
@@ -224,11 +226,11 @@ Với món cần gửi bếp/bar, mở **Thiết lập in → In và hiển th�
 
 <figure><img src="../../.gitbook/assets/san-pham-dich-vu-20261020/web-14-cac-san-pham-da-luu.jpg" alt="Danh sách sản phẩm và nguyên liệu mẫu đã lưu trên PosApp"><figcaption><p>Kiểm tra sản phẩm đã lưu trong danh sách</p></figcaption></figure>
 
-| Vướng mắc | Cách xử lý |
-| --- | --- |
-| Không lưu được sản phẩm | Kiểm tra tên, nhóm, đơn vị tính và các ô đang báo lỗi; kiểm tra mã không trùng |
-| Không thấy phần định lượng | Với món pha theo order, tắt Quản lý tồn kho; với thành phẩm, bật cả Quản lý tồn kho và Sản xuất trừ nguyên vật liệu |
-| Không tìm được nguyên liệu | Tạo và lưu nguyên liệu trước; kiểm tra lại tên hoặc mã khi tìm kiếm |
-| Bán một lốc nhưng trừ sai số lon | Kiểm tra lon là đơn vị đầu tiên có tỷ lệ 1, lốc có tỷ lệ 6 |
-| Bánh flan chưa có số lượng để bán | Nhập nguyên liệu và lập phiếu sản xuất; chỉ lưu sản phẩm chưa tạo tồn thành phẩm |
-| Sản phẩm chưa xuất hiện trên menu | Kiểm tra Cho phép bán tại cửa hàng, trạng thái sản phẩm và đồng bộ dữ liệu thu ngân |
+| Vướng mắc                         | Cách xử lý                                                                                                          |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Không lưu được sản phẩm           | Kiểm tra tên, nhóm, đơn vị tính và các ô đang báo lỗi; kiểm tra mã không trùng                                      |
+| Không thấy phần định lượng        | Với món pha theo order, tắt Quản lý tồn kho; với thành phẩm, bật cả Quản lý tồn kho và Sản xuất trừ nguyên vật liệu |
+| Không tìm được nguyên liệu        | Tạo và lưu nguyên liệu trước; kiểm tra lại tên hoặc mã khi tìm kiếm                                                 |
+| Bán một lốc nhưng trừ sai số lon  | Kiểm tra lon là đơn vị đầu tiên có tỷ lệ 1, lốc có tỷ lệ 6                                                          |
+| Bánh flan chưa có số lượng để bán | Nhập nguyên liệu và lập phiếu sản xuất; chỉ lưu sản phẩm chưa tạo tồn thành phẩm                                    |
+| Sản phẩm chưa xuất hiện trên menu | Kiểm tra Cho phép bán tại cửa hàng, trạng thái sản phẩm và đồng bộ dữ liệu thu ngân                                 |

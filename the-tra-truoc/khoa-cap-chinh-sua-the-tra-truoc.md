@@ -42,7 +42,7 @@ Tại giao diện khách hàng cần reset mật khẩu > nhấn reset
 
 Sẽ có thông báo thành công , mk được reset về 123456 (tùy theo chủ cửa hàng đăng ký ban đầu)
 
-![](<../.gitbook/assets/5 (28)>)
+![](<../.gitbook/assets/4 (5)>)
 
 **C. Cấp lại thẻ ( trường hợp khách mất thẻ có nhu cầu cấp lại thẻ mới)**
 

@@ -42,6 +42,6 @@ Nếu máy Pos có 2 màn thì màn phụ sẽ hiển thị mã QR cho khách qu
 
 Hoặc máy không có màn hình phụ để hiển thị thì mẫu in ra sẽ có mã QR trên mẫu in
 
-![](<../.gitbook/assets/7 (7).png>)
+![](<../.gitbook/assets/0 (5).png>)
 
 **>> Chúc các bạn thành công**

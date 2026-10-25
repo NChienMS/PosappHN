@@ -1,2 +1,0 @@
-# Khởi tạo gian hàng
-

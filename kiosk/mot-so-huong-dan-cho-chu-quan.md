@@ -16,7 +16,7 @@ Khi quý khách đăng ký thông tin bên PosApp sẽ bàn giao tài khoản v�
 2. Mỗi một dòng sẽ đăng nhập trên 1 máy. Tuyệt đối không dùng thông tin đăng nhập cho nhiều máy khác nhau
 3. Trưởng tiệm là tài khoản cho chủ quán quản lý, còn lại sẽ dùng cho máy pos và nhân viên (Lưu ý ko đăng nhập lẫn lộn)
 
-<figure><img src=".gitbook/assets/image (436).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (436).png" alt=""><figcaption></figcaption></figure>
 
 #### 2/ Hướng dẫn đổi tài khoản/mật khẩu để bảo mật
 
@@ -39,13 +39,13 @@ Khi bàn giao thiết bị sẽ cần test bán hàng để check hệ thống h
 
 Qúy khách cần thao tác xóa dữ liệu trước khi muốn bán hàng thật để ghi nhận doanh thu cho chính xác
 
-<mark style="color:$primary;">**Lưu ý: Khi thao tác xóa dữ liệu cửa hàng đồng nghĩa khách hàng đồng ý mọi điều khoản khi xóa dữ liệu của PosApp**</mark>&#x20;
+<mark style="color:$primary;">**Lưu ý: Khi thao tác xóa dữ liệu cửa hàng đồng nghĩa khách hàng đồng ý mọi điều khoản khi xóa dữ liệu của PosApp**</mark>
 
 {% embed url="https://youtu.be/iHaP4Km7gW4?si=UfwIjLx8pBqVCaKp" %}
 
 #### 5/ Cài kênh bán hàng + quỹ tiền cho Grab
 
-Các thao tác sau khi liên kết Grab&#x20;
+Các thao tác sau khi liên kết Grab
 
 {% embed url="https://www.youtube.com/watch?feature=youtu.be&si=tmmSBsEqhPNVcNyS&v=gkJ9mdnW7b4" %}
 
@@ -53,7 +53,7 @@ Các thao tác sau khi liên kết Grab&#x20;
 
 {% embed url="https://youtube.com/shorts/3JjrVJxF6Uw?feature=share" %}
 
-### B  MỘT SỐ VIDEO HƯỚNG DẪN KHÁC NÊN THAM KHẢO
+### B MỘT SỐ VIDEO HƯỚNG DẪN KHÁC NÊN THAM KHẢO
 
 #### 1/ Hướng dẫn cài đặt in 1 liên, 2 liên trên ứng dụng GrabMerchant
 
@@ -79,9 +79,9 @@ _<mark style="color:$primary;">Lưu ý: mỗi một tài khoản nhân viên đi
 
 #### 6. Cách kiểm tra máy in bị lỗi và cách xử lý
 
-Lưu ý: cách này kiểm tra từ máy Pos 3 máy in \
+Lưu ý: cách này kiểm tra từ máy Pos 3 máy in\
 Máy in hóa đơn\
-Máy in 1(máy tem) \
+Máy in 1(máy tem)\
 Máy in 2 máy bếp
 
 {% embed url="https://www.youtube.com/watch?v=sSYRZKE0fMI" %}
@@ -101,8 +101,6 @@ Dùng **VietQR dự phòng** khi **TingBox gặp lỗi hoặc không sử dụng
 * **Chỉ sử dụng trong trường hợp dự phòng.**
 
 {% embed url="https://www.youtube.com/shorts/NJUuvaGNWQ0" %}
-
-
 
 #### 9. Tắt / Bật món , topping khỏi menu online
 
